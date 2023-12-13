@@ -7,7 +7,8 @@ const userRouter = require("./routes/users.js");
 const app = express();
 const PORT = 4050;
 
-app.use("auth", userRouter);
+app.use(express.json());
+app.use("/auth", userRouter);
 
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
