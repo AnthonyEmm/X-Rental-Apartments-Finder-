@@ -2,7 +2,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users.model.js");
 
-const register = async (req, res) => {
+// Creating a POST request for User Signup //
+const register = async (req, res, next) => {
   try {
     const {
       body: { email, password, name },
@@ -22,11 +23,12 @@ const register = async (req, res) => {
     res.status(201).json(payload);
   } catch (error) {
     console.log(error);
-    res.status(500).json("Something went wrong");
+    next(error);
   }
 };
 
-const login = async (req, res) => {
+// Creating a POST request for User Login //
+const login = async (req, res, next) => {
   try {
     const {
       body: { email, password },
@@ -48,7 +50,7 @@ const login = async (req, res) => {
     res.json(payload);
   } catch (error) {
     console.log(error);
-    res.status(500).json("Something went wrong");
+    next(error);
   }
 };
 

@@ -14,11 +14,9 @@ function NavBar() {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">About</Nav.Link>
           </Nav>
+          <Button variant="outline-light">Post Property</Button>
+          <Button variant="outline-light">Sign In</Button>
         </Container>
-        <br />
-        <br />
-        <Button variant="outline-light">Login</Button>
-        <Button variant="outline-light">List Property</Button>
       </Navbar>
     </>
   );
