@@ -1,3 +1,10 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.CONNECTION_STRING);
+mongoose
+  .connect(process.env.CONNECTION_STRING)
+  .then((resizeBytes) => {
+    console.log("DB Connected");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
