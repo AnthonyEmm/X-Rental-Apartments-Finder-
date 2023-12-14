@@ -35,7 +35,7 @@ const login = async (req, res, next) => {
     } = req;
     const user = await User.findOne({ email }).select("+password");
     if (!user) throw new Error("Could not find user");
-
+    // Bcrypt password compare //
     const userMatch = await bcrypt.compare(password, user.password);
     if (!userMatch) throw Error("Invalid password");
 
