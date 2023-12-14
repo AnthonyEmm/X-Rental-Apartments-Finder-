@@ -8,6 +8,7 @@ const propertySchema = new Schema({
   area: { type: Number, required: true },
   image: { type: String, required: true },
   images: { type: [String] },
+  owner: { type: Schema.Types.ObjectId, ref: "User" },
   availability: {
     type: String,
     enum: ["vacant", "rented", "sold"],

@@ -1,6 +1,6 @@
 const Property = require("../models/property.js");
 
-// Create a property in DB //
+// Create a property Listing to the DataBase //
 const createProperty = async (req, res, next) => {
   try {
     const {
@@ -11,6 +11,7 @@ const createProperty = async (req, res, next) => {
       area,
       image,
       images,
+      owner,
       availability,
     } = req.body;
     const property = await Property.create({
@@ -21,10 +22,11 @@ const createProperty = async (req, res, next) => {
       area,
       image,
       images,
+      owner,
       availability,
     });
 
-    const foundProperty = await Property.findOne(id);
+    const foundProperty = await Property.findOne({ title });
     if (foundProperty) throw new Error("Property Already Exists");
 
     res.status(201).json(property);
@@ -34,10 +36,11 @@ const createProperty = async (req, res, next) => {
   }
 };
 
-// Get all properties from the DB //
+// Get and display all properties from the DataBase //
 const getProperties = async (req, res, next) => {
   try {
     const property = await Property.find({});
+
     res.json(property);
   } catch (error) {
     console.log(error);
@@ -45,7 +48,19 @@ const getProperties = async (req, res, next) => {
   }
 };
 
+// Get a property from the DataBase by ID //
+const getProperty = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const OneProperty = await Property.findById(id).populate("owner");
+    res.json(OneProperty);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   createProperty,
   getProperties,
+  getProperty,
 };
