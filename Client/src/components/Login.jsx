@@ -10,8 +10,20 @@ function Login() {
           <h1 className="fw-bold">X Rental</h1>
           <h5>Make your login</h5>
 
-          <input type="text" name="Email" id="key" placeholder="Email" />
-          <input type="text" name="Password" id="key" placeholder="Password" />
+          <input
+            type="text"
+            name="Email"
+            id="key"
+            placeholder="Email"
+            required="true"
+          />
+          <input
+            type="text"
+            name="Password"
+            id="key"
+            placeholder="Password"
+            required="true"
+          />
           <button className="text-dark" id="key">
             Sign-in
           </button>
