@@ -6,7 +6,7 @@ const {
 
 const propertiesRouter = express.Router();
 
-propertiesRouter.get("/list", getProperties);
-propertiesRouter.post("/create", createProperty);
+propertiesRouter.get("/properties", getProperties);
+propertiesRouter.post("/createlisting", createProperty);
 
 module.exports = propertiesRouter;
