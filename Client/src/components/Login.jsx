@@ -5,7 +5,7 @@ import "./Login.css";
 function Login() {
   return (
     <div className="bg text-white">
-      <div className="container d-flex justify-content-center align-items-center mt-3 d-flex">
+      <div className="container-main d-flex justify-content-center align-items-center mt-3 d-flex">
         <div className="title-form border border-primary-subtle d-flex flex-column align-items-center gap-5 p-5">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Make your login</h5>

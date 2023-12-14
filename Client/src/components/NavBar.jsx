@@ -12,7 +12,7 @@ function NavBar() {
           <Navbar.Brand href="#home">X RENTAL</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">About</Nav.Link>
+            <Nav.Link href="#">About</Nav.Link>
           </Nav>
           <Button variant="outline-light">Post Property</Button>
           <Button variant="outline-light">Sign In</Button>
