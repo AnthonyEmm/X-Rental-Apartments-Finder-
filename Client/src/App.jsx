@@ -1,6 +1,9 @@
+
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import Login from "./components/Login";
+import React from "react";
+import "./App.css";
+import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -9,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>
+      <NavBar />
     </>
   );
 }
