@@ -56,6 +56,7 @@ const getProperty = async (req, res, next) => {
     res.json(OneProperty);
   } catch (error) {
     console.log(error);
+    next(error);
   }
 };
 
