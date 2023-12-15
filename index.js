@@ -1,14 +1,21 @@
 require("dotenv/config");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 require("./db.js");
 const express = require("express");
 
 const userRouter = require("./routes/users.js");
+const propertiesRouter = require("./routes/properties.js");
 
 const app = express();
 const PORT = 4050;
 
+app.use(cookieParser());
+app.use(cors());
 app.use(express.json());
+
 app.use("/auth", userRouter);
+app.use("/", propertiesRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
