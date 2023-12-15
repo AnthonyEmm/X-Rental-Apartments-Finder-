@@ -40,10 +40,8 @@ function SignUp() {
             </div>
           </form>
 
-          <button className="text-dark" id="key">
-            Register
-          </button>
-          <a href="#" className="text-success text-decoration-none">
+          <button className="btn btn-outline-success">Register</button>
+          <a href="#" className="text-decoration-none">
             Back to sign-in
           </a>
         </div>

@@ -15,6 +15,13 @@
   background-color: rgb(17, 189, 74);
 }
 
+.title-form button:hover {
+  background-color: rgba(17, 189, 74, 0.307);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.665);
+  font-weight: bold;
+}
+
 #key {
   border: 1px solid white;
   border-radius: 5px;

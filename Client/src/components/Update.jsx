@@ -40,7 +40,7 @@ function Update() {
               required="true"
             />
           </div>
-          <button className="text-dark" id="key">
+          <button type="button" className="btn btn-outline-success">
             Save
           </button>
           {/* <a href="#" className="text-success text-decoration-none">

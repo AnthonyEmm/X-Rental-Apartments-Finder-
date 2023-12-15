@@ -11,8 +11,28 @@
   color: rgb(17, 189, 74);
 }
 
-.title-form button {
+.title-form > button {
   background-color: rgb(17, 189, 74);
+  color: black;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 15rem;
+}
+
+.title-form > button:hover {
+  background-color: rgba(17, 189, 74, 0.307);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.665);
+  font-weight: bold;
+}
+
+.title-form a {
+  color: rgba(17, 189, 74, 0.672);
+}
+
+.title-form a:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
 }
 
 #key {
@@ -20,6 +40,7 @@
   border-radius: 5px;
   padding: 1rem;
   width: 15rem;
+  color: white;
 }
 
 .img-login {

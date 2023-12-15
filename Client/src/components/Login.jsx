@@ -24,10 +24,8 @@ function Login() {
             placeholder="Password"
             required="true"
           />
-          <button className="text-dark" id="key">
-            Sign-in
-          </button>
-          <a href="#" className="text-success text-decoration-none">
+          <button className="btn btn-outline-success">Sign-in</button>
+          <a href="#" className="text-decoration-none">
             Create an account
           </a>
         </div>
