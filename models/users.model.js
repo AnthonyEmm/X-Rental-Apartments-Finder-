@@ -1,3 +1,4 @@
+// const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const { Schema, model } = require("mongoose");
 
@@ -14,4 +15,10 @@ userSchema.pre("findOne", function (next) {
   next();
 });
 
+// userSchema.pre("save", async function (next) {
+//   if (this.isModified("password"))
+//     this.password = await bcrypt.hash(this.password, 10);
+
+//   next();
+// });
 module.exports = model("User", userSchema);
