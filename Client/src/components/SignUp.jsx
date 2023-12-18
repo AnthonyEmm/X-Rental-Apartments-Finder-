@@ -1,34 +1,87 @@
 import React from "react";
 import "./SignUp.css";
+import { useState } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function SignUp() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const notify = () => {
+    toast.success("Sign-Up Successful!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:4050/auth/signup",
+        formData,
+      );
+
+      console.log("SignUp successful:", response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center mt-5 d-flex">
         <div className="title-form border border-secondary d-flex flex-column align-items-center gap-4 p-4">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Create your account</h5>
-          <input
-            type="text"
-            name="Name"
-            id="key"
-            placeholder="Name"
-            required="true"
-          />
-          <input
-            type="text"
-            name="Email"
-            id="key"
-            placeholder="Email"
-            required="true"
-          />
-          <input
-            type="password"
-            name="Password"
-            id="key"
-            placeholder="Password"
-            required="true"
-          />
-          <form className="signup-form">
+          <form onSubmit={handleSignUp}>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Name"
+            />
+            <br />
+            <br />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Email"
+            />
+            <br />
+            <br />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              placeholder="Password"
+            />
+            <br />
+            <br />
+            {/* <form className="signup-form">
             <div className="tenant">
               <input type="radio" id="html" name="#" value="HTML" />
               <label for="html">I am looking for a place</label>
@@ -38,15 +91,27 @@ function SignUp() {
               <input type="radio" id="html" name="#" value="HTML" />
               <label for="html">I am a property owner</label>
             </div>
+          </form> */}
+            <button onClick={notify}>Submit</button>
+            <ToastContainer
+              position="top-right"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </form>
-
-          <button className="btn btn-outline-success">Register</button>
           <a href="#" className="text-decoration-none">
             Back to sign-in
           </a>
         </div>
         <div className="img-login border border-secondary">
-          <img src="../public/berlin.jpg" alt="Berlin landscape" />
+          <img src="/berlin.jpg" alt="Berlin landscape" />
         </div>
       </div>
     </div>
