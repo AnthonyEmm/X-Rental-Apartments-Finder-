@@ -46,11 +46,11 @@ function SignUp() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center mt-5 d-flex">
-        <div className="title-form border border-secondary d-flex flex-column align-items-center gap-4 p-4">
+      <div className="container-main d-flex justify-content-center align-items-center mt-4">
+        <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Create your account</h5>
-          <form onSubmit={handleSignUp}>
+          <form onSubmit={handleSignUp} className="container">
             <input
               type="text"
               name="name"
@@ -92,27 +92,29 @@ function SignUp() {
               <label for="html">I am a property owner</label>
             </div>
           </form> */}
-            <button onClick={notify}>Submit</button>
-            <ToastContainer
-              position="top-right"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-            />
+            <button className="btn" onClick={notify}>
+              Submit
+            </button>
           </form>
-          <a href="#" className="text-decoration-none">
+          <a href="#" className="text-decoration-none text-success">
             Back to sign-in
           </a>
         </div>
-        <div className="img-login border border-secondary">
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+        {/* <div className="img-login border border-secondary">
           <img src="/berlin.jpg" alt="Berlin landscape" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

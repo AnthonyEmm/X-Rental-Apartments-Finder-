@@ -1,4 +1,4 @@
-.container-main {
+/* .container-main {
   height: 100vh;
   width: auto;
 }
@@ -84,4 +84,38 @@ input[type="radio"]:checked:after {
   display: inline-block;
   visibility: visible;
   border: 1px solid white;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 10px 10px 5px rgb(44, 123, 44);
+}
+
+input {
+  width: 60%;
+  padding: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: azure;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
 }
