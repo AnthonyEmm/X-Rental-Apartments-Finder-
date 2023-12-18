@@ -1,0 +1,45 @@
+.container-main {
+  height: auto;
+  width: auto;
+}
+
+.list-container {
+  width: 55rem;
+}
+
+#search {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 40rem;
+  color: white;
+}
+
+#search:hover {
+  border: 1px solid rgba(255, 255, 255, 0.278);
+}
+
+.tags a {
+  text-decoration: none;
+  color: rgba(17, 189, 74, 0.631);
+}
+
+.tags a:hover {
+  color: rgb(17, 189, 74);
+}
+
+.list .card {
+  cursor: pointer;
+}
+
+.list .card:hover {
+  border-color: rgb(17, 189, 74);
+}
+
+.card-body h5 {
+  color: rgb(17, 189, 74);
+}
+
+.card-text {
+  color: white;
+}
