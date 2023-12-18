@@ -18,7 +18,7 @@ function Login() {
             required="true"
           />
           <input
-            type="text"
+            type="password"
             name="Password"
             id="key"
             placeholder="Password"

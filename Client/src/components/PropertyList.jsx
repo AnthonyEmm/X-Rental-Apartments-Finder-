@@ -6,6 +6,7 @@ function PropertyList() {
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-5">
           <div className="search-tags d-flex flex-column gap-2">
+            <h1 className="text-center">Property List</h1>
             <input
               type="search"
               name="search"
@@ -21,7 +22,7 @@ function PropertyList() {
               <a href="#">rooms</a>
             </div>
           </div>
-          <div className="list">
+          {/* <div className="list">
             <div class="row row-cols-1 row-cols-md-3 g-4">
               <div class="col">
                 <div class="card">
@@ -78,7 +79,7 @@ function PropertyList() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* <button type="button" className="btn btn-outline-success">
             Save
           </button> */}

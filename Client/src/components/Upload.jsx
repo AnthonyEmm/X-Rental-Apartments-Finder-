@@ -52,7 +52,7 @@ function Upload() {
                 placeholder="PLZ"
                 required="true"
               />
-              <button id="key">Upload an image</button>
+              {/* <button id="key">Upload an image</button> */}
             </div>
             <div className="right-section d-flex flex-column gap-2">
               <input
@@ -82,7 +82,7 @@ function Upload() {
             </div>
           </div>
           <button type="button" className="btn btn-outline-success">
-            Save
+            Submit
           </button>
           {/* <a href="#" className="text-success text-decoration-none">
             Create an account
