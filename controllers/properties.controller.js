@@ -1,4 +1,5 @@
 const Property = require("../models/property.js");
+const cloudinary = require("cloudinary").v2;
 
 // Create a property Listing to the DataBase //
 const createProperty = async (req, res, next) => {
@@ -60,8 +61,15 @@ const getProperty = async (req, res, next) => {
   }
 };
 
+// Upload file to server (testing) //
+const testUpload = (req, res) => {
+  console.log(req.body);
+  console.log(req.file);
+};
+
 module.exports = {
   createProperty,
   getProperties,
   getProperty,
+  testUpload,
 };

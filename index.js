@@ -10,6 +10,7 @@ const propertiesRouter = require("./routes/properties.js");
 const app = express();
 const PORT = 4050;
 
+app.use(express.static("uploads"));
 app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
