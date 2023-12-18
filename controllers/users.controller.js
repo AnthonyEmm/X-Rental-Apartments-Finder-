@@ -34,10 +34,10 @@ const login = async (req, res, next) => {
       body: { email, password },
     } = req;
     const user = await User.findOne({ email }).select("+password");
-    if (!user) throw new Error("Could not find user");
+    if (!user) throw new Error("User Does Not Exist");
     // Bcrypt password compare //
     const userMatch = await bcrypt.compare(password, user.password);
-    if (!userMatch) throw Error("Invalid password");
+    if (!userMatch) throw Error("Incorrect password");
 
     // This step is for User who signed up be send to login page immediately after the signup process //
     const payload = { id: user._id, name: user.name, email: user.email };
@@ -47,7 +47,36 @@ const login = async (req, res, next) => {
 
     console.log(token);
 
-    res.json(payload);
+    res
+      .cookie("access_token", token, { httpOnly: true, maxAge: 28800000 })
+      .json(payload);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
+// Creating a POST request for User Logout //
+const logout = async (req, res, next) => {
+  try {
+    res
+      .cookie("access_token", "", { httpOnly: true, maxAge: 0 })
+      .json({ success: true });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
+// Creating a GET request for User Profile //
+const getProfile = async (req, res, next) => {
+  try {
+    const {
+      user: { id },
+    } = req;
+
+    const user = await User.findById(id);
+    res.json(user);
   } catch (error) {
     console.log(error);
     next(error);
@@ -57,4 +86,6 @@ const login = async (req, res, next) => {
 module.exports = {
   register,
   login,
+  logout,
+  getProfile,
 };
