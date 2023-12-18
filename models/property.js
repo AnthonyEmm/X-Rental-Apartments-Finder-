@@ -6,6 +6,7 @@ const propertySchema = new Schema({
   price: { type: Number, required: true },
   bedrooms: { type: Number, required: true, min: 1 },
   area: { type: Number, required: true },
+  type: { type: String, required: true },
   image: { type: String, required: true },
   images: { type: [String] },
   owner: { type: Schema.Types.ObjectId, ref: "User" },

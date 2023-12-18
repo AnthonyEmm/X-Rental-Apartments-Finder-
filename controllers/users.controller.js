@@ -12,8 +12,8 @@ const register = async (req, res, next) => {
     const foundUser = await User.findOne({ email });
     if (foundUser) throw new Error("User Already Exists");
 
-    const hash = await bcrypt.hash(password, 10);
-    const user = await User.create({ email, password: hash, name });
+    // const hash = await bcrypt.hash(password, 10);
+    const user = await User.create({ email, password, name });
 
     const payload = { id: user._id, name: user.name, email: user.email };
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
@@ -83,9 +83,39 @@ const getProfile = async (req, res, next) => {
   }
 };
 
+// Creating a POST request for User credentials Update //
+const updateUser = async (req, res, next) => {
+  try {
+    if (req.body.password) {
+      req.body.password = await bcrypt.hash(req.body.password, 10);
+    }
+    if (req.user.id !== req.params.id)
+      throw new Error("You can only update your own account");
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: {
+          email: req.body.email,
+          password: req.body.password,
+          avatar: req.body.avatar,
+        },
+      },
+      { new: true },
+    );
+
+    const { password, ...rest } = updatedUser._doc;
+    res.status(200).json(rest);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
 module.exports = {
   register,
   login,
   logout,
+  updateUser,
   getProfile,
 };
