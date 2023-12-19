@@ -6,12 +6,12 @@ function PropertyList() {
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-5">
           <div className="search-tags d-flex flex-column gap-2">
-            <h1 className="text-center">Property List</h1>
+            <h1 className="text-center text-success">Property List</h1>
             <input
               type="search"
               name="search"
               id="search"
-              placeholder="Search by title"
+              placeholder="Search by title..."
             />
             <div className="tags d-flex justify-content-center gap-4">
               <a href="#">location</a>

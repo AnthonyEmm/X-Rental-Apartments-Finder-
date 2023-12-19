@@ -2,28 +2,15 @@ import React from "react";
 import "./SignUp.css";
 import { useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function SignUp() {
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
-
-  const notify = () => {
-    toast.success("Sign-Up Successful!", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -41,12 +28,13 @@ function SignUp() {
       console.log("SignUp successful:", response.data);
     } catch (error) {
       console.log(error);
+      setError("Invalid credentials. Please try again");
     }
   };
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center mt-4">
+      <div className="container-main d-flex justify-content-center align-items-center mt-5">
         <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Create your account</h5>
@@ -58,6 +46,7 @@ function SignUp() {
               value={formData.name}
               onChange={handleInputChange}
               placeholder="Name"
+              required
             />
             <br />
             <br />
@@ -68,6 +57,7 @@ function SignUp() {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
+              required
             />
             <br />
             <br />
@@ -78,8 +68,10 @@ function SignUp() {
               value={formData.password}
               onChange={handleInputChange}
               placeholder="Password"
+              required={true}
             />
             <br />
+            {error && <p style={{ color: "red" }}>{error}</p>}
             <br />
             {/* <form className="signup-form">
             <div className="tenant">
@@ -92,26 +84,15 @@ function SignUp() {
               <label for="html">I am a property owner</label>
             </div>
           </form> */}
-            <button className="btn" onClick={notify}>
-              Submit
+            <button className="btn" onClick={handleSignUp}>
+              Sign Up
             </button>
           </form>
-          <a href="#" className="text-decoration-none text-success">
+          <Link to="/login" className="text-decoration-none text-success">
             Back to sign-in
-          </a>
+          </Link>
         </div>
-        <ToastContainer
-          position="top-right"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+
         {/* <div className="img-login border border-secondary">
           <img src="/berlin.jpg" alt="Berlin landscape" />
         </div> */}
