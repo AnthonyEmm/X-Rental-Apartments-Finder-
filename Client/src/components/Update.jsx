@@ -12,40 +12,30 @@ function Update() {
             <input
               type="text"
               name="Email"
-              id="key"
+              id="email"
               placeholder="Email"
-              required="true"
+              required={true}
             />
-            {/* <input
-              type="password"
-              name="Password"
-              id="key"
-              placeholder="Password"
-              required="true"
-            /> */}
           </div>
-          <div className="pass-area d-flex flex-column gap-2">
+          <div className="pass-area d-flex flex-column gap-4">
             <input
               type="password"
-              name="Current password"
-              id="key"
+              name="password"
+              id="password"
               placeholder="Current password"
-              required="true"
+              required={true}
             />
             <input
               type="password"
-              name="New password"
-              id="key"
+              name="password"
+              id="newpass"
               placeholder="New password"
-              required="true"
+              required={true}
             />
           </div>
-          <button type="button" className="btn btn-outline-success">
+          <button type="button" className="btn btn-outline-success text-light">
             Save
           </button>
-          {/* <a href="#" className="text-success text-decoration-none">
-            Create an account
-          </a> */}
         </div>
       </div>
     </div>

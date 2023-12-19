@@ -4,11 +4,11 @@
 }
 
 .form-header {
-  width: 30rem;
+  width: 25rem;
 }
 
 .title-form {
-  width: 40rem;
+  width: 36rem;
 }
 
 .title-form h5 {
@@ -23,7 +23,7 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1rem;
-  width: 15rem;
+  max-width: 12.5rem;
 }
 
 #desk {
@@ -31,4 +31,6 @@
   border-radius: 5px;
   padding: 1rem;
   color: white;
+  resize: none;
+  width: 25rem;
 }

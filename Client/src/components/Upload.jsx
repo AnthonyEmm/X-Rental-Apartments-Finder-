@@ -1,23 +1,28 @@
 import React from "react";
 import "./Upload.css";
+import { Link } from "react-router-dom";
+
 function Upload() {
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-3">
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-3 p-4">
           <div className="form-header d-flex justify-content-between">
-            <h5 className="fw-bold">Add a property</h5>
-            <a className="text-decoration-none" href="#">
+            <h4 className="fw-bold text-success">Add a property</h4>
+            <Link
+              to="/list"
+              className="text-decoration-none text-success fw-bold"
+            >
               Back
-            </a>
+            </Link>
           </div>
-          <div className="t-description d-flex flex-column gap-2">
+          <div className="t-description d-flex flex-column gap-2 ">
             <input
               type="text"
               name="title"
               id="desk"
               placeholder="Title"
-              required="true"
+              required={true}
             />
             <textarea
               name="description"
@@ -35,24 +40,39 @@ function Upload() {
                 name="rent price"
                 id="key"
                 placeholder="Rent price in euros"
-                required="true"
+                required={true}
               />
-              <select name="property" id="key" required="true">
+              <select
+                name="property"
+                id="key"
+                required={true}
+                className="select text-secondary"
+              >
                 <option value="select property">Select type of Property</option>
-                <option value="house">House</option>
                 <option value="apartment">Apartment</option>
-                <option value="flat">Flat</option>
-                <option value="studio">Studio</option>
+                <option value="cottage">Cottage</option>
                 <option value="duplex">Duplex</option>
+                <option value="flat">Flat</option>
+                <option value="house">House</option>
+                <option value="studio">Studio</option>
+              </select>
+              <select
+                name="property"
+                id="key"
+                required={true}
+                className="select text-secondary"
+              >
+                <option value="availability">Availability</option>
+                <option value="vacant">Vacant</option>
+                <option value="cottage">Rented</option>
               </select>
               <input
                 type="text"
                 name="post code"
                 id="key"
                 placeholder="PLZ"
-                required="true"
+                required={true}
               />
-              {/* <button id="key">Upload an image</button> */}
             </div>
             <div className="right-section d-flex flex-column gap-2">
               <input
@@ -60,33 +80,30 @@ function Upload() {
                 name="number of rooms"
                 id="key"
                 placeholder="Number of rooms"
-                required="true"
+                required={true}
               />
               <input
                 type="text"
                 name="size of property"
                 id="key"
                 placeholder="Size of property in m²"
-                required="true"
+                required={true}
               />
               <input
                 type="number"
                 id="key"
                 name="year"
-                min="1750"
-                max="2023"
+                min="1900"
+                max="2030"
                 placeholder="Building age (YYYY)"
-                required="true"
+                required={true}
               />
-              <input type="file" id="key" name="img" accept="image/*"></input>
+              <input type="file" id="key" name="img" accept="image/*" />
             </div>
           </div>
-          <button type="button" className="btn btn-outline-success">
+          <button type="button" className="btn btn-outline-success text-light">
             Submit
           </button>
-          {/* <a href="#" className="text-success text-decoration-none">
-            Create an account
-          </a> */}
         </div>
       </div>
     </div>

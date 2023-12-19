@@ -29,16 +29,16 @@ function NavBar() {
         className="collapse navbar-collapse justify-content-end"
         id="navbarNav"
       >
-        <ul className="navbar-nav gap-3">
-          <li className="nav-item">
-            <Link to="/" className="nav-link">
+        <ul className="navbar-nav gap-3 ">
+          <li className="nav-item ">
+            <Link to="/" className="nav-link ">
               Home
             </Link>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
+          <li className="nav-item ">
+            <Link to="#" className="nav-link ">
               About
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link to="/login" className="btn">
