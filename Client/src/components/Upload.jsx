@@ -39,7 +39,7 @@ function Upload() {
                 type="text"
                 name="rent price"
                 id="key"
-                placeholder="Rent price in euros"
+                placeholder="Rent price in Euros"
                 required={true}
               />
               <select
@@ -74,7 +74,7 @@ function Upload() {
                 required={true}
               />
             </div>
-            <div className="right-section d-flex flex-column gap-2">
+            <div className="right-section d-flex flex-column gap-2 ">
               <input
                 type="text"
                 name="number of rooms"
@@ -101,9 +101,7 @@ function Upload() {
               <input type="file" id="key" name="img" accept="image/*" />
             </div>
           </div>
-          <button type="button" className="btn btn-outline-success text-light">
-            Submit
-          </button>
+          <button className="btn btn-lg bg-success">Submit</button>
         </div>
       </div>
     </div>

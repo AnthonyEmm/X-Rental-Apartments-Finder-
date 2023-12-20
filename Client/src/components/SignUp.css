@@ -94,7 +94,6 @@ input[type="radio"]:checked:after {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }
 
 input {

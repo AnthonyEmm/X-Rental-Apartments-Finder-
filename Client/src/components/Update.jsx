@@ -33,9 +33,7 @@ function Update() {
               required={true}
             />
           </div>
-          <button type="button" className="btn btn-outline-success text-light">
-            Save
-          </button>
+          <button className="btn btn-lg bg-success">Save</button>
         </div>
       </div>
     </div>

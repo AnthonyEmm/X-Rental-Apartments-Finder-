@@ -52,22 +52,27 @@ function Login() {
                 placeholder="Password"
                 required={true}
               />
-              <br />
+              <Link
+                to="/Update"
+                className="fw-bold text-success text-decoration-none bg-transparent gap-4 p-4"
+              >
+                Forgot Password?
+              </Link>
+
               {error && <p style={{ color: "red" }}>{error}</p>}
               <br />
-              <button className="btn" type="button" onClick={handleLogin}>
+              <button
+                className="btn btn-lg bg-success"
+                type="button"
+                onClick={handleLogin}
+              >
                 Sign In
               </button>
-
-              <br />
             </form>
             <Link to="/sign-up" className="text-decoration-none text-success">
               Create an account
             </Link>
           </div>
-          {/* <div className="img-login border border-secondary">
-          <img src="/berlin.jpg" alt="Berlin landscape" />
-        </div> */}
         </div>
       </div>
     </>

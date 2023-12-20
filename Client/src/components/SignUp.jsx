@@ -34,7 +34,7 @@ function SignUp() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center mt-5">
+      <div className="container-main d-flex justify-content-center align-items-center mt-4">
         <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Create your account</h5>
@@ -84,7 +84,7 @@ function SignUp() {
               <label for="html">I am a property owner</label>
             </div>
           </form> */}
-            <button className="btn" onClick={handleSignUp}>
+            <button className="btn btn-lg bg-success" onClick={handleSignUp}>
               Sign Up
             </button>
           </form>
@@ -92,10 +92,6 @@ function SignUp() {
             Back to sign-in
           </Link>
         </div>
-
-        {/* <div className="img-login border border-secondary">
-          <img src="/berlin.jpg" alt="Berlin landscape" />
-        </div> */}
       </div>
     </div>
   );
