@@ -8,6 +8,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleLogin = async () => {
     try {
@@ -16,10 +17,11 @@ function Login() {
         password,
       });
 
-      console.log("Login successful:", response.data);
+      console.log("Login Successful:", response.data);
+      setSuccess("Login Successful", response.message);
     } catch (error) {
-      console.log("Login failed:", error.response.data);
-      setError("Incorrect email or password");
+      console.log("Login Failed:", error.response.data);
+      setError("Incorrect Email or Password!");
     }
   };
 
@@ -58,8 +60,8 @@ function Login() {
               >
                 Forgot Password?
               </Link>
-
               {error && <p style={{ color: "red" }}>{error}</p>}
+              {success && <p style={{ color: "green" }}>{success}</p>}
               <br />
               <button
                 className="btn btn-lg bg-success"

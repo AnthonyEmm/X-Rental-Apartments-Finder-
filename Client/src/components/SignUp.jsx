@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function SignUp() {
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,10 +26,11 @@ function SignUp() {
         formData,
       );
 
-      console.log("SignUp successful:", response.data);
+      console.log("SignUp Successful:", response.data);
+      setSuccess("Sign Up Successful. Please login", response.message);
     } catch (error) {
       console.log(error);
-      setError("Invalid credentials. Please try again");
+      setError("Invalid credentials. Please fill out all fields!");
     }
   };
 
@@ -72,18 +74,9 @@ function SignUp() {
             />
             <br />
             {error && <p style={{ color: "red" }}>{error}</p>}
+            {success && <p style={{ color: "green" }}>{success}</p>}
             <br />
-            {/* <form className="signup-form">
-            <div className="tenant">
-              <input type="radio" id="html" name="#" value="HTML" />
-              <label for="html">I am looking for a place</label>
-            </div>
 
-            <div className="owner">
-              <input type="radio" id="html" name="#" value="HTML" />
-              <label for="html">I am a property owner</label>
-            </div>
-          </form> */}
             <button className="btn btn-lg bg-success" onClick={handleSignUp}>
               Sign Up
             </button>
