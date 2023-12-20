@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Upload() {
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-3">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-3 mb-3">
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-3 p-4">
           <div className="form-header d-flex justify-content-between">
             <h4 className="fw-bold text-success">Add a property</h4>
