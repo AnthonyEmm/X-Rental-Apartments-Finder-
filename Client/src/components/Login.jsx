@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
     try {
       const response = await axios.post("http://localhost:4050/auth/login", {
         email,
@@ -18,10 +18,11 @@ function Login() {
       });
 
       console.log("Login Successful:", response.data);
-      setSuccess("Login Successful", response.message);
+      setSuccess(true);
     } catch (error) {
       console.log("Login Failed:", error.response.data);
-      setError("Incorrect Email or Password!");
+      setError(true);
+      e.preventDefault();
     }
   };
 
@@ -60,8 +61,16 @@ function Login() {
               >
                 Forgot Password?
               </Link>
-              {error && <p style={{ color: "red" }}>{error}</p>}
-              {success && <p style={{ color: "green" }}>{success}</p>}
+              {error && (
+                <p style={{ color: "red" }}>
+                  {error ? "Incorrect Email or Password" : ""}
+                </p>
+              )}
+              {success && (
+                <p style={{ color: "green" }}>
+                  {success ? "Login Successful" : ""}
+                </p>
+              )}
               <br />
               <button
                 className="btn btn-lg bg-success"
