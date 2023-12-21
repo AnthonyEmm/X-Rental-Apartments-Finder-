@@ -4,7 +4,7 @@ function Upload() {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
-        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-3 p-4">
+        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-4">
           <div className="form-header d-flex justify-content-between">
             <h5 className="fw-bold">Add a property</h5>
             <a className="text-decoration-none" href="#">
@@ -78,9 +78,9 @@ function Upload() {
                 placeholder="Building age (YYYY)"
                 required="true"
               />
-              <input type="file" id="key" name="img" accept="image/*"></input>
             </div>
           </div>
+          <input type="file" id="image" name="img" accept="image/*"></input>
           <button type="button" className="btn btn-outline-success">
             Submit
           </button>

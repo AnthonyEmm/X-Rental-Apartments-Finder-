@@ -1,0 +1,29 @@
+.container-main {
+  height: auto;
+  width: auto;
+}
+
+.list-container {
+  width: 70rem;
+}
+
+.row img {
+  cursor: pointer;
+}
+
+a {
+  color: rgba(17, 189, 74, 0.631);
+}
+
+a:hover {
+  color: rgb(17, 189, 74);
+}
+
+.mapa {
+  height: 300px;
+}
+
+.map-section button:hover {
+  background-color: rgb(17, 189, 74);
+  color: black;
+}

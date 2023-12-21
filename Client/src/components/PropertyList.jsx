@@ -1,6 +1,24 @@
 import React from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import "../components/PropertyList.css";
 function PropertyList() {
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    getList(`http://localhost:4050/properties`);
+  }, []);
+
+  const getList = async (url) => {
+    try {
+      const response = await axios.get(url);
+      setProperties(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
@@ -22,7 +40,25 @@ function PropertyList() {
               <a href="#">rooms</a>
             </div>
           </div>
-          {/* <div className="list">
+
+          {properties.map((property) => {
+            return (
+              <div key={property.id}>
+                <p>
+                  <img src={property.image} />
+                  {/* <img src={property.images[2]} /> */}
+                </p>
+
+                <h2>Title: {property.title}</h2>
+                {/* <h3>Owner: {property.owner}</h3> */}
+                <h3>Description: {property.description}</h3>
+                <h3>Property Area: {property.area}</h3>
+                <h3>Price: {property.price}</h3>
+              </div>
+            );
+          })}
+
+          <div className="list">
             <div class="row row-cols-1 row-cols-md-3 g-4">
               <div class="col">
                 <div class="card">
@@ -79,10 +115,7 @@ function PropertyList() {
                 </div>
               </div>
             </div>
-          </div> */}
-          {/* <button type="button" className="btn btn-outline-success">
-            Save
-          </button> */}
+          </div>
         </div>
       </div>
     </div>
