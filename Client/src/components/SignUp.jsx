@@ -30,7 +30,7 @@ function SignUp() {
       setSuccess("Sign Up Successful. Please login", response.message);
     } catch (error) {
       console.log(error);
-      setError("Invalid credentials. Please fill out all fields!");
+      setError("Invalid credentials. SignUp failed!");
     }
   };
 
