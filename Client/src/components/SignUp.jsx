@@ -36,8 +36,8 @@ function SignUp() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center mt-4">
-        <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
+      <div className="container-main d-flex justify-content-center align-items-center mt-4 mb-20">
+        <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-1 p-3">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Create your account</h5>
           <form onSubmit={handleSignUp} className="container">
@@ -73,15 +73,21 @@ function SignUp() {
               required={true}
             />
             <br />
+            <p className="info text-danger fs-6 bg-transparent mt-2">
+              Must contain 8-10 letters and one number
+            </p>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
             <br />
 
-            <button className="btn btn-lg bg-success" onClick={handleSignUp}>
+            <button
+              className="btn btn-lg bg-success mb-25"
+              onClick={handleSignUp}
+            >
               Sign Up
             </button>
           </form>
-          <Link to="/login" className="text-decoration-none text-success">
+          <Link to="/login" className="text-decoration-none text-success mb-25">
             Back to sign-in
           </Link>
         </div>
