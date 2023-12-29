@@ -42,7 +42,7 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                required={true}
+                required
               />
               <br />
               <br />
@@ -53,7 +53,7 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                required={true}
+                required
               />
               <Link
                 to="/Update"
