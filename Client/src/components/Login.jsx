@@ -19,6 +19,7 @@ function Login() {
 
       console.log("Login Successful:", response.data);
       setSuccess(true);
+      setError("");
     } catch (error) {
       console.log("Login Failed:", error.response.data);
       setError(true);
@@ -42,7 +43,7 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                required
+                required={true}
               />
               <br />
               <br />
@@ -53,7 +54,7 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                required
+                required={true}
               />
               <Link
                 to="/Update"

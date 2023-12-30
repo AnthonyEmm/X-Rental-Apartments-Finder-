@@ -28,6 +28,7 @@ function SignUp() {
 
       console.log("SignUp Successful:", response.data);
       setSuccess("Sign Up Successful. Please login", response.message);
+      setError("");
     } catch (error) {
       console.log(error);
       setError("Invalid credentials. SignUp failed!");
@@ -48,7 +49,7 @@ function SignUp() {
               value={formData.name}
               onChange={handleInputChange}
               placeholder="Name"
-              required
+              required={true}
             />
             <br />
             <br />
@@ -59,7 +60,7 @@ function SignUp() {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
-              required
+              required={true}
             />
             <br />
             <br />

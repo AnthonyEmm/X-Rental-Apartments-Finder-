@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Update({ userId }) {
+function Update({ id }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -24,10 +24,10 @@ function Update({ userId }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:4050/auth/update/:id`,
+        `http://localhost:4050/auth/update/${id}`,
         {
-          email: email,
-          password: password,
+          email,
+          password,
         },
       );
       console.log("User Updated Successfully:", response.data);
