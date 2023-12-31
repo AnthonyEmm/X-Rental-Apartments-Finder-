@@ -12,30 +12,23 @@ function Update() {
             <input
               type="text"
               name="Email"
-              id="key"
+              id="email"
               placeholder="Email"
               required="true"
             />
-            {/* <input
-              type="password"
-              name="Password"
-              id="key"
-              placeholder="Password"
-              required="true"
-            /> */}
           </div>
           <div className="pass-area d-flex flex-column gap-2">
             <input
               type="password"
               name="Current password"
-              id="key"
+              id="currentPassword"
               placeholder="Current password"
               required="true"
             />
             <input
               type="password"
               name="New password"
-              id="key"
+              id="newPassword"
               placeholder="New password"
               required="true"
             />

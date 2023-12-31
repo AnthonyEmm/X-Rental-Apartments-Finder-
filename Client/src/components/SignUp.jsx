@@ -10,21 +10,21 @@ function SignUp() {
           <input
             type="text"
             name="Name"
-            id="key"
+            id="name"
             placeholder="Name"
             required="true"
           />
           <input
             type="text"
             name="Email"
-            id="key"
+            id="email"
             placeholder="Email"
             required="true"
           />
           <input
             type="password"
             name="Password"
-            id="key"
+            id="password"
             placeholder="Password"
             required="true"
           />

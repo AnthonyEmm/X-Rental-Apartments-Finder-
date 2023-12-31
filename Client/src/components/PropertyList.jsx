@@ -24,7 +24,7 @@ function PropertyList() {
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-5">
           <div className="search-tags d-flex flex-column gap-2">
-            <h1 className="text-center">Property List</h1>
+            {/* <h1 className="text-center">Property List</h1> */}
             <input
               type="search"
               name="search"
@@ -41,79 +41,27 @@ function PropertyList() {
             </div>
           </div>
 
-          {properties.map((property) => {
-            return (
-              <div key={property.id}>
-                <p>
-                  <img src={property.image} />
-                  {/* <img src={property.images[2]} /> */}
-                </p>
-
-                <h2>Title: {property.title}</h2>
-                {/* <h3>Owner: {property.owner}</h3> */}
-                <h3>Description: {property.description}</h3>
-                <h3>Property Area: {property.area}</h3>
-                <h3>Price: {property.price}</h3>
-              </div>
-            );
-          })}
-
           <div className="list">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-              <div class="col">
-                <div class="card">
-                  <img src="../public/ap.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Flat in Pankow</h5>
-                    <p class="card-text">102m², 4 rooms,kitchen included</p>
+            <div className="row row-cols-1 row-cols-md-3 g-4">
+              {properties.map((property) => (
+                <div key={property.id} className="col">
+                  <div className="card">
+                    <img
+                      src={property.image}
+                      className="card-img-top"
+                      alt="Property Image"
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{property.title}</h5>
+                      <p className="card-text">
+                        {property.area}m², {property.bedrooms} rooms, kitchen
+                        included
+                      </p>
+                      <p className="card-text">Price: {property.price} €</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="../public/ap.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Flat in Pankow</h5>
-                    <p class="card-text">102m², 4 rooms,kitchen included</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="../public/ap.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Flat in Pankow</h5>
-                    <p class="card-text">102m², 4 rooms,kitchen included</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="../public/ap.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Flat in Pankow</h5>
-                    <p class="card-text">102m², 4 rooms,kitchen included</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="../public/ap.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Flat in Pankow</h5>
-                    <p class="card-text">102m², 4 rooms,kitchen included</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="../public/ap.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Flat in Pankow</h5>
-                    <p class="card-text">102m², 4 rooms,kitchen included</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

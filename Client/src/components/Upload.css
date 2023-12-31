@@ -19,24 +19,32 @@
   background-color: rgb(17, 189, 74);
 }
 
-#key {
+#price,
+#propertyType,
+#areaCode,
+#availability,
+#bedrooms,
+#area,
+#year {
+  color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1rem;
   width: 15rem;
 }
 
-#desk {
+#image {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 0.7rem;
+  width: 15rem;
+}
+
+#title,
+#description {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1rem;
   color: white;
-}
-
-#image {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  padding: 1rem;
-  width: 25rem;
-  margin-bottom: 2rem;
+  width: 30rem;
 }

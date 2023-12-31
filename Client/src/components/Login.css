@@ -22,7 +22,8 @@
   font-weight: bold;
 }
 
-#key {
+#email,
+#password {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
