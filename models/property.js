@@ -6,7 +6,7 @@ const propertySchema = new Schema({
   price: { type: Number, required: true },
   bedrooms: { type: Number, required: true, min: 1 },
   area: { type: Number, required: true },
-  type: { type: String, required: true },
+  propertyType: { type: String, required: true },
   areaCode: { type: Number, required: true },
   year: { type: Number, required: true },
   image: { type: String, required: true },
