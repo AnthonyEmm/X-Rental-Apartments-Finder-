@@ -21,7 +21,7 @@ function PropertyList() {
       console.log(response.data);
     } catch (error) {
       console.log(error);
-      setError("Error fetching data", error.message);
+      setError("Properties not found. Please try again!", error.message);
       setLoading(false);
     }
   };
