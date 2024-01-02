@@ -38,6 +38,7 @@ function Upload() {
       const response = await axios.post(
         "http://localhost:4050/createlisting",
         formData,
+        url,
       );
 
       console.log("Upload Successful:", response.data);
