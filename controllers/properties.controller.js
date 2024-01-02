@@ -33,8 +33,8 @@ const createProperty = async (req, res, next) => {
       availability,
     });
 
-    const foundProperty = await Property.findOne({ title });
-    if (foundProperty) throw new Error("Property Already Exists");
+    // const foundProperty = await Property.findOne({ title });
+    // if (foundProperty) throw new Error("Property Already Exists");
 
     res.status(201).json(property);
   } catch (error) {

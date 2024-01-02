@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Upload() {
-  const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -21,7 +22,11 @@ function Upload() {
   });
 
   const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    if (e.target.type === "files") {
+      setFormData({ ...formData, [e.target.id]: e.target.files[0] });
+    } else {
+      setFormData({ ...formData, [e.target.id]: e.target.value });
+    }
   };
 
   const handleUpload = async (e) => {
@@ -34,7 +39,7 @@ function Upload() {
       );
 
       console.log("Upload Successful:", response.data);
-      setSuccess("Property Upload Successful", response.message);
+      setSuccess("Property Upload Successful");
       setError("");
     } catch (error) {
       console.log("Upload failed", error.message);
@@ -144,7 +149,6 @@ function Upload() {
                   value={formData.image}
                   onChange={handleInputChange}
                   id="image"
-                  alt="img"
                 ></input>
               </div>
             </div>
@@ -152,7 +156,7 @@ function Upload() {
             {success && <p style={{ color: "green" }}>{success}</p>}
             <button
               onClick={handleUpload}
-              type="button"
+              type="submit"
               className="btn btn-lg bg-success"
             >
               Submit
