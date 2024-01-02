@@ -7,6 +7,7 @@ import { useState } from "react";
 function Upload() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -31,6 +32,7 @@ function Upload() {
 
   const handleUpload = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const response = await axios.post(
@@ -39,11 +41,16 @@ function Upload() {
       );
 
       console.log("Upload Successful:", response.data);
-      setSuccess("Property Upload Successful");
+      setSuccess(true);
       setError("");
     } catch (error) {
-      console.log("Upload failed", error.message);
+      console.log(
+        "Upload Failed:",
+        error.response ? error.response.data : error.message,
+      );
       setError("Property Upload Failed. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -65,12 +72,14 @@ function Upload() {
                 value={formData.title}
                 onChange={handleInputChange}
                 placeholder="Title"
+                required={true}
               />
               <textarea
                 placeholder="Description"
                 id="description"
                 value={formData.description}
                 onChange={handleInputChange}
+                required={true}
                 cols="48"
                 rows="10"
               ></textarea>
@@ -84,12 +93,14 @@ function Upload() {
                   value={formData.price}
                   onChange={handleInputChange}
                   placeholder="Rent price in Euros"
+                  required={true}
                 />
                 <select
                   className="select text-secondary"
                   id="propertyType"
                   value={formData.propertyType}
                   onChange={handleInputChange}
+                  required={true}
                 >
                   <option value="select property">
                     Select type of Property
@@ -107,11 +118,13 @@ function Upload() {
                   value={formData.areaCode}
                   onChange={handleInputChange}
                   placeholder="PLZ"
+                  required={true}
                 />
                 <select
                   id="availability"
                   value={formData.availability}
                   onChange={handleInputChange}
+                  required={true}
                   className="select text-secondary"
                 >
                   <option value="availability">Availability</option>
@@ -126,6 +139,7 @@ function Upload() {
                   value={formData.bedrooms}
                   onChange={handleInputChange}
                   placeholder="Number of rooms"
+                  required={true}
                 />
                 <input
                   type="text"
@@ -133,6 +147,7 @@ function Upload() {
                   value={formData.area}
                   onChange={handleInputChange}
                   placeholder="Size of property in m²"
+                  required={true}
                 />
                 <input
                   type="number"
@@ -142,6 +157,7 @@ function Upload() {
                   value={formData.year}
                   onChange={handleInputChange}
                   placeholder="Building age (YYYY)"
+                  required={true}
                 />
 
                 <input
@@ -149,19 +165,23 @@ function Upload() {
                   value={formData.image}
                   onChange={handleInputChange}
                   id="image"
+                  accept="image/*"
+                  required={true}
                 ></input>
               </div>
             </div>
             {error && <p style={{ color: "red" }}>{error}</p>}
-            {success && <p style={{ color: "green" }}>{success}</p>}
-            <button
-              onClick={handleUpload}
-              type="submit"
-              className="btn btn-lg bg-success"
-            >
-              Submit
-            </button>
+            {success && (
+              <p style={{ color: "green" }}>Property Upload Successful!</p>
+            )}
           </form>
+          <button
+            onClick={handleUpload}
+            type="submit"
+            className="btn btn-lg bg-success"
+          >
+            {loading ? "Uploading..." : "Submit"}
+          </button>
         </div>
       </div>
     </div>

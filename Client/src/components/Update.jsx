@@ -71,7 +71,7 @@ function Update({ id }) {
               required={true}
             />
             <p className="info text-danger fs-6 bg-transparent mt-2">
-              Must contain 8-10 letters and one number
+              Password must be 8-10 letters and a number
             </p>
             <input
               type="password"

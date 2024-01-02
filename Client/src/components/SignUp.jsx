@@ -75,7 +75,7 @@ function SignUp() {
             />
             <br />
             <p className="info text-danger fs-6 bg-transparent mt-2">
-              Must contain 8-10 letters and one number
+              Password must be 8-10 letters and one number
             </p>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
