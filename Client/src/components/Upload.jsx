@@ -23,21 +23,33 @@ function Upload() {
   });
 
   const handleInputChange = (e) => {
-    if (e.target.type === "files") {
-      setFormData({ ...formData, [e.target.id]: e.target.files[0] });
+    if (e.target.type === "file") {
+      setFormData({ ...formData, [e.target.id]: e.target.files });
     } else {
       setFormData({ ...formData, [e.target.id]: e.target.value });
     }
   };
 
   const handleUpload = async (e) => {
+    const data = new FormData();
+    data.append("title", formData.title);
+    data.append("description", formData.description);
+    data.append("price", formData.price);
+    data.append("bedrooms", formData.bedrooms);
+    data.append("availability", formData.availability);
+    data.append("propertyType", formData.propertyType);
+    data.append("area", formData.area);
+    data.append("areaCode", formData.areaCode);
+    data.append("year", formData.year);
+    data.append("image", formData.image[0]);
+
     e.preventDefault();
     setLoading(true);
 
     try {
       const response = await axios.post(
         "http://localhost:4050/createlisting",
-        formData
+        data,
       );
 
       console.log("Upload Successful:", response.data);
@@ -46,7 +58,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message
+        error.response ? error.response.data : error.message,
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
@@ -162,7 +174,6 @@ function Upload() {
 
                 <input
                   type="file"
-                  value={formData.image}
                   onChange={handleInputChange}
                   id="image"
                   accept="image/*"

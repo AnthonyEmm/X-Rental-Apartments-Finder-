@@ -10,6 +10,12 @@ function Login() {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleLogin = async (e) => {
     try {
       const response = await axios.post("http://localhost:4050/auth/login", {
@@ -47,15 +53,26 @@ function Login() {
               />
               <br />
               <br />
-              <input
-                type="password"
-                name="Password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required={true}
-              />
+              <div style={{ position: "relative" }}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                />
+                <span
+                  style={{
+                    position: "absolute",
+                    right: "10px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    cursor: "pointer",
+                  }}
+                  onClick={handleTogglePasswordVisibility}
+                >
+                  {showPassword ? "👁️" : "👁️‍🗨️"}
+                </span>
+              </div>
               <Link
                 to="/Update"
                 className="fw-bold text-success text-decoration-none bg-transparent gap-4 p-4"

@@ -11,7 +11,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   folder: "X-Rental Images",
-  allowedFormats: ["jpg", "png", "jpeg", "gif", "svg", "avif"],
+  allowedFormats: ["jpg", "png", "jpeg", "gif", "svg", "avif", "webp"],
   transformation: [{ width: 500, height: 500, crop: "limit" }],
 });
 
