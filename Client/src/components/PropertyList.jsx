@@ -55,7 +55,7 @@ function PropertyList() {
               id="search"
               placeholder="Search Property..."
             />
-            <div className="tags bg-transparent d-flex justify-content-center gap-4">
+            <div className="tags bg-transparent d-flex justify-content-center gap-4 mt-2">
               <a href="#">Location</a>
               <a href="#">M²</a>
               <a href="#">Price</a>
