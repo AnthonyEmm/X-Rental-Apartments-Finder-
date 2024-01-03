@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -27,19 +28,19 @@ function NavBar() {
         >
           <ul className="navbar-nav gap-3">
             <li className="nav-item align-self-end">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="#">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item align-self-end">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="#">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item align-self-end">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/login">
                 Sign-in
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
