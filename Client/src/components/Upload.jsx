@@ -68,8 +68,8 @@ function Upload() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-3">
-        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-3 mb-3">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4">
+        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-3 mb-4">
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold">Add a property</h5>
             <Link to="/list" className="text-decoration-none text-success">

@@ -11,6 +11,11 @@ function Update({ id }) {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleUpdate = async (e) => {
     e.preventDefault();
@@ -62,14 +67,27 @@ function Update({ id }) {
             />
           </div>
           <div className="pass-area d-flex flex-column gap-1">
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="New password"
-              required={true}
-            />
+            <div style={{ position: "relative" }}>
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required={true}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                }}
+                onClick={handleTogglePasswordVisibility}
+              >
+                {showPassword ? "👁️" : "👁️‍🗨️"}
+              </span>
+            </div>
             <p className="info text-danger fs-6 bg-transparent mt-2">
               Password must be 8-10 letters and a number
             </p>

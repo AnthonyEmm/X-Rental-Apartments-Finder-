@@ -28,15 +28,15 @@ function PropertyList() {
 
   if (loading) {
     return (
-      <p className="loading text-success d-flex flex-column align-items-center">
-        Loading Please wait...
+      <p className="loading text-success d-flex flex-column align-items-center mt-5">
+        Loading... Please wait!
       </p>
     );
   }
 
   if (error) {
     return (
-      <p className="error text-danger d-flex flex-column align-items-center">
+      <p className="error text-danger d-flex flex-column align-items-center mt-5">
         {error}
       </p>
     );
@@ -44,7 +44,7 @@ function PropertyList() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
           <div className="search-tags d-flex flex-column gap-2">
             <h1 className="text-center ">Property List</h1>
@@ -53,15 +53,15 @@ function PropertyList() {
               type="search"
               name="search"
               id="search"
-              placeholder="Search by title..."
+              placeholder="Search Property..."
             />
             <div className="tags bg-transparent d-flex justify-content-center gap-4">
-              <a href="#">location</a>
-              <a href="#">price</a>
-              <a href="#">newest</a>
-              <a href="#">oldest</a>
-              <a href="#">m²</a>
-              <a href="#">rooms</a>
+              <a href="#">Location</a>
+              <a href="#">M²</a>
+              <a href="#">Price</a>
+              <a href="#">Rooms</a>
+              <a href="#">Type</a>
+              <a href="#">Year</a>
             </div>
           </div>
           <Link
@@ -83,9 +83,11 @@ function PropertyList() {
                     <div className="card-body">
                       <h5 className="card-title">{property.title}</h5>
                       <p className="card-text">
-                        {property.area}m², {property.bedrooms} rooms, kitchen
-                        Included
+                        {property.area}m², {""}
+                        {property.bedrooms} rooms
                       </p>
+                      <p className="card-text">Type: {property.propertyType}</p>
+
                       <p className="card-text">
                         Price: €{property.price}/month
                       </p>
