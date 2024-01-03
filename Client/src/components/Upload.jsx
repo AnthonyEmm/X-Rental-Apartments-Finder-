@@ -37,8 +37,7 @@ function Upload() {
     try {
       const response = await axios.post(
         "http://localhost:4050/createlisting",
-        formData,
-        url,
+        formData
       );
 
       console.log("Upload Successful:", response.data);
@@ -47,7 +46,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message,
+        error.response ? error.response.data : error.message
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
