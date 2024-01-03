@@ -4,16 +4,17 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-inherit container-fluid px-4">
-      <a class="navbar-brand fw-bold fs-4" href="#">
+    <nav className="navbar navbar-expand-lg navbar-light bg-inherit container-fluid px-4">
+      <Link to="/" className="navbar-brand fw-bold fs-4">
         <span>X Rental</span>
-      </a>
+      </Link>
 
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -21,25 +22,28 @@ function NavBar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav gap-3">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+      <div
+        className="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul className="navbar-nav gap-3 ">
+          <li className="nav-item ">
+            <Link to="/" className="nav-link ">
               Home
-            </a>
+            </Link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item ">
+            <Link to="#" className="nav-link ">
               About
-            </a>
+            </Link>
           </li>
-          <li class="nav-item">
-            <a class="btn" href="#">
+          <li className="nav-item">
+            <Link to="/login" className="btn">
               Sign-in
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

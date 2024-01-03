@@ -5,6 +5,8 @@
 
 .title-form {
   width: 30rem;
+  border: 1px solid white;
+  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }
 
 .title-form h1 {
@@ -15,19 +17,11 @@
   background-color: rgb(17, 189, 74);
 }
 
-#key {
+input {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
-  width: 15rem;
-}
-
-.img-login {
-  width: 30rem;
-  background-position: center;
-}
-
-.img-login img {
-  width: 475px;
-  height: 622px;
+  width: 20rem;
+  outline: none;
+  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }

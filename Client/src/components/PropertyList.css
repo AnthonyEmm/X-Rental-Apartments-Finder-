@@ -4,24 +4,46 @@
 }
 
 .list-container {
-  width: 55rem;
+  width: 70rem;
 }
 
 #search {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
-  width: 40rem;
+  width: 35rem;
   color: white;
 }
 
 #search:hover {
   border: 1px solid rgba(255, 255, 255, 0.278);
 }
+.text-center {
+  color: rgb(17, 189, 74);
+}
+
+.add-listing {
+  color: rgb(228, 236, 236);
+  border: 1px solid rgba(12, 108, 44, 0.631);
+  border-radius: 5px;
+  width: 10rem;
+  background-color: rgba(17, 189, 74, 0.631);
+  width: 10rem;
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.add-listing:hover {
+  color: rgba(5, 1, 1, 0.732);
+  background-color: rgb(17, 189, 74);
+  transition: 1s ease-out;
+}
 
 .tags a {
   text-decoration: none;
   color: rgba(17, 189, 74, 0.631);
+  background: none;
 }
 
 .tags a:hover {
@@ -30,6 +52,7 @@
 
 .list .card {
   cursor: pointer;
+  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }
 
 .list .card:hover {

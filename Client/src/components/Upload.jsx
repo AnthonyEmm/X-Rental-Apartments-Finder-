@@ -1,92 +1,187 @@
 import React from "react";
 import "./Upload.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
 function Upload() {
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    price: "",
+    bedrooms: "",
+    availability: "",
+    propertyType: "",
+    area: "",
+    areaCode: "",
+    year: "",
+    image: "",
+  });
+
+  const handleInputChange = (e) => {
+    if (e.target.type === "files") {
+      setFormData({ ...formData, [e.target.id]: e.target.files[0] });
+    } else {
+      setFormData({ ...formData, [e.target.id]: e.target.value });
+    }
+  };
+
+  const handleUpload = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:4050/createlisting",
+        formData
+      );
+
+      console.log("Upload Successful:", response.data);
+      setSuccess(true);
+      setError("");
+    } catch (error) {
+      console.log(
+        "Upload Failed:",
+        error.response ? error.response.data : error.message
+      );
+      setError("Property Upload Failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
-        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-3 p-4">
-          <div className="form-header d-flex justify-content-between">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-3">
+        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-3 mb-3">
+          <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold">Add a property</h5>
-            <a className="text-decoration-none" href="#">
+            <Link to="/list" className="text-decoration-none text-success">
               Back
-            </a>
+            </Link>
           </div>
-          <div className="t-description d-flex flex-column gap-2">
-            <input
-              type="text"
-              name="title"
-              id="desk"
-              placeholder="Title"
-              required="true"
-            />
-            <textarea
-              name="description"
-              placeholder="Description"
-              id="desk"
-              cols="48"
-              rows="10"
-            ></textarea>
-          </div>
+          <form onSubmit={handleUpload}>
+            <div className="t-description d-flex flex-column gap-2 mb-3">
+              <input
+                type="text"
+                id="title"
+                value={formData.title}
+                onChange={handleInputChange}
+                placeholder="Title"
+                required={true}
+              />
+              <textarea
+                placeholder="Description"
+                id="description"
+                value={formData.description}
+                onChange={handleInputChange}
+                required={true}
+                cols="48"
+                rows="10"
+              ></textarea>
+            </div>
 
-          <div className="form-body d-flex gap-2">
-            <div className="left-section d-flex flex-column gap-2">
-              <input
-                type="text"
-                name="rent price"
-                id="key"
-                placeholder="Rent price in euros"
-                required="true"
-              />
-              <select name="property" id="key" required="true">
-                <option value="select property">Select type of Property</option>
-                <option value="house">House</option>
-                <option value="apartment">Apartment</option>
-                <option value="flat">Flat</option>
-                <option value="studio">Studio</option>
-                <option value="duplex">Duplex</option>
-              </select>
-              <input
-                type="text"
-                name="post code"
-                id="key"
-                placeholder="PLZ"
-                required="true"
-              />
-              {/* <button id="key">Upload an image</button> */}
+            <div className="form-body d-flex gap-2 mb-3">
+              <div className="left-section d-flex flex-column gap-2">
+                <input
+                  type="text"
+                  id="price"
+                  value={formData.price}
+                  onChange={handleInputChange}
+                  placeholder="Rent price in Euros"
+                  required={true}
+                />
+                <select
+                  className="select text-secondary"
+                  id="propertyType"
+                  value={formData.propertyType}
+                  onChange={handleInputChange}
+                  required={true}
+                >
+                  <option value="select property">
+                    Select type of Property
+                  </option>
+
+                  <option value="apartment">Apartment</option>
+                  <option value="cottage">Cottage</option>
+                  <option value="Duplex">Duplex</option>
+                  <option value="house">House</option>
+                  <option value="studio">Studio</option>
+                </select>
+                <input
+                  type="text"
+                  id="areaCode"
+                  value={formData.areaCode}
+                  onChange={handleInputChange}
+                  placeholder="PLZ"
+                  required={true}
+                />
+                <select
+                  id="availability"
+                  value={formData.availability}
+                  onChange={handleInputChange}
+                  required={true}
+                  className="select text-secondary"
+                >
+                  <option value="availability">Availability</option>
+                  <option value="vacant">Vacant</option>
+                  <option value="rented">Rented</option>
+                </select>
+              </div>
+              <div className="right-section d-flex flex-column gap-2">
+                <input
+                  type="text"
+                  id="bedrooms"
+                  value={formData.bedrooms}
+                  onChange={handleInputChange}
+                  placeholder="Number of rooms"
+                  required={true}
+                />
+                <input
+                  type="text"
+                  id="area"
+                  value={formData.area}
+                  onChange={handleInputChange}
+                  placeholder="Size of property in m²"
+                  required={true}
+                />
+                <input
+                  type="number"
+                  id="year"
+                  min="1900"
+                  max="2024"
+                  value={formData.year}
+                  onChange={handleInputChange}
+                  placeholder="Building age (YYYY)"
+                  required={true}
+                />
+
+                <input
+                  type="file"
+                  value={formData.image}
+                  onChange={handleInputChange}
+                  id="image"
+                  accept="image/*"
+                  required={true}
+                ></input>
+              </div>
             </div>
-            <div className="right-section d-flex flex-column gap-2">
-              <input
-                type="text"
-                name="number of rooms"
-                id="key"
-                placeholder="Number of rooms"
-                required="true"
-              />
-              <input
-                type="text"
-                name="size of property"
-                id="key"
-                placeholder="Size of property in m²"
-                required="true"
-              />
-              <input
-                type="number"
-                id="key"
-                name="year"
-                min="1750"
-                max="2023"
-                placeholder="Building age (YYYY)"
-                required="true"
-              />
-              <input type="file" id="key" name="img" accept="image/*"></input>
-            </div>
-          </div>
-          <button type="button" className="btn btn-outline-success">
-            Submit
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            {success && (
+              <p style={{ color: "green" }}>Property Upload Successful!</p>
+            )}
+          </form>
+          <button
+            onClick={handleUpload}
+            type="submit"
+            className="btn btn-lg bg-success"
+          >
+            {loading ? "Uploading..." : "Submit"}
           </button>
-          {/* <a href="#" className="text-success text-decoration-none">
-            Create an account
-          </a> */}
         </div>
       </div>
     </div>
