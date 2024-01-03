@@ -6,9 +6,9 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg bg-inherit">
       <div className="container-fluid px-4">
-        <a className="navbar-brand fw-bold fs-4" href="#">
+        <Link className="navbar-brand fw-bold fs-4" to="/">
           <span>X Rental</span>
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -28,7 +28,7 @@ function NavBar() {
         >
           <ul className="navbar-nav gap-3">
             <li className="nav-item align-self-end">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
