@@ -51,14 +51,19 @@
 }
 
 .list .card {
-  border: 1px solid #ccc;
+  border: 1px solid #343434;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  height: 100%;
+}
+
+img {
+  height: 100%;
 }
 
 .list .card:hover {
-  border-color: rgb(17, 189, 74);
-  box-shadow: 0 0 10px rgba(20, 223, 88, 0.7);
+  border-color: rgb(20, 216, 86);
+  box-shadow: 0 0 10px rgba(26, 231, 95, 0.9);
 }
 
 .card-body h5 {
