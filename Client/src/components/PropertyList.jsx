@@ -84,7 +84,7 @@ function PropertyList() {
                       <h5 className="card-title">{property.title}</h5>
                       <p className="card-text">
                         {property.area}m², {""}
-                        {property.bedrooms} rooms
+                        {property.bedrooms} room(s)
                       </p>
                       <p className="card-text">Type: {property.propertyType}</p>
 

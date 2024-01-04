@@ -118,11 +118,11 @@ function Upload() {
                     Select type of Property
                   </option>
 
-                  <option value="apartment">Apartment</option>
-                  <option value="cottage">Cottage</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Cottage">Cottage</option>
                   <option value="Duplex">Duplex</option>
-                  <option value="house">House</option>
-                  <option value="studio">Studio</option>
+                  <option value="House">House</option>
+                  <option value="Studio">Studio</option>
                 </select>
                 <input
                   type="text"
