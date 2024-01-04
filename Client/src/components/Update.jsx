@@ -33,7 +33,7 @@ function Update({ id }) {
         {
           email,
           password,
-        },
+        }
       );
       console.log("User Updated Successfully:", response.data);
       setSuccess(true);
@@ -41,7 +41,7 @@ function Update({ id }) {
     } catch (error) {
       console.error(
         "User Update Failed:",
-        error.response ? error.response.data : error.message,
+        error.response ? error.response.data : error.message
       );
       setError("User Update Failed. Please try again.");
     } finally {
@@ -72,6 +72,7 @@ function Update({ id }) {
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                id="password"
                 placeholder="Password"
                 required={true}
               />

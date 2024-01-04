@@ -35,13 +35,13 @@ function Login() {
 
   return (
     <>
-      <div className="bg text-white">
+      <div className="bg text-light">
         <div className="container-main d-flex justify-content-center align-items-center mt-5 ">
           <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
             <h1 className="fw-bold">X Rental</h1>
-            <h3 className="login text-success">Sign In</h3>
+            {/* <h3 className="login text-success">Sign In</h3> */}
 
-            <form className="container">
+            <form className="container gap-3">
               <input
                 type="text"
                 name="Email"
@@ -51,13 +51,13 @@ function Login() {
                 placeholder="Email"
                 required={true}
               />
-              <br />
-              <br />
+
               <div style={{ position: "relative" }}>
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  id="password"
                   placeholder="Password"
                   required={true}
                 />
@@ -76,7 +76,7 @@ function Login() {
               </div>
               <Link
                 to="/Update"
-                className="fw-bold text-success text-decoration-none bg-transparent gap-4 p-4"
+                className="link-signup text-decoration-none p-4"
               >
                 Forgot Password?
               </Link>
@@ -90,16 +90,16 @@ function Login() {
                   {success ? "Login Successful" : ""}
                 </p>
               )}
-              <br />
+
               <button
-                className="btn btn-lg bg-success"
+                className="btn btn-lg btn-outline-success"
                 type="button"
                 onClick={handleLogin}
               >
                 Sign In
               </button>
             </form>
-            <Link to="/sign-up" className="text-decoration-none text-success">
+            <Link to="/sign-up" className="link-signup text-decoration-none">
               Create an account
             </Link>
           </div>

@@ -18,6 +18,7 @@ function NavBar() {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          bg="light"
         >
           <span className="navbar-toggler-icon custom-toggler-icon"></span>
         </button>

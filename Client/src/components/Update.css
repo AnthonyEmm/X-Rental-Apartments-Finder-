@@ -6,7 +6,6 @@
 .title-form {
   width: 30rem;
   border: 1px solid white;
-  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }
 
 .title-form h1 {
@@ -17,11 +16,12 @@
   background-color: rgb(17, 189, 74);
 }
 
-input {
+#email,
+#password,
+#confirmPassword {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
   width: 20rem;
   outline: none;
-  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }
