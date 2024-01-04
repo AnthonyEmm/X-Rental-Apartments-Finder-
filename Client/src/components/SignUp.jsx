@@ -8,6 +8,7 @@ function SignUp() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,7 +25,7 @@ function SignUp() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const response = await axios.post(
         "http://localhost:4050/auth/signup",
@@ -37,6 +38,8 @@ function SignUp() {
     } catch (error) {
       console.log(error);
       setError("Invalid credentials. SignUp failed!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -103,8 +106,9 @@ function SignUp() {
             <button
               className="btn btn-lg bg-success mb-25"
               onClick={handleSignUp}
+              type="submit"
             >
-              Sign Up
+              {loading ? "Signing Up..." : "Sign Up"}
             </button>
           </form>
           <Link to="/login" className="text-decoration-none text-success mb-25">
