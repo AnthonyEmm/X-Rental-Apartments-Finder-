@@ -5,14 +5,17 @@
 
 .list-container {
   width: 90rem;
+  border-color: rgb(20, 216, 86);
+  box-shadow: 0 0 10px rgba(26, 231, 95, 0.9);
 }
 
 #search {
-  border: 1px solid white;
+  border-color: rgb(196, 237, 210);
   border-radius: 5px;
   padding: 1rem;
   width: 35rem;
   color: white;
+  margin-top: 1rem;
 }
 
 #search:hover {
@@ -23,7 +26,7 @@
 }
 
 .add-listing {
-  color: rgb(228, 236, 236);
+  color: rgb(196, 237, 210);
   border: 1px solid rgba(12, 108, 44, 0.631);
   border-radius: 5px;
   width: 10rem;

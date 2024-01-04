@@ -6,7 +6,8 @@
 .title-form {
   width: 30rem;
   border: 1px solid white;
-  box-shadow: 10px 10px 5px rgb(44, 123, 44);
+  border-color: rgb(20, 216, 86);
+  box-shadow: 0 0 10px rgba(26, 231, 95, 0.9);
 }
 
 .title-form h1 {
@@ -23,5 +24,9 @@ input {
   padding: 1rem;
   width: 20rem;
   outline: none;
-  box-shadow: 10px 10px 5px rgb(44, 123, 44);
+  border-color: rgb(196, 237, 210);
+}
+
+input:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
 }

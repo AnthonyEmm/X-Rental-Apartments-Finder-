@@ -47,15 +47,13 @@ function PropertyList() {
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
           <div className="search-tags d-flex flex-column gap-2">
-            <h1 className="text-center ">Property List</h1>
-
             <input
               type="search"
               name="search"
               id="search"
               placeholder="Search Property..."
             />
-            <div className="tags bg-transparent d-flex justify-content-center gap-4 mt-2">
+            <div className="tags bg-transparent d-flex justify-content-center gap-4 mt-3">
               <a href="#">Location</a>
               <a href="#">M²</a>
               <a href="#">Price</a>

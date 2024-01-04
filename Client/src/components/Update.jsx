@@ -82,6 +82,7 @@ function Update({ id }) {
                   top: "50%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
+                  background: "transparent",
                 }}
                 onClick={handleTogglePasswordVisibility}
               >
