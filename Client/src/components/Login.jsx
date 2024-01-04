@@ -9,7 +9,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const handleTogglePasswordVisibility = () => {
@@ -17,6 +17,8 @@ function Login() {
   };
 
   const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post("http://localhost:4050/auth/login", {
         email,
@@ -29,7 +31,8 @@ function Login() {
     } catch (error) {
       console.log("Login Failed:", error.response.data);
       setError(true);
-      e.preventDefault();
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -96,7 +99,7 @@ function Login() {
                 type="button"
                 onClick={handleLogin}
               >
-                Sign In
+                {loading ? "Signing In..." : "Sign In"}
               </button>
             </form>
             <Link to="/sign-up" className="text-decoration-none text-success">
