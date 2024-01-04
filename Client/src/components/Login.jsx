@@ -3,8 +3,10 @@ import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -27,6 +29,7 @@ function Login() {
 
       console.log("Login Successful:", response.data);
       setSuccess(true);
+      navigate("/list");
       setError("");
     } catch (error) {
       console.log("Login Failed:", error.response.data);

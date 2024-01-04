@@ -3,8 +3,10 @@ import "./SignUp.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -33,7 +35,8 @@ function SignUp() {
       );
 
       console.log("SignUp Successful:", response.data);
-      setSuccess("Sign Up Successful. Please login", response.message);
+      setSuccess("Sign Up Successful", response.message);
+      navigate("/login");
       setError("");
     } catch (error) {
       console.log(error);
@@ -112,9 +115,9 @@ function SignUp() {
               {loading ? "Signing Up..." : "Sign Up"}
             </button>
           </form>
-          <Link to="/login" className="text-decoration-none text-success mb-25">
+          {/* <Link to="/login" className="text-decoration-none text-success mb-25">
             Back to sign-in
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
