@@ -31,7 +31,6 @@
   border-radius: 5px;
   padding: 1rem;
   width: 15rem;
-  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }
 
 #image {
@@ -48,5 +47,4 @@
   padding: 1rem;
   color: white;
   width: 30rem;
-  box-shadow: 10px 10px 5px rgb(44, 123, 44);
 }

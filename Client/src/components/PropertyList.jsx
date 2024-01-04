@@ -46,30 +46,32 @@ function PropertyList() {
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
-          <div className="search-tags d-flex flex-column gap-2">
-            <h1 className="text-center ">Property List</h1>
+          <div className="search-tags d-flex flex-column justify-content-center align-items-center gap-2 mb-2">
+            {/* <h1 className="text-center ">Property List</h1> */}
 
             <input
+              className="mt-5"
               type="search"
               name="search"
               id="search"
               placeholder="Search Property..."
             />
-            <div className="tags bg-transparent d-flex justify-content-center gap-4 mt-2">
-              <a href="#">Location</a>
-              <a href="#">M²</a>
-              <a href="#">Price</a>
-              <a href="#">Rooms</a>
-              <a href="#">Type</a>
-              <a href="#">Year</a>
+            <div className="tags d-flex justify-content-center gap-4 mt-2 mb-5">
+              <a href="#">location</a>
+              <a href="#">m²</a>
+              <a href="#">price</a>
+              <a href="#">rooms</a>
+              <a href="#">type</a>
+              <a href="#">year</a>
             </div>
+            <Link
+              to="/upload"
+              className="add-listing text-center text-decoration-none"
+            >
+              List a Property
+            </Link>
           </div>
-          <Link
-            to="/upload"
-            className=" add-listing text-decoration-none  d-flex flex-column align-items-center"
-          >
-            List a Property
-          </Link>
+
           <div className="list">
             <div className="row row-cols-1 row-cols-md-3 g-4">
               {properties.map((property) => (

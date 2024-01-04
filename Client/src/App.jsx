@@ -4,6 +4,7 @@ import SignUp from "./components/SignUp";
 import Update from "./components/Update";
 import Upload from "./components/Upload";
 import PropertyList from "./components/PropertyList";
+import PropertyDetails from "./components/PropertyDetails";
 import React from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/update" element={<Update />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/list" element={<PropertyList />} />
+        <Route path="/property" element={<PropertyDetails />} />
       </Routes>
     </>
   );

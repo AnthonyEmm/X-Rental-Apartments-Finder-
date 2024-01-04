@@ -8,7 +8,7 @@
 }
 
 #search {
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.515);
   border-radius: 5px;
   padding: 1rem;
   width: 35rem;
@@ -16,6 +16,7 @@
 }
 
 #search:hover {
+  border: 1px solid white;
   box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
 }
 .text-center {
@@ -23,14 +24,11 @@
 }
 
 .add-listing {
-  color: rgb(228, 236, 236);
-  border: 1px solid rgba(12, 108, 44, 0.631);
+  color: white;
   border-radius: 5px;
-  width: 10rem;
   background-color: rgba(17, 189, 74, 0.631);
   width: 10rem;
-  padding: 5px;
-  text-transform: uppercase;
+  padding: 0.5rem;
   font-weight: 600;
 }
 
@@ -38,16 +36,17 @@
   color: rgba(5, 1, 1, 0.732);
   background-color: rgb(17, 189, 74);
   transition: 1s ease-out;
+  text-transform: uppercase;
 }
 
 .tags a {
   text-decoration: none;
   color: rgba(17, 189, 74, 0.631);
-  background: none;
 }
 
 .tags a:hover {
   color: rgb(17, 189, 74);
+  font-weight: bold;
 }
 
 .list .card {

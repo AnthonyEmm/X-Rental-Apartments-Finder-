@@ -49,7 +49,7 @@ function Upload() {
     try {
       const response = await axios.post(
         "http://localhost:4050/createlisting",
-        data,
+        data
       );
 
       console.log("Upload Successful:", response.data);
@@ -58,7 +58,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message,
+        error.response ? error.response.data : error.message
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
@@ -72,7 +72,7 @@ function Upload() {
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-3 mb-4">
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold">Add a property</h5>
-            <Link to="/list" className="text-decoration-none text-success">
+            <Link to="/list" className="link-signup text-decoration-none">
               Back
             </Link>
           </div>
@@ -181,15 +181,17 @@ function Upload() {
                 ></input>
               </div>
             </div>
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            {success && (
-              <p style={{ color: "green" }}>Property Upload Successful!</p>
-            )}
+            <div className="result text-center">
+              {error && <p style={{ color: "red" }}>{error}</p>}
+              {success && (
+                <p style={{ color: "green" }}>Property Upload Successful!</p>
+              )}
+            </div>
           </form>
           <button
             onClick={handleUpload}
             type="submit"
-            className="btn btn-lg bg-success"
+            className="btn btn-lg btn-outline-success"
           >
             {loading ? "Uploading..." : "Submit"}
           </button>

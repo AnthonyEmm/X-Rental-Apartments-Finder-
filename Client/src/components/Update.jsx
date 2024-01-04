@@ -3,6 +3,8 @@ import "./Update.css";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 function Update({ id }) {
   const [email, setEmail] = useState("");
@@ -50,7 +52,7 @@ function Update({ id }) {
   };
 
   return (
-    <div className="bg text-white">
+    <div className="bg">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
           <h1 className="fw-bold">Profile</h1>
@@ -86,10 +88,18 @@ function Update({ id }) {
                 }}
                 onClick={handleTogglePasswordVisibility}
               >
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? (
+                  <FontAwesomeIcon icon={faEye} color="#fff" />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faEyeSlash}
+                    color="#fff"
+                    style={{ opacity: 0.7 }}
+                  />
+                )}
               </span>
             </div>
-            <p className="info text-danger fs-6 bg-transparent mt-2">
+            <p className="info text-danger align-self-center mt-2">
               Password must be 8-10 letters and a number
             </p>
             <input
@@ -102,14 +112,17 @@ function Update({ id }) {
             />
           </div>
 
-          <button onClick={handleUpdate} className="btn btn-lg bg-success">
+          <button
+            onClick={handleUpdate}
+            className="btn btn-lg btn-outline-success"
+          >
             {loading ? "Updating..." : "Update"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
           {success && (
             <p style={{ color: "green" }}>User Updated Successfully</p>
           )}
-          <Link to="/login" className="text-decoration-none text-success">
+          <Link to="/login" className="link-login text-decoration-none">
             Back to sign-in
           </Link>
         </div>

@@ -3,6 +3,8 @@ import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -35,8 +37,8 @@ function Login() {
 
   return (
     <>
-      <div className="bg text-light">
-        <div className="container-main d-flex justify-content-center align-items-center mt-5 ">
+      <div className="bg ">
+        <div className="container-main d-flex justify-content-center align-items-center mt-5">
           <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
             <h1 className="fw-bold">X Rental</h1>
             {/* <h3 className="login text-success">Sign In</h3> */}
@@ -71,7 +73,16 @@ function Login() {
                   }}
                   onClick={handleTogglePasswordVisibility}
                 >
-                  {showPassword ? "👁️" : "👁️‍🗨️"}
+                  {showPassword ? (
+                    <FontAwesomeIcon icon={faEye} color="#fff" />
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faEyeSlash}
+                      color="#fff"
+                      style={{ opacity: 0.7 }}
+                    />
+                  )}
+                  {/* {showPassword ? "👀" : "🔒"} */}
                 </span>
               </div>
               <Link

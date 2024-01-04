@@ -3,6 +3,8 @@ import "./SignUp.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 function SignUp() {
   const [error, setError] = useState("");
@@ -28,7 +30,7 @@ function SignUp() {
     try {
       const response = await axios.post(
         "http://localhost:4050/auth/signup",
-        formData,
+        formData
       );
 
       console.log("SignUp Successful:", response.data);
@@ -41,12 +43,12 @@ function SignUp() {
   };
 
   return (
-    <div className="bg text-white">
+    <div className="bg">
       <div className="container-main d-flex justify-content-center align-items-center mt-4 mb-20">
         <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-1 p-3">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Create your account</h5>
-          <form onSubmit={handleSignUp} className="container">
+          <form onSubmit={handleSignUp} className="container gap-3">
             <input
               type="text"
               name="name"
@@ -56,8 +58,7 @@ function SignUp() {
               placeholder="Name"
               required={true}
             />
-            <br />
-            <br />
+
             <input
               type="email"
               name="email"
@@ -67,8 +68,7 @@ function SignUp() {
               placeholder="Email"
               required={true}
             />
-            <br />
-            <br />
+
             <div style={{ position: "relative" }}>
               <input
                 type={showPassword ? "text" : "password"}
@@ -89,25 +89,31 @@ function SignUp() {
                 }}
                 onClick={handleTogglePasswordVisibility}
               >
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? (
+                  <FontAwesomeIcon icon={faEye} color="#fff" />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faEyeSlash}
+                    color="#fff"
+                    style={{ opacity: 0.7 }}
+                  />
+                )}
               </span>
             </div>
-            <br />
-            <p className="info text-danger fs-6 bg-transparent mt-2">
+            <p className="info text-danger align-self-center  mt-2">
               Password must be 8-10 letters and one number
             </p>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
-            <br />
 
             <button
-              className="btn btn-lg bg-success mb-25"
+              className="btn btn-lg bg-outline-success"
               onClick={handleSignUp}
             >
               Sign Up
             </button>
           </form>
-          <Link to="/login" className="text-decoration-none text-success mb-25">
+          <Link to="/login" className="link-login text-decoration-none">
             Back to sign-in
           </Link>
         </div>
