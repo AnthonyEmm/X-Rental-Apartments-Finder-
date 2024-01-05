@@ -3,12 +3,13 @@ import "./Upload.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Upload() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate(true);
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -54,6 +55,7 @@ function Upload() {
 
       console.log("Upload Successful:", response.data);
       setSuccess(true);
+      navigate("/list");
       setError("");
     } catch (error) {
       console.log(
