@@ -33,7 +33,7 @@ function SignUp() {
     try {
       const response = await axios.post(
         "http://localhost:4050/auth/signup",
-        formData
+        formData,
       );
 
       console.log("SignUp Successful:", response.data);
@@ -50,7 +50,7 @@ function SignUp() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center mt-4 mb-20">
+      <div className="container-main d-flex justify-content-center align-items-center mt-5 mb-5">
         <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-1 p-3">
           <h1 className="fw-bold">X Rental</h1>
           <h5>Create your account</h5>

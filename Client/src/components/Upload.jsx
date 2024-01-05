@@ -50,7 +50,7 @@ function Upload() {
     try {
       const response = await axios.post(
         "http://localhost:4050/createlisting",
-        data
+        data,
       );
 
       console.log("Upload Successful:", response.data);
@@ -60,7 +60,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message
+        error.response ? error.response.data : error.message,
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
@@ -69,8 +69,8 @@ function Upload() {
   };
 
   return (
-    <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4">
+    <div className="bg">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 ">
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-3 mb-4">
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold mt-2">Add a property</h5>
