@@ -7,6 +7,7 @@ import PropertyList from "./components/PropertyList";
 import React from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/upload" element={<Upload />} />
         <Route path="/list" element={<PropertyList />} />
       </Routes>
+      <Footer />
     </>
   );
 }

@@ -17,6 +17,12 @@
 
 .title-form button {
   background-color: rgb(17, 189, 74);
+  color: black;
+}
+
+.title-form button:hover {
+  background-color: rgba(17, 189, 74, 0.415);
+  color: white;
 }
 
 #price,
@@ -38,7 +44,7 @@
 #image {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  padding: 0.8rem;
+  padding: 0.7rem 0.5rem;
   width: 15rem;
 }
 
@@ -51,4 +57,8 @@
   width: 30rem;
   border-color: rgb(196, 237, 210);
   background-color: rgb(40, 39, 39);
+}
+
+#description:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
 }

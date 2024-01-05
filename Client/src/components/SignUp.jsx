@@ -33,7 +33,7 @@ function SignUp() {
     try {
       const response = await axios.post(
         "http://localhost:4050/auth/signup",
-        formData,
+        formData
       );
 
       console.log("SignUp Successful:", response.data);
@@ -125,7 +125,7 @@ function SignUp() {
               {loading ? "Signing Up..." : "SIGN UP"}
             </button>
           </form>
-          <Link to="/login" className="text-decoration-none text-success mb-25">
+          <Link to="/login" className="link-login text-decoration-none mb-2">
             Back to sign-in
           </Link>
         </div>

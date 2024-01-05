@@ -36,7 +36,7 @@ function Update({ id }) {
           email,
           password,
         },
-        { withCredentials: true },
+        { withCredentials: true }
       );
       console.log("User Updated Successfully:", response.data);
       setSuccess(true);
@@ -44,7 +44,7 @@ function Update({ id }) {
     } catch (error) {
       console.error(
         "User Update Failed:",
-        error.response ? error.response.data : error.message,
+        error.response ? error.response.data : error.message
       );
       setError("User Update Failed. Please try again.");
     } finally {
@@ -120,7 +120,7 @@ function Update({ id }) {
           {success && (
             <p style={{ color: "green" }}>User Updated Successfully</p>
           )}
-          <Link to="/login" className="text-decoration-none text-success">
+          <Link to="/login" className="link-login text-decoration-none">
             Back to sign-in
           </Link>
         </div>

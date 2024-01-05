@@ -31,3 +31,12 @@ input {
 .btn:hover {
   background-color: #45a049;
 }
+
+.link-signup {
+  color: rgba(17, 189, 74, 0.553);
+}
+
+.link-signup:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
+}
