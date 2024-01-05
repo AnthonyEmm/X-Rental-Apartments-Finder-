@@ -1,7 +1,7 @@
 import React from "react";
 import "./Upload.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -74,9 +74,13 @@ function Upload() {
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-3 mb-4">
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold">Add a property</h5>
-            <Link to="/list" className="text-decoration-none text-success">
+            {/* <Link
+              to="/list"
+              className="text-decoration-none text-success"
+              title="Go back"
+            >
               Back
-            </Link>
+            </Link> */}
           </div>
           <form onSubmit={handleUpload}>
             <div className="t-description d-flex flex-column gap-2 mb-3">
@@ -115,6 +119,7 @@ function Upload() {
                   value={formData.propertyType}
                   onChange={handleInputChange}
                   required={true}
+                  title="Select a Property type"
                 >
                   <option value="select property">
                     Select type of Property
@@ -139,6 +144,7 @@ function Upload() {
                   value={formData.availability}
                   onChange={handleInputChange}
                   required={true}
+                  title="Availability"
                   className="select text-secondary"
                 >
                   <option value="availability">Availability</option>

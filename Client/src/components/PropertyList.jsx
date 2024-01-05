@@ -46,25 +46,40 @@ function PropertyList() {
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
-          <div className="search-tags d-flex flex-column align-items-center gap-2">
+          <div className="search-tags d-flex flex-column align-items-center w-75 gap-2">
             <input
+              className="search w-50"
+              title="Search property by location, rooms, size...."
               type="search"
               name="search"
               id="search"
-              placeholder="Search Property..."
+              placeholder="Search by location, rooms, size...."
             />
             <div className="tags bg-transparent d-flex justify-content-center gap-4 mt-3">
-              <a href="#">Location</a>
-              <a href="#">M²</a>
-              <a href="#">Price</a>
-              <a href="#">Rooms</a>
-              <a href="#">Type</a>
-              <a href="#">Year</a>
+              <a href="#" title="Filter by location.">
+                Location
+              </a>
+              <a href="#" title="Filter by location">
+                M²
+              </a>
+              <a href="#" title="Filter by Price">
+                Price
+              </a>
+              <a href="#" title="Filter by rooms">
+                Rooms
+              </a>
+              <a href="#" title="Filter by Property type">
+                Type
+              </a>
+              <a href="#" title="Filter by Year">
+                Year
+              </a>
             </div>
           </div>
           <Link
             to="/upload"
             className=" add-listing text-decoration-none  d-flex flex-column align-items-center"
+            title="List a Property"
           >
             List a Property
           </Link>

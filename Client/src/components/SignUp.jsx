@@ -115,9 +115,9 @@ function SignUp() {
               {loading ? "Signing Up..." : "Sign Up"}
             </button>
           </form>
-          {/* <Link to="/login" className="text-decoration-none text-success mb-25">
+          <Link to="/login" className="text-decoration-none text-success mb-25">
             Back to sign-in
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>
