@@ -8,6 +8,7 @@ import React from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PropertyDetails from "./components/propertyDetails";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/update" element={<Update />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/list" element={<PropertyList />} />
+        <Route path="/property" element={<PropertyDetails />} />
       </Routes>
     </>
   );
