@@ -30,7 +30,7 @@ function Login() {
           email,
           password,
         },
-        { withCredentials: true }
+        { withCredentials: true },
       );
 
       console.log("Login Successful:", response.data);
@@ -50,8 +50,7 @@ function Login() {
       <div className="bg text-white">
         <div className="container-main d-flex justify-content-center align-items-center mt-4 ">
           <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
-            <h1 className="fw-bold">X Rental</h1>
-            <h3 className="login text-success">LOGIN</h3>
+            <h3 className="login text-success mt-4">LOGIN</h3>
 
             <form className="container">
               <input
