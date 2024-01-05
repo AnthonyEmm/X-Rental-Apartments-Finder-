@@ -30,7 +30,7 @@ function Login() {
           email,
           password,
         },
-        { withCredentials: true },
+        { withCredentials: true }
       );
 
       console.log("Login Successful:", response.data);
@@ -98,7 +98,7 @@ function Login() {
               </div>
               <Link
                 to="/Update"
-                className="fw-bold text-success text-decoration-none bg-transparent gap-4 p-4"
+                className="link-signup text-decoration-none gap-4 p-4"
               >
                 Forgot Password?
               </Link>
@@ -121,7 +121,7 @@ function Login() {
                 {loading ? "Signing In..." : "SIGN IN"}
               </button>
             </form>
-            <Link to="/sign-up" className="text-decoration-none text-success">
+            <Link to="/sign-up" className="link-signup text-decoration-none">
               Create an account
             </Link>
           </div>
