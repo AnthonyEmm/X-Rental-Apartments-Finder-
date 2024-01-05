@@ -5,8 +5,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Update({ id }) {
+  const navigate = useNavigate(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -31,20 +33,21 @@ function Update({ id }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:4050/auth/update`,
+        `http://localhost:4050/auth/update/:id`,
         {
           email,
           password,
         },
-        { withCredentials: true }
+        { withCredentials: true },
       );
       console.log("User Updated Successfully:", response.data);
       setSuccess(true);
+      navigate("/login");
       setError("");
     } catch (error) {
       console.error(
         "User Update Failed:",
-        error.response ? error.response.data : error.message
+        error.response ? error.response.data : error.message,
       );
       setError("User Update Failed. Please try again.");
     } finally {

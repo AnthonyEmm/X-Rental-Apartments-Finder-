@@ -59,19 +59,19 @@ function PropertyList() {
               <a href="#" title="Filter by location.">
                 Location
               </a>
-              <a href="#" title="Filter by location">
+              <a href="#" title="Filter by size">
                 M²
               </a>
-              <a href="#" title="Filter by Price">
+              <a href="#" title="Filter by price">
                 Price
               </a>
               <a href="#" title="Filter by rooms">
                 Rooms
               </a>
-              <a href="#" title="Filter by Property type">
+              <a href="#" title="Filter by property type">
                 Type
               </a>
-              <a href="#" title="Filter by Year">
+              <a href="#" title="Filter by year">
                 Year
               </a>
             </div>
