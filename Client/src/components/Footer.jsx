@@ -19,22 +19,22 @@ function Footer() {
               <h5 className="bg-transparent">&copy;2024 X-Rental</h5>
             </div>
             <div className="icons d-flex gap-3 bg-transparent mb-4">
-              <a href="#">
+              <a href="#" className="instagram" title="Instagram">
                 <FontAwesomeIcon
                   icon={faInstagram}
                   style={{ fontSize: "2em" }}
                 />
               </a>
-              <a href="#">
+              <a href="#" className="facebook" title="facebook">
                 <FontAwesomeIcon
                   icon={faFacebook}
                   style={{ fontSize: "2em" }}
                 />
               </a>
-              <a href="#">
+              <a href="#" className="github" title="GitHub">
                 <FontAwesomeIcon icon={faGithub} style={{ fontSize: "2em" }} />
               </a>
-              <a href="#">
+              <a href="#" className="twitter" title="X-Twitter">
                 <FontAwesomeIcon
                   icon={faXTwitter}
                   style={{ fontSize: "2em" }}

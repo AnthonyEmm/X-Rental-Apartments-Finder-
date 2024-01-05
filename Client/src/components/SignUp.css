@@ -8,6 +8,10 @@
   padding: 20px;
 }
 
+.txt {
+  color: rgb(17, 189, 74);
+}
+
 input {
   width: 60%;
   padding: 14px;
