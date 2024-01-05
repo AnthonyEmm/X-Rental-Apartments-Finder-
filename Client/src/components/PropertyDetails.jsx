@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "../components/PropertyDetails.css";
+import { Link } from "react-router-dom";
 
 function PropertyDetails() {
   const [properties, setProperties] = useState([]);
@@ -23,6 +24,13 @@ function PropertyDetails() {
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
         <div className="list-container border border-secondary rounded d-flex gap-5 p-5">
+          <Link
+            to="/list"
+            className="link-signup text-decoration-none mt-2"
+            title="Go back"
+          >
+            Back
+          </Link>
           {properties.map((property) => {
             return (
               <div className="details" key={property.id}>
