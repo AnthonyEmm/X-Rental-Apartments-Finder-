@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 function Login() {
   const navigate = useNavigate(true);
@@ -64,6 +66,7 @@ function Login() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  id="password"
                   placeholder="Password"
                   required={true}
                 />
@@ -78,7 +81,15 @@ function Login() {
                   }}
                   onClick={handleTogglePasswordVisibility}
                 >
-                  {showPassword ? "👁️" : "👁️‍🗨️"}
+                  {showPassword ? (
+                    <FontAwesomeIcon icon={faEye} color="#fff" />
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faEyeSlash}
+                      color="#fff"
+                      style={{ opacity: 0.7 }}
+                    />
+                  )}
                 </span>
               </div>
               <Link

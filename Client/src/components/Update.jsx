@@ -3,6 +3,8 @@ import "./Update.css";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 function Update({ id }) {
   const [email, setEmail] = useState("");
@@ -86,7 +88,15 @@ function Update({ id }) {
                 }}
                 onClick={handleTogglePasswordVisibility}
               >
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? (
+                  <FontAwesomeIcon icon={faEye} color="#fff" />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faEyeSlash}
+                    color="#fff"
+                    style={{ opacity: 0.7 }}
+                  />
+                )}
               </span>
             </div>
             <p className="info text-danger fs-6 bg-transparent mt-2">

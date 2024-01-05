@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 function SignUp() {
   const navigate = useNavigate(true);
@@ -96,7 +98,15 @@ function SignUp() {
                 }}
                 onClick={handleTogglePasswordVisibility}
               >
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? (
+                  <FontAwesomeIcon icon={faEye} color="#fff" />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faEyeSlash}
+                    color="#fff"
+                    style={{ opacity: 0.7 }}
+                  />
+                )}
               </span>
             </div>
             <br />
