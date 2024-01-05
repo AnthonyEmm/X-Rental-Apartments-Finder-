@@ -13,7 +13,7 @@
   border-color: rgb(196, 237, 210);
   border-radius: 5px;
   padding: 1rem;
-  width: 35rem;
+  max-width: 60rem;
   color: white;
   margin-top: 1rem;
 }
