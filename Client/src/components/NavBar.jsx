@@ -13,7 +13,7 @@ function NavBar() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
+          data-bs-toggle="offcanvas"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
@@ -23,26 +23,41 @@ function NavBar() {
         </button>
 
         <div
-          className="collapse navbar-collapse justify-content-end"
+          className="offcanvas offcanvas-end align-self-end"
+          tabIndex="-1"
           id="navbarNav"
+          aria-labelledby="navbarNavLabel"
         >
-          <ul className="navbar-nav gap-3">
-            <li className="nav-item align-self-end">
-              <Link className="nav-link" to="/">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item align-self-end">
-              <Link className="nav-link" to="#">
-                About
-              </Link>
-            </li>
-            <li className="nav-item align-self-end">
-              <Link className="nav-link" to="/login">
-                Sign-in
-              </Link>
-            </li>
-          </ul>
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title text-success" id="navbarNavLabel">
+              Menu
+            </h5>
+            <button
+              type="button"
+              className="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="offcanvas-body align-self-end">
+            <ul className="navbar-nav gap-3">
+              <li className="nav-item ">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item  ">
+                <Link className="nav-link" to="#">
+                  About
+                </Link>
+              </li>
+              <li className="nav-item  ">
+                <Link className="nav-link" to="/login">
+                  Sign-in
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

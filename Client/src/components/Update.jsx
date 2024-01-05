@@ -31,11 +31,12 @@ function Update({ id }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:4050/auth/update/${id}`,
+        `http://localhost:4050/auth/update`,
         {
           email,
           password,
         },
+        { withCredentials: true },
       );
       console.log("User Updated Successfully:", response.data);
       setSuccess(true);
@@ -113,7 +114,7 @@ function Update({ id }) {
           </div>
 
           <button onClick={handleUpdate} className="btn btn-lg bg-success">
-            {loading ? "Updating..." : "Update"}
+            {loading ? "Updating..." : "UPDATE"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
           {success && (

@@ -199,7 +199,7 @@ function Upload() {
             type="submit"
             className="btn btn-lg bg-success"
           >
-            {loading ? "Uploading..." : "Submit"}
+            {loading ? "Uploading..." : "SUBMIT"}
           </button>
         </div>
       </div>

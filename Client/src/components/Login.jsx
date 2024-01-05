@@ -24,10 +24,14 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:4050/auth/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:4050/auth/login",
+        {
+          email,
+          password,
+        },
+        { withCredentials: true },
+      );
 
       console.log("Login Successful:", response.data);
       setSuccess(true);
@@ -47,7 +51,7 @@ function Login() {
         <div className="container-main d-flex justify-content-center align-items-center mt-4 ">
           <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
             <h1 className="fw-bold">X Rental</h1>
-            <h3 className="login text-success">Sign In</h3>
+            <h3 className="login text-success">LOGIN</h3>
 
             <form className="container">
               <input
@@ -114,7 +118,7 @@ function Login() {
                 type="button"
                 onClick={handleLogin}
               >
-                {loading ? "Signing In..." : "Sign In"}
+                {loading ? "Signing In..." : "SIGN IN"}
               </button>
             </form>
             <Link to="/sign-up" className="text-decoration-none text-success">

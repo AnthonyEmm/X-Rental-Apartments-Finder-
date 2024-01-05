@@ -122,7 +122,7 @@ function SignUp() {
               onClick={handleSignUp}
               type="submit"
             >
-              {loading ? "Signing Up..." : "Sign Up"}
+              {loading ? "Signing Up..." : "SIGN UP"}
             </button>
           </form>
           <Link to="/login" className="text-decoration-none text-success mb-25">
