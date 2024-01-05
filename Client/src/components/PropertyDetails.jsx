@@ -34,17 +34,17 @@ function PropertyDetails() {
           {properties.map((property) => {
             return (
               <div className="details" key={property.id}>
-                <p>
+                <h3>{property.description}</h3>
+                <p className="img w-25">
                   <img src={property.image} />
                 </p>
-                <h2>Title: {property.title}</h2>
-                <h3>Description: {property.description}</h3>
-                <h3>Property Size: {property.area}</h3>
-                <h3>Rooms: {property.rooms}</h3>
+
+                <h3>Property Size: {property.area} M²</h3>
+                <h3>Room(s): {property.bedrooms}</h3>
                 <h3>Zip Code: {property.areaCode}</h3>
                 <h3>Type: {property.propertyType}</h3>
-                <h3>Year: {property.year}</h3>
-                <h3>Price: {property.price}</h3>
+                <h3>Construction year: {property.year}</h3>
+                <h3>Price: €{property.price}/month</h3>
                 <h3>Availability: {property.availability}</h3>
                 {/* <h3>Owner: {property.owner}</h3> */}
               </div>
