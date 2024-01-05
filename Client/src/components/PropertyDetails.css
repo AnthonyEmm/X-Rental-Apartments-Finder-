@@ -7,24 +7,11 @@
   width: 90rem;
 }
 
-img {
+/* img {
   cursor: pointer;
   width: 100%;
 }
 
-a {
-  color: rgba(17, 189, 74, 0.631);
-}
-
-a:hover {
-  color: rgb(17, 189, 74);
-}
-
-.mapa {
-  height: 300px;
-}
-
-.map-section button:hover {
-  background-color: rgb(17, 189, 74);
-  color: black;
-}
+.details {
+  width: 100%;
+} */
