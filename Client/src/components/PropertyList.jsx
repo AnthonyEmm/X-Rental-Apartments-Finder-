@@ -33,7 +33,7 @@ function PropertyList() {
     const searchTerm = e.target.value.toLowerCase();
     setSearchInput(searchTerm);
     const filtered = properties.filter((property) =>
-      property.title.toLowerCase().includes(searchTerm),
+      property.propertyType.toLowerCase().includes(searchTerm),
     );
     e.preventDefault();
     setFilteredProperties(filtered);
