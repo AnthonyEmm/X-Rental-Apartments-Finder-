@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 
 function PropertyList() {
   const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [searchInput, setSearchInput] = useState("");
   const [filteredProperties, setFilteredProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    getList(`http://localhost:4050/properties`);
+    fetchProperties("http://localhost:4050/properties");
   }, []);
 
-  const getList = async (url) => {
+  const fetchProperties = async (url) => {
     try {
       const response = await axios.get(url);
       setProperties(response.data);
@@ -24,8 +24,7 @@ function PropertyList() {
       console.log(response.data);
     } catch (error) {
       console.log(error);
-      setError("Properties not found. Please try again!", error.message);
-
+      setError("Properties not found. Please try again!");
       setLoading(false);
     }
   };
@@ -120,6 +119,11 @@ function PropertyList() {
                       <p className="card-text">
                         Price: €{property.price}/month
                       </p>
+                      <button type="submit" className="btn btn-sm btn-success">
+                        <Link to="/property" className="btn">
+                          VIEW MORE
+                        </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
