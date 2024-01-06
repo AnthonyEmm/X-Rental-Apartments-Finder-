@@ -89,7 +89,7 @@ function Upload() {
                 id="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                placeholder="Title"
+                placeholder="Short title"
                 required={true}
               />
               <textarea

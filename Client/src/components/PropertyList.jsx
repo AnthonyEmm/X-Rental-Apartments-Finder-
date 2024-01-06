@@ -8,6 +8,8 @@ function PropertyList() {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredProperties, setFilteredProperties] = useState([]);
 
   useEffect(() => {
     getList(`http://localhost:4050/properties`);
@@ -17,13 +19,25 @@ function PropertyList() {
     try {
       const response = await axios.get(url);
       setProperties(response.data);
+      setFilteredProperties(response.data);
       setLoading(false);
       console.log(response.data);
     } catch (error) {
       console.log(error);
       setError("Properties not found. Please try again!", error.message);
+
       setLoading(false);
     }
+  };
+
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchInput(searchTerm);
+    const filtered = properties.filter((property) =>
+      property.title.toLowerCase().includes(searchTerm),
+    );
+    e.preventDefault();
+    setFilteredProperties(filtered);
   };
 
   if (loading) {
@@ -44,16 +58,18 @@ function PropertyList() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-5">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
           <div className="search-tags d-flex flex-column align-items-center w-75 gap-2">
             <input
               className="search w-50"
-              title="Search property by location, rooms, size...."
+              title="Search by property type"
               type="search"
               name="search"
               id="search"
-              placeholder="Search by location, rooms, size...."
+              placeholder="Search by property type..."
+              value={searchInput}
+              onChange={handleSearch}
             />
             <div className="tags bg-transparent d-flex justify-content-center gap-4 mt-3">
               <a href="#" title="Filter by location.">
@@ -83,9 +99,9 @@ function PropertyList() {
           >
             List a Property
           </Link>
-          <div className="list">
+          <div className="list mt-4 mb-5">
             <div className="row row-cols-1 row-cols-md-3 g-4">
-              {properties.map((property) => (
+              {filteredProperties.map((property) => (
                 <div key={property.id} className="col">
                   <div className="card">
                     <img
