@@ -14,7 +14,7 @@ function Footer() {
     <>
       <div className="bg">
         <div className="footer mt-4">
-          <div className="contain d-flex flex-column justify-content-center align-items-center gap-2 mt-4">
+          <div className="contain d-flex flex-column justify-content-center align-items-center  mt-4">
             <div className="header d-flex gap-2 bg-transparent ">
               <h5 className="bg-transparent">&copy;2024 X-Rental</h5>
             </div>
@@ -42,7 +42,7 @@ function Footer() {
               </a>
             </div>
             <Link
-              className="link text-decoration-none bg-transparent"
+              className="link text-decoration-none bg-transparent mb-5"
               to="/contact"
             >
               Need help? Contact us here
