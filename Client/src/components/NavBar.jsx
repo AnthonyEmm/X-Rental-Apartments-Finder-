@@ -30,7 +30,7 @@ function NavBar() {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title text-success" id="navbarNavLabel">
-              Menu
+              X Rental
             </h5>
             <button
               type="button"
