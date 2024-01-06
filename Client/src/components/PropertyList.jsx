@@ -98,7 +98,7 @@ function PropertyList() {
           >
             List a Property
           </Link>
-          <div className="list mt-4 mb-5">
+          <Link to="/property" className="list mt-4 mb-5 text-decoration-none">
             <div className="row row-cols-1 row-cols-md-3 g-4">
               {filteredProperties.map((property) => (
                 <div key={property.id} className="col">
@@ -119,7 +119,11 @@ function PropertyList() {
                       <p className="card-text">
                         Price: €{property.price}/month
                       </p>
-                      <button type="submit" className="btn btn-sm btn-success">
+                      <button
+                        type="submit"
+                        className="btn btn-sm btn-success"
+                        title="Property Details"
+                      >
                         <Link to="/property" className="btn">
                           VIEW MORE
                         </Link>
@@ -129,7 +133,7 @@ function PropertyList() {
                 </div>
               ))}
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
