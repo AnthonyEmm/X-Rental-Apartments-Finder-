@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PropertyDetails from "./components/propertyDetails";
+import ContactForm from "./components/contactForm";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/upload" element={<Upload />} />
         <Route path="/list" element={<PropertyList />} />
         <Route path="/property" element={<PropertyDetails />} />
+        <Route path="/contact" element={<ContactForm />} />
       </Routes>
       <Footer />
     </>

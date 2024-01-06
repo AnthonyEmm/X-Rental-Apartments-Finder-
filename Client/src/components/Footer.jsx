@@ -41,7 +41,10 @@ function Footer() {
                 />
               </a>
             </div>
-            <Link className="link text-decoration-none bg-transparent" to="#">
+            <Link
+              className="link text-decoration-none bg-transparent"
+              to="/contact"
+            >
               Need help? Contact us here
             </Link>
           </div>
