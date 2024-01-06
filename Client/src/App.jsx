@@ -9,7 +9,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PropertyDetails from "./components/propertyDetails";
+import PropertyDetails from "./components/PropertyDetails";
 
 function App() {
   return (
