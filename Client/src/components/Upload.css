@@ -7,6 +7,10 @@
   width: 30rem;
 }
 
+.fw-bold {
+  color: rgb(17, 189, 74);
+}
+
 .title-form {
   width: 40rem;
 }
