@@ -98,7 +98,7 @@ function PropertyList() {
           >
             List a Property
           </Link>
-          <Link to="/property" className="list mt-4 mb-5 text-decoration-none">
+          <div className="list mt-4 mb-5 text-decoration-none">
             <div className="row row-cols-1 row-cols-md-3 g-4">
               {filteredProperties.map((property) => (
                 <div key={property.id} className="col">
@@ -133,7 +133,7 @@ function PropertyList() {
                 </div>
               ))}
             </div>
-          </Link>
+          </div>
         </div>
       </div>
     </div>
