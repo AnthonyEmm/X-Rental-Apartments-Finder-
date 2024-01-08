@@ -1,10 +1,14 @@
 .container-main {
   height: auto;
-  width: auto;
+  max-width: auto;
 }
 
 .form-header {
   width: 30rem;
+}
+
+.fw-bold {
+  color: rgb(17, 189, 74);
 }
 
 .title-form {
@@ -17,18 +21,48 @@
 
 .title-form button {
   background-color: rgb(17, 189, 74);
+  color: black;
 }
 
-#key {
+.title-form button:hover {
+  background-color: rgba(17, 189, 74, 0.415);
+  color: white;
+}
+
+#price,
+#propertyType,
+#areaCode,
+#availability,
+#bedrooms,
+#area,
+#year {
+  color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1rem;
   width: 15rem;
+  border-color: rgb(196, 237, 210);
+  background-color: rgb(40, 39, 39);
 }
 
-#desk {
+#image {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 0.8rem 0.5rem;
+  width: 15rem;
+}
+
+#title,
+#description {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 1rem;
   color: white;
+  width: 30rem;
+  border-color: rgb(196, 237, 210);
+  background-color: rgb(40, 39, 39);
+}
+
+#description:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
 }

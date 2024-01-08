@@ -7,6 +7,8 @@ const userSchema = new Schema({
   password: { type: String, required: true, select: false },
   name: { type: String },
   avatar: { type: String },
+  createdAt: { type: Date, default: Date.now() },
+  updatedAt: { type: Date, default: Date.now() },
 });
 
 userSchema.pre("findOne", function (next) {

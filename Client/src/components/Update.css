@@ -5,6 +5,9 @@
 
 .title-form {
   width: 30rem;
+  border: 1px solid white;
+  border-color: rgb(20, 216, 86);
+  box-shadow: 0 0 10px rgba(26, 231, 95, 0.9);
 }
 
 .title-form h1 {
@@ -15,19 +18,24 @@
   background-color: rgb(17, 189, 74);
 }
 
-#key {
+input {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
-  width: 15rem;
+  width: 20rem;
+  outline: none;
+  border-color: rgb(196, 237, 210);
 }
 
-.img-login {
-  width: 30rem;
-  background-position: center;
+input:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
 }
 
-.img-login img {
-  width: 475px;
-  height: 622px;
+.link-login {
+  color: rgba(17, 189, 74, 0.553);
+}
+
+.link-login:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
 }

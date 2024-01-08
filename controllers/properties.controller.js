@@ -10,9 +10,10 @@ const createProperty = async (req, res, next) => {
       price,
       bedrooms,
       area,
-      image,
+      propertyType,
+      areaCode,
+      year,
       images,
-      owner,
       availability,
     } = req.body;
     const property = await Property.create({
@@ -21,14 +22,17 @@ const createProperty = async (req, res, next) => {
       price,
       bedrooms,
       area,
-      image,
+      propertyType,
+      areaCode,
+      year,
+      image: req.file.path,
       images,
-      owner,
+      owner: req.user.id,
       availability,
     });
 
-    const foundProperty = await Property.findOne({ title });
-    if (foundProperty) throw new Error("Property Already Exists");
+    // const foundProperty = await Property.findOne({ title });
+    // if (foundProperty) throw new Error("Property Already Exists");
 
     res.status(201).json(property);
   } catch (error) {
@@ -53,6 +57,7 @@ const getProperties = async (req, res, next) => {
 const getProperty = async (req, res, next) => {
   try {
     const { id } = req.params;
+
     const OneProperty = await Property.findById(id).populate("owner");
     res.json(OneProperty);
   } catch (error) {

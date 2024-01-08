@@ -1,68 +1,92 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
+  const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
+
+  const handleToggleOffcanvas = () => {
+    setIsOffcanvasOpen(!isOffcanvasOpen);
+  };
+
+  const handleCloseOffcanvas = () => {
+    setIsOffcanvasOpen(false);
+  };
+
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-inherit container-fluid px-4">
-      <a class="navbar-brand fw-bold fs-4" href="#">
-        <span>X Rental</span>
-      </a>
+    <nav className="navbar navbar-expand-lg bg-inherit">
+      <div className="container-fluid px-4">
+        <Link className="navbar-brand fw-bold fs-4" to="/">
+          <span>X Rental</span>
+        </Link>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={handleToggleOffcanvas}
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon custom-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav gap-3">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              About
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="btn" href="#">
-              Sign-in
-            </a>
-          </li>
-        </ul>
+        <div
+          className={`offcanvas offcanvas-end ${isOffcanvasOpen ? "show" : ""}`}
+          tabIndex="-1"
+          id="navbarNav"
+          aria-labelledby="navbarNavLabel"
+        >
+          <div className="offcanvas-header justify-content-end">
+            <button
+              type="button"
+              className="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+              onClick={handleCloseOffcanvas}
+              style={{
+                backgroundColor: "green",
+                color: "green",
+                width: "0.5rem",
+                height: "0.5rem",
+                borderRadius: "50px",
+              }}
+            ></button>
+          </div>
+          <div className="offcanvas-body justify-content-end w-100">
+            <ul className="navbar-nav gap-3" role="menu">
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to="/"
+                  onClick={handleCloseOffcanvas}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/about"
+                  onClick={handleCloseOffcanvas}
+                >
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/login"
+                  onClick={handleCloseOffcanvas}
+                >
+                  Sign-in
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );
-
-  /* <>
-      <Navbar className="nav navbar-dark text-success border-bottom border-success sticky-top">
-        <Container>
-          <Navbar.Brand className="logo" href="#home">
-            X RENTAL
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-          </Nav>
-          <div className="links d-flex gap-3">
-            <Button variant="outline-success">Post Property</Button>
-            <Button variant="outline-success">Sign In</Button>
-          </div>
-        </Container>
-      </Navbar>
-    </> */
 }
 
 export default NavBar;

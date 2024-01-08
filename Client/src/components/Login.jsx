@@ -1,39 +1,131 @@
 import React from "react";
 import "./Login.css";
-/* import image from "../assets/berlin.jpg"; */
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import axiosClient from "../axiosClient";
 
 function Login() {
-  return (
-    <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center mt-5 d-flex">
-        <div className="title-form border border-secondary d-flex flex-column align-items-center gap-5 p-5">
-          <h1 className="fw-bold">X Rental</h1>
-          <h5>Make your login</h5>
+  const navigate = useNavigate(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-          <input
-            type="text"
-            name="Email"
-            id="key"
-            placeholder="Email"
-            required="true"
-          />
-          <input
-            type="password"
-            name="Password"
-            id="key"
-            placeholder="Password"
-            required="true"
-          />
-          <button className="btn btn-outline-success">Sign-in</button>
-          <a href="#" className="text-decoration-none">
-            Create an account
-          </a>
-        </div>
-        <div className="img-login border border-secondary">
-          <img src="../public/berlin.jpg" alt="Berlin landscape" />
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await axiosClient.post(
+        "http://localhost:4050/auth/login",
+        {
+          email,
+          password,
+        },
+      );
+
+      console.log("Login Successful:", response.data);
+      setSuccess(true);
+      navigate("/list");
+      setError("");
+    } catch (error) {
+      console.log("Login Failed:", error.response.data);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <>
+      <div className="bg text-white">
+        <div className="container-main d-flex justify-content-center align-items-center mt-5 mb-5">
+          <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
+            <h3 className="login mt-4">LOGIN</h3>
+
+            <form className="container">
+              <input
+                type="text"
+                name="Email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required={true}
+              />
+              <br />
+              <br />
+              <div style={{ position: "relative" }}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  id="password"
+                  placeholder="Password"
+                  required={true}
+                />
+                <span
+                  style={{
+                    position: "absolute",
+                    right: "10px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    cursor: "pointer",
+                    background: "transparent",
+                  }}
+                  onClick={handleTogglePasswordVisibility}
+                >
+                  {showPassword ? (
+                    <FontAwesomeIcon icon={faEye} color="#fff" />
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faEyeSlash}
+                      color="#fff"
+                      style={{ opacity: 0.7 }}
+                    />
+                  )}
+                </span>
+              </div>
+              <Link
+                to="/Update"
+                className="link-signup text-decoration-none gap-4 p-4"
+              >
+                Forgot Password?
+              </Link>
+              {error && (
+                <p style={{ color: "red" }}>
+                  {error ? "Incorrect Email or Password" : ""}
+                </p>
+              )}
+              {success && (
+                <p style={{ color: "green" }}>
+                  {success ? "Login Successful" : ""}
+                </p>
+              )}
+              <br />
+              <button
+                className="btn btn-lg bg-success"
+                type="button"
+                onClick={handleLogin}
+              >
+                {loading ? "Signing In..." : "SIGN IN"}
+              </button>
+            </form>
+            <Link to="/sign-up" className="link-signup text-decoration-none">
+              Create an account
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

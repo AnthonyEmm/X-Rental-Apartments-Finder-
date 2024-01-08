@@ -1,13 +1,14 @@
 .navbar {
   border-bottom: 1px solid rgb(17, 189, 74);
+  cursor: pointer;
 }
 
-span {
+.navbar-brand span {
   color: rgb(17, 189, 74);
 }
 
-span:hover {
-  text-shadow: 2px 2px 2px rgb(142, 142, 142);
+.navbar-brand span:hover {
+  text-shadow: 2px 2px 2px rgba(142, 142, 142, 0.561);
 }
 
 .nav-item a {
@@ -15,12 +16,31 @@ span:hover {
 }
 
 .nav-item a:hover {
-  background-color: rgb(52, 52, 52);
+  /* background-color: rgb(52, 52, 52); */
   border-radius: 5px;
   color: rgb(17, 189, 74);
   font-weight: bold;
+  cursor: pointer;
 }
 
 .nav-item button {
   color: rgba(16, 156, 63, 0.858);
+}
+
+.custom-toggler-icon {
+  background-color: rgba(1, 237, 80, 0.558);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.offcanvas {
+  background-color: inherit;
+}
+
+.offcanvas-title {
+  color: rgb(40, 238, 106);
+}
+
+.offcanvas-end {
+  width: 15rem !important;
 }
