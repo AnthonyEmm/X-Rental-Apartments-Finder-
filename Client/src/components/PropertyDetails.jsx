@@ -22,17 +22,17 @@ function PropertyDetails() {
   };
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
-        <div className="list-container border border-secondary rounded d-flex gap-5 p-5">
-          <Link
-            to="/list"
-            className="link-signup text-decoration-none mt-2"
-            title="Go back"
-          >
-            Back
-          </Link>
-          {property && (
-            <div className="details">
+      <Link
+        to="/list"
+        className="link-signup text-decoration-none mt-2"
+        title="Go back"
+      >
+        Back
+      </Link>
+      {property && (
+        <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
+          <div className="list-container border border-secondary rounded d-flex gap-5 p-5">
+            <div className="left-side">
               <p className="img w-25">
                 <img src={property.image} />
               </p>
@@ -46,9 +46,9 @@ function PropertyDetails() {
               <h3>Availability: {property.availability}</h3>
               <h3>Owner: {property.owner.name}</h3>
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

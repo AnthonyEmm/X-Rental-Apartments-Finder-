@@ -24,13 +24,10 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axiosClient.post(
-        "http://localhost:4050/auth/login",
-        {
-          email,
-          password,
-        },
-      );
+      const response = await axiosClient.post("/auth/login", {
+        email,
+        password,
+      });
 
       console.log("Login Successful:", response.data);
       setSuccess(true);
