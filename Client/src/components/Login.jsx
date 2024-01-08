@@ -1,11 +1,11 @@
 import React from "react";
 import "./Login.css";
 import { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import axiosClient from "../axiosClient";
 
 function Login() {
   const navigate = useNavigate(true);
@@ -24,13 +24,12 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(
+      const response = await axiosClient.post(
         "http://localhost:4050/auth/login",
         {
           email,
           password,
         },
-        { withCredentials: true },
       );
 
       console.log("Login Successful:", response.data);

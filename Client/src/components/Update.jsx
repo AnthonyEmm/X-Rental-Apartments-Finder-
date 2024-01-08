@@ -1,11 +1,11 @@
 import React from "react";
 import "./Update.css";
-import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
+import axiosClient from "../axiosClient";
 
 function Update({ id }) {
   const navigate = useNavigate(true);
@@ -32,8 +32,8 @@ function Update({ id }) {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        `http://localhost:4050/auth/update/:id`,
+      const response = await axiosClient.post(
+        `/auth/update/:id`,
         {
           email,
           password,

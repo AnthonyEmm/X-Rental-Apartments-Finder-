@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axiosClient from "../axiosClient";
 
 function Upload() {
   const [success, setSuccess] = useState("");
@@ -48,10 +49,7 @@ function Upload() {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        "http://localhost:4050/createlisting",
-        data,
-      );
+      const response = await axiosClient.post("/createlisting", data);
 
       console.log("Upload Successful:", response.data);
       setSuccess(true);

@@ -1,8 +1,8 @@
 import React from "react";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import "../components/PropertyList.css";
 import { Link } from "react-router-dom";
+import axiosClient from "../axiosClient";
 
 function PropertyList() {
   const [properties, setProperties] = useState([]);
@@ -12,12 +12,12 @@ function PropertyList() {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    fetchProperties("http://localhost:4050/properties");
+    fetchProperties("/properties");
   }, []);
 
   const fetchProperties = async (url) => {
     try {
-      const response = await axios.get(url);
+      const response = await axiosClient.get(url);
       setProperties(response.data);
       setFilteredProperties(response.data);
       setLoading(false);
@@ -101,7 +101,7 @@ function PropertyList() {
           <div className="list mt-4 mb-5 text-decoration-none">
             <div className="row row-cols-1 row-cols-md-3 g-4">
               {filteredProperties.map((property) => (
-                <div key={property.id} className="col">
+                <div key={property._id} className="col">
                   <div className="card">
                     <img
                       src={property.image}
@@ -124,7 +124,7 @@ function PropertyList() {
                         className="btn btn-sm btn-success"
                         title="Property Details"
                       >
-                        <Link to="/property" className="btn">
+                        <Link to={`/property/${property._id}`} className="btn">
                           VIEW MORE
                         </Link>
                       </button>

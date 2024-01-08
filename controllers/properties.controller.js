@@ -14,7 +14,6 @@ const createProperty = async (req, res, next) => {
       areaCode,
       year,
       images,
-      owner,
       availability,
     } = req.body;
     const property = await Property.create({
@@ -28,7 +27,7 @@ const createProperty = async (req, res, next) => {
       year,
       image: req.file.path,
       images,
-      owner,
+      owner: req.user.id,
       availability,
     });
 
@@ -58,6 +57,7 @@ const getProperties = async (req, res, next) => {
 const getProperty = async (req, res, next) => {
   try {
     const { id } = req.params;
+
     const OneProperty = await Property.findById(id).populate("owner");
     res.json(OneProperty);
   } catch (error) {
