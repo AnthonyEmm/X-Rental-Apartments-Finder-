@@ -47,21 +47,29 @@ function UserProfile() {
     <>
       <div className="bg w-100 p-5 d-flex justify-content-center align-items-center ">
         <div className="container-profile mt-5 rounded">
-          <h1 className="header-title mt-4 d-flex justify-content-center align-items-start">
+          <h1 className="header-title mt-5 d-flex justify-content-center align-items-start">
             PROFILE
           </h1>
           {userProfile && (
-            <div className="profile">
+            <div className="profile mb-4">
               <div className="user-profile text-light d-flex flex-column justify-content-center align-items-center gap-2 ">
-                <div className="profile mt-4 mb-4">
+                <div className="profile mt-4 mb-5">
                   <img src={userProfile.avatar} />
                 </div>
                 <h3 className="profile-txt ">Name: {userProfile.name}</h3>
                 <h3 className="profile-txt">Email: {userProfile.email}</h3>
               </div>
               <Link
+                to="/Update"
+                className="text-light d-flex justify-content-center align-items-start text-decoration-none"
+              >
+                <button className="btn btn-lg bg-success mt-4 ">
+                  UPDATE ACCOUNT
+                </button>
+              </Link>
+              <Link
                 to="/list"
-                className="link-signup d-flex flex-column justify-content-center align-items-center  gap-2 text-decoration-none mt-5 fw-bold fs-5"
+                className="link-signup d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none mt-5 fw-bold fs-5"
               >
                 Back to Properties
               </Link>

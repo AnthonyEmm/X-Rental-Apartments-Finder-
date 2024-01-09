@@ -9,12 +9,12 @@
 
 .profile-txt {
   color: azure;
-  font-size: 2rem;
+  font-size: 1.299rem;
 }
 
 .container-profile {
-  width: 50rem;
-  height: 30rem;
+  width: 45rem;
+  height: 40rem;
   box-shadow: 0 0 10px rgba(43, 212, 100, 0.7);
 }
 
@@ -26,4 +26,9 @@
   height: 150px;
   border-radius: 80px;
   background-size: cover;
+}
+.btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -95,7 +95,7 @@ function Login() {
                 </span>
               </div>
               <Link
-                to="/Update"
+                to="#"
                 className="link-signup text-decoration-none gap-4 p-4"
               >
                 Forgot Password?
