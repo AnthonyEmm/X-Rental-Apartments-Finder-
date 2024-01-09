@@ -80,7 +80,7 @@ function PropertyDetails() {
                 <MapContainer
                   center={center}
                   zoom={13}
-                  style={{ height: "100vh" }}
+                  style={{ height: "50vh" }}
                 >
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -94,9 +94,11 @@ function PropertyDetails() {
                 </MapContainer>
               </div>
               <div className="button-section mt-4 d-flex justify-content-between">
-                <button className="btn btn-lg btn-success" type="button">
-                  Contact the Owner
-                </button>
+                <Link to="/contact">
+                  <button className="btn btn-lg btn-success" type="button">
+                    Contact the Owner
+                  </button>
+                </Link>
                 <Link
                   to="/list"
                   className="link-signup text-decoration-none align-self-center "

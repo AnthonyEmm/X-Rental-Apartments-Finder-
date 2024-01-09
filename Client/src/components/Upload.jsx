@@ -1,6 +1,5 @@
 import React from "react";
 import "./Upload.css";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -58,7 +57,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message,
+        error.response ? error.response.data : error.message
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
