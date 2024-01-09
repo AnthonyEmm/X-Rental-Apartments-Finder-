@@ -8,14 +8,24 @@ const register = async (req, res, next) => {
     const {
       body: { email, password, name },
     } = req;
-
+    console.log(req.file);
     const foundUser = await User.findOne({ email });
     if (foundUser) throw new Error("User Already Exists");
 
     // const hash = await bcrypt.hash(password, 10);
-    const user = await User.create({ email, password, name });
+    const user = await User.create({
+      email,
+      password,
+      name,
+      avatar: req.file.path,
+    });
 
-    const payload = { id: user._id, name: user.name, email: user.email };
+    const payload = {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar,
+    };
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
       expiresIn: "500m",
     });

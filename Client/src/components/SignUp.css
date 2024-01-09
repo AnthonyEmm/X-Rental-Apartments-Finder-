@@ -34,3 +34,7 @@ input {
 .btn:hover {
   background-color: #45a049;
 }
+.upload {
+  border: none;
+  background-color: transparent;
+}

@@ -120,7 +120,7 @@ function Login() {
               </button>
             </form>
             <Link to="/sign-up" className="link-signup text-decoration-none">
-              Create an account
+              Don't have an account?
             </Link>
           </div>
         </div>

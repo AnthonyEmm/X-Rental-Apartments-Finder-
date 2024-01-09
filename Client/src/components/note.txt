@@ -2,6 +2,8 @@ notes to know"
 
 create another component for viewing other profiles by creating a new component for that. it should work like the property details using id.
 
+install google node-geocoder
+
 
 Users:
 
@@ -44,3 +46,5 @@ Naomi Givens, naomig@mail.com, 9987546Lon
 Danny Frank, frankdanny@mail.com, heisaman5877
 
 Natasha Andreeva, andreevanat@mail.com, natandre98998
+
+Patrick Doyle, pdoyle@mail.com, patrick85578D

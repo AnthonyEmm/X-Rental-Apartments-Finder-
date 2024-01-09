@@ -17,6 +17,7 @@ function SignUp() {
     name: "",
     email: "",
     password: "",
+    avatar: "",
   });
 
   const handleTogglePasswordVisibility = () => {
@@ -24,16 +25,26 @@ function SignUp() {
   };
 
   const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    if (e.target.files) {
+      setFormData({ ...formData, [e.target.id]: e.target.files[0] });
+    } else {
+      setFormData({ ...formData, [e.target.id]: e.target.value });
+    }
   };
 
   const handleSignUp = async (e) => {
-    e.preventDefault();
-    setLoading(true);
     try {
+      e.preventDefault();
+      setLoading(true);
+      const data = new FormData();
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("password", formData.password);
+      data.append("avatar", formData.avatar);
+
       const response = await axios.post(
         "http://localhost:4050/auth/signup",
-        formData,
+        data,
       );
 
       console.log("SignUp Successful:", response.data);
@@ -53,7 +64,7 @@ function SignUp() {
       <div className="container-main d-flex justify-content-center align-items-center mt-5 mb-5">
         <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-1 p-3">
           {/* <h1 className="fw-bold">X Rental</h1> */}
-          <h4 className="txt mt-3">CREATE ACCOUNT</h4>
+          <h4 className="txt mt-5">CREATE ACCOUNT</h4>
           <form onSubmit={handleSignUp} className="container">
             <input
               type="text"
@@ -110,15 +121,25 @@ function SignUp() {
               </span>
             </div>
             <br />
-            <p className="info text-danger fs-6 bg-transparent mt-2">
+            <p className="info text-danger fs-6 bg-transparent">
               Password must be 8-10 letters and one number
             </p>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
             <br />
-
+            <label htmlFor="upload" className="upload text-success mb-3">
+              Upload Profile Photo
+            </label>
+            <input
+              className="upload"
+              type="file"
+              onChange={handleInputChange}
+              id="avatar"
+              accept="image/*"
+              required={true}
+            />
             <button
-              className="btn btn-lg bg-success mb-25"
+              className="btn btn-lg bg-success mt-3"
               onClick={handleSignUp}
               type="submit"
             >

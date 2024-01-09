@@ -1,9 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axiosClient from "../axiosClient";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import "../components/UserProfile.css";
+
 function UserProfile() {
   const [userProfile, setUserProfile] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -14,29 +18,57 @@ function UserProfile() {
     try {
       const response = await axiosClient.get(url);
       setUserProfile(response.data);
+      setLoading(false);
       console.log(response.data);
     } catch (error) {
       console.log(error);
+      setError("Please sign In to proceed!");
+      setLoading(false);
     }
   };
 
+  if (loading) {
+    return (
+      <p className="loading text-success d-flex flex-column align-items-center mt-5">
+        Loading User Profile... Please wait!
+      </p>
+    );
+  }
+
+  if (error) {
+    return (
+      <p className="error text-danger d-flex flex-column align-items-center mt-5">
+        {error}
+      </p>
+    );
+  }
+
   return (
     <>
-      <h1 className="header-title text-light mt-5 d-flex justify-content-center align-items-center ">
-        PROFILE
-      </h1>
-      {userProfile && (
-        <div className="profile d-flex justify-content-center align-items-center">
-          <div className="user-profile text-light ">
-            <p className="profile mt-2">
-              <img src={userProfile.avatar} />
-            </p>
-            <h3>Name: {userProfile.name}</h3>
-            <h3>Email: {userProfile.email}</h3>
-            <button className="btn btn-lg bg-success mt-3">Contact</button>
-          </div>
+      <div className="bg w-100 p-5 d-flex justify-content-center align-items-center ">
+        <div className="container-profile mt-5 rounded">
+          <h1 className="header-title mt-4 d-flex justify-content-center align-items-start">
+            PROFILE
+          </h1>
+          {userProfile && (
+            <div className="profile">
+              <div className="user-profile text-light d-flex flex-column justify-content-center align-items-center gap-2 ">
+                <div className="profile mt-4 mb-4">
+                  <img src={userProfile.avatar} />
+                </div>
+                <h3 className="profile-txt ">Name: {userProfile.name}</h3>
+                <h3 className="profile-txt">Email: {userProfile.email}</h3>
+              </div>
+              <Link
+                to="/list"
+                className="link-signup d-flex flex-column justify-content-center align-items-center  gap-2 text-decoration-none mt-5 fw-bold fs-5"
+              >
+                Back to Properties
+              </Link>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 }
