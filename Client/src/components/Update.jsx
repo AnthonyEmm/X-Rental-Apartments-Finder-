@@ -42,7 +42,7 @@ function Update({ id }) {
       );
       console.log("User Updated Successfully:", response.data);
       setSuccess(true);
-      navigate("/login");
+      navigate("/profile");
       setError("");
     } catch (error) {
       console.error(
