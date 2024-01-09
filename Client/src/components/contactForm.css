@@ -3,12 +3,25 @@
   width: auto;
 }
 
+.container {
+  border: 1px solid rgba(255, 255, 255, 0.388);
+  width: 40rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+}
+
 .container h2 {
   color: rgb(17, 189, 74);
 }
 
 .form label {
   color: rgb(17, 189, 74);
+}
+
+.email-contact,
+.name-contact {
+  width: 23rem;
+  padding: 0.7rem;
 }
 
 #email,
@@ -23,6 +36,10 @@
 #email:hover,
 #message:hover {
   box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+}
+
+#message {
+  resize: none;
 }
 
 .container button {

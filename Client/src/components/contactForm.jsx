@@ -28,22 +28,24 @@ const ContactForm = () => {
 
   return (
     <div className="bg">
-      <div className="container mt-4 text-success">
-        <div className="header d-flex justify-content-center align-items-center gap-3">
-          <h2>Contact Form</h2>
-          <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: "1.7rem" }} />
+      <div className="container d-flex  mt-4 text-success">
+        <div className="header d-flex justify-content-center align-items-center gap-3 mt-4">
+          <h2>CONTACT FORM</h2>
+          <div>
+            <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: "2rem" }} />
+          </div>
         </div>
         <form
           onSubmit={handleSubmit}
-          className="form d-flex flex-column gap-5 mt-4 mb-2"
+          className="form d-flex flex-column gap-4 mt-4 mb-2"
         >
-          <div className="d-flex gap-2">
+          <div className="">
             <label htmlFor="name" className="form-label">
               Name:
             </label>
             <input
               type="text"
-              className="form-control"
+              className="name-contact form-control"
               id="name"
               name="name"
               value={formData.name}
@@ -51,13 +53,13 @@ const ContactForm = () => {
               required
             />
           </div>
-          <div className="d-flex gap-2">
+          <div className="">
             <label htmlFor="email" className="form-label">
               Email:
             </label>
             <input
               type="email"
-              className="form-control"
+              className="email-contact form-control"
               id="email"
               name="email"
               value={formData.email}
@@ -65,7 +67,7 @@ const ContactForm = () => {
               required
             />
           </div>
-          <div className="d-flex gap-2">
+          <div className="">
             <label htmlFor="message" className="form-label">
               Message:
             </label>
@@ -80,7 +82,7 @@ const ContactForm = () => {
               required
             />
           </div>
-          <button className="btn btn-lg btn-success" type="button">
+          <button className="btn btn-lg btn-success mb-5" type="button">
             SUBMIT
           </button>
         </form>

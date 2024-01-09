@@ -61,6 +61,7 @@
   width: 30rem;
   border-color: rgb(196, 237, 210);
   background-color: rgb(40, 39, 39);
+  resize: none;
 }
 
 #description:hover {

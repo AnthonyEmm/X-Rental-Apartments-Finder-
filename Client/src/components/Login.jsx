@@ -49,7 +49,7 @@ function Login() {
           <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
             <h3 className="login mt-4">LOGIN</h3>
 
-            <form className="container d-flex gap-4">
+            <form className="container-box d-flex gap-4">
               <input
                 type="text"
                 name="Email"
