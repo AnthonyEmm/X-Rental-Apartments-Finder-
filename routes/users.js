@@ -15,6 +15,6 @@ userRouter.post("/signup", register);
 userRouter.post("/login", login);
 userRouter.post("/logout", logout);
 userRouter.post("/update/:id", authenticate, updateUser);
-userRouter.get("/profile", verifyToken, getProfile);
+userRouter.get("/profile/:id", authenticate, getProfile);
 
 module.exports = userRouter;
