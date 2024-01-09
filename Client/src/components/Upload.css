@@ -1,14 +1,10 @@
-.container-main {
+.bg {
+  width: auto;
   height: auto;
-  max-width: auto;
 }
 
 .form-header {
   width: 30rem;
-}
-
-.fw-bold {
-  color: rgb(17, 189, 74);
 }
 
 .title-form {
@@ -48,7 +44,7 @@
 #image {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  padding: 0.8rem 0.5rem;
+  padding: 0.6rem 0.5rem;
   width: 15rem;
 }
 
@@ -66,4 +62,23 @@
 
 #description:hover {
   box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+}
+
+@media (max-width: 768px) {
+  .form-header {
+    width: 100%;
+  }
+
+  #title,
+  #description,
+  #price,
+  #propertyType,
+  #areaCode,
+  #availability,
+  #bedrooms,
+  #area,
+  #year,
+  #image {
+    width: 100%;
+  }
 }

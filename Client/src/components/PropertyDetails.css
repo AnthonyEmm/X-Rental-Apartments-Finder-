@@ -40,6 +40,6 @@
   color: black;
 }
 
-.map {
-  width: 40vw;
+.custom-leaflet.leaflet-container {
+  background-color: #fff !important;
 }

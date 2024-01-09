@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import "../components/PropertyDetails.css";
 import { Link, useParams } from "react-router-dom";
 import axiosClient from "../axiosClient";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 
 function PropertyDetails() {
   const [property, setProperty] = useState("");
@@ -23,7 +22,7 @@ function PropertyDetails() {
     }
   };
 
-  const center = [51.505, -0.09];
+  const center = [52.5232, 13.3653];
 
   return (
     <div className="bg text-white">
@@ -75,24 +74,33 @@ function PropertyDetails() {
                   <span>Owner</span>: {property.owner.name}
                 </p>
               </div>
+
               <div className="map">
                 {/* <img src="../public/map.png" alt="" /> */}
                 <MapContainer
+                  className="custom-leaflet"
                   center={center}
-                  zoom={13}
+                  zoom={15}
                   style={{ height: "50vh" }}
                 >
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   />
-                  <Marker position={center}>
-                    <Popup>
-                      A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                  </Marker>
+                  <Circle
+                    center={center}
+                    pathOptions={{
+                      color: "green",
+                      fillColor: "#71a900",
+                      fillOpacity: 0.5,
+                    }}
+                    radius={300}
+                  >
+                    <Popup>Property Zone Location</Popup>
+                  </Circle>
                 </MapContainer>
               </div>
+
               <div className="button-section mt-4 d-flex justify-content-between">
                 <Link to="/contact">
                   <button className="btn btn-lg btn-success" type="button">

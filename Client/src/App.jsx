@@ -14,7 +14,7 @@ import ContactForm from "./components/contactForm";
 
 function App() {
   return (
-    <>
+    <div className="bg-color">
       <NavBar />
       <Routes>
         <Route path="/" element="" />
@@ -27,7 +27,7 @@ function App() {
         <Route path="/contact" element={<ContactForm />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
