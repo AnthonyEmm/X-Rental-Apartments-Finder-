@@ -2,5 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.bg-color {
   background-color: rgb(33, 31, 31);
 }

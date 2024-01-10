@@ -24,13 +24,10 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axiosClient.post(
-        "http://localhost:4050/auth/login",
-        {
-          email,
-          password,
-        },
-      );
+      const response = await axiosClient.post("/auth/login", {
+        email,
+        password,
+      });
 
       console.log("Login Successful:", response.data);
       setSuccess(true);
@@ -51,7 +48,7 @@ function Login() {
           <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
             <h3 className="login mt-4">LOGIN</h3>
 
-            <form className="container">
+            <form className="container-box d-flex gap-4">
               <input
                 type="text"
                 name="Email"
@@ -61,8 +58,7 @@ function Login() {
                 placeholder="Email"
                 required={true}
               />
-              <br />
-              <br />
+
               <div style={{ position: "relative" }}>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -110,7 +106,7 @@ function Login() {
                   {success ? "Login Successful" : ""}
                 </p>
               )}
-              <br />
+
               <button
                 className="btn btn-lg bg-success"
                 type="button"

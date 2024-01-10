@@ -1,6 +1,5 @@
 import React from "react";
 import "./Upload.css";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -58,7 +57,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message,
+        error.response ? error.response.data : error.message
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
@@ -66,10 +65,18 @@ function Upload() {
     }
   };
 
+  const handleMouseEnter = (event) => {
+    event.target.style.backgroundColor = "green";
+  };
+
+  const handleMouseLeave = (event) => {
+    event.target.style.color = "";
+  };
+
   return (
     <div className="bg">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 ">
-        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-2 p-3 mb-4">
+      <div className="container-main d-flex justify-content-center align-items-center mt-4">
+        <div className="title-form d-flex flex-column justify-content-center align-items-center border border-secondary rounded gap-2 p-4 mb-3">
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold mt-2">Add a property</h5>
             <Link
