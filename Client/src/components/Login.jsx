@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import React from "react";
 import "./Login.css";
 import { useState } from "react";
@@ -6,9 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import axiosClient from "../axiosClient";
+import { AuthContext } from "../context/AuthProvider";
 
 function Login() {
   const navigate = useNavigate(true);
+  const { user, login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -22,19 +25,19 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     setLoading(true);
     try {
-      const response = await axiosClient.post("/auth/login", {
+      login({
         email,
         password,
       });
 
-      console.log("Login Successful:", response.data);
       setSuccess(true);
-      navigate("/list");
+      navigate("/");
       setError("");
     } catch (error) {
-      console.log("Login Failed:", error.response.data);
+      console.log("Login Failed:", error);
       setError(true);
     } finally {
       setLoading(false);
@@ -45,10 +48,10 @@ function Login() {
     <>
       <div className="bg text-white">
         <div className="container-main d-flex justify-content-center align-items-center mt-5 mb-5">
-          <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-5 p-4">
+          <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-4 p-4">
             <h3 className="login mt-4">LOGIN</h3>
 
-            <form className="container-box d-flex gap-4">
+            <form className="container-box d-flex gap-5">
               <input
                 type="text"
                 name="Email"
@@ -92,7 +95,7 @@ function Login() {
               </div>
               <Link
                 to="#"
-                className="link-signup text-decoration-none gap-4 p-4"
+                className="link-signup text-decoration-none gap-3 p-2"
               >
                 Forgot Password?
               </Link>

@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../context/AuthProvider";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const { logout, loading, user } = useContext(AuthContext);
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
+  // const navigate = useNavigate();
 
   const handleToggleOffcanvas = () => {
     setIsOffcanvasOpen(!isOffcanvasOpen);
@@ -74,24 +78,39 @@ function NavBar() {
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/login"
-                  onClick={handleCloseOffcanvas}
-                >
-                  Sign-in
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/profile"
-                  onClick={handleCloseOffcanvas}
-                >
-                  Profile
-                </Link>
-              </li>
+
+              {!loading && (
+                <>
+                  {!user ? (
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link"
+                        to="/login"
+                        onClick={handleCloseOffcanvas}
+                      >
+                        Sign-in
+                      </Link>
+                    </li>
+                  ) : (
+                    <>
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link"
+                          to="/profile"
+                          onClick={handleCloseOffcanvas}
+                        >
+                          Profile
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" onClick={logout}>
+                          Logout
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                </>
+              )}
             </ul>
           </div>
         </div>
