@@ -30,7 +30,9 @@ function NavBar() {
         </button>
 
         <div
-          className={`offcanvas offcanvas-end ${isOffcanvasOpen ? "show" : ""}`}
+          className={`offcanvas bg-dark offcanvas-end ${
+            isOffcanvasOpen ? "show" : ""
+          }`}
           tabIndex="-1"
           id="navbarNav"
           aria-labelledby="navbarNavLabel"

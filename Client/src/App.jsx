@@ -15,7 +15,7 @@ import UserProfile from "./components/userProfile";
 
 function App() {
   return (
-    <>
+    <div className="bg-color">
       <NavBar />
       <Routes>
         <Route path="/" element="" />
@@ -29,7 +29,7 @@ function App() {
         <Route path="/profile" element={<UserProfile />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -6,3 +6,40 @@
 .list-container {
   width: 90rem;
 }
+
+.left-side {
+  width: 50%;
+}
+
+.right-side {
+  width: 50%;
+}
+
+.right-side h3 {
+  letter-spacing: 1px;
+}
+
+.right-side p {
+  font-size: 1.1rem;
+}
+
+.img img {
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(183, 184, 183, 0.7);
+  border: 3px solid azure;
+}
+
+.details span {
+  color: chartreuse;
+}
+
+.button-section button {
+  background-color: rgb(17, 189, 74);
+  color: black;
+}
+
+.custom-leaflet.leaflet-container {
+  background-color: #fff !important;
+}
+
