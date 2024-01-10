@@ -62,10 +62,10 @@ function SignUp() {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center mt-5 mb-5">
-        <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center gap-1 p-3">
-          <h4 className="txt mt-3">CREATE ACCOUNT</h4>
+        <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center">
+          <h4 className="txt mt-4">CREATE ACCOUNT</h4>
           <form onSubmit={handleSignUp} className="container-box">
-            <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4">
+            <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-5">
               <input
                 className="name-contact"
                 type="text"
@@ -118,12 +118,12 @@ function SignUp() {
                 </span>
               </div>
             </div>
-            <p className="info text-danger fs-6 bg-transparent mt-2">
+            <p className="info text-danger fs-6 bg-transparent mt-5">
               Password must be 8-10 letters and one number
             </p>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
-            <label htmlFor="upload" className="upload text-success mb-3">
+            <label htmlFor="upload" className="upload text-success mb-5">
               Upload Profile Photo
             </label>
             <input
@@ -142,7 +142,7 @@ function SignUp() {
               {loading ? "Signing Up..." : "SIGN UP"}
             </button>
           </form>
-          <Link to="/login" className="link-login text-decoration-none mb-2">
+          <Link to="/login" className="link-login text-decoration-none mb-3">
             Back to sign-in
           </Link>
         </div>

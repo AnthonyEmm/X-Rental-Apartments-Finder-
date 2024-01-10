@@ -45,8 +45,8 @@ function UserProfile() {
 
   return (
     <>
-      <div className="bg w-100 p-5 d-flex justify-content-center align-items-center ">
-        <div className="container-profile mt-5 rounded">
+      <div className="bg w-100 p-5 d-flex justify-content-center align-items-center mb-4">
+        <div className="container-profile mt-4 rounded">
           <h1 className="header-title mt-5 d-flex justify-content-center align-items-start">
             PROFILE
           </h1>
@@ -58,6 +58,9 @@ function UserProfile() {
                 </div>
                 <h3 className="profile-txt ">Name: {userProfile.name}</h3>
                 <h3 className="profile-txt">Email: {userProfile.email}</h3>
+                <h3 className="profile-txt">
+                  Member since: {userProfile.createdAt}
+                </h3>
               </div>
               <Link
                 to="/Update"

@@ -16,7 +16,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-inherit">
+    <nav className="navbar navbar-expand-lg bg-inherit p-3">
       <div className="container-fluid px-4">
         <Link className="navbar-brand fw-bold fs-4" to="/">
           <span>X Rental</span>
@@ -56,7 +56,7 @@ function NavBar() {
             ></button>
           </div>
           <div className="offcanvas-body justify-content-end w-100">
-            <ul className="navbar-nav gap-3" role="menu">
+            <ul className="navbar-nav gap-4" role="menu">
               <li className="nav-item">
                 <Link
                   className="nav-link"
@@ -91,18 +91,41 @@ function NavBar() {
                     </li>
                   ) : (
                     <>
+                      {/* <li className="nav-item">
+                        <Link to="/login" className="nav-link" onClick={logout}>
+                          Logout
+                        </Link>
+                      </li>
                       <li className="nav-item">
                         <Link
                           className="nav-link"
                           to="/profile"
                           onClick={handleCloseOffcanvas}
                         >
-                          Profile
+                          <img
+                            src={user.avatar}
+                            alt="profile"
+                            className="nav-item rounded-circle "
+                          />
                         </Link>
-                      </li>
+                      </li> */}
                       <li className="nav-item">
                         <Link to="/login" className="nav-link" onClick={logout}>
                           Logout
+                        </Link>
+                      </li>
+                      <li className="nav-item" title="My Profile">
+                        <Link
+                          className="nav-link"
+                          to="/profile"
+                          onClick={handleCloseOffcanvas}
+                        >
+                          <img
+                            src={user.avatar}
+                            alt="profile"
+                            className="nav-item rounded-circle object-cover"
+                            style={{ width: "30px", height: "30px" }}
+                          />
                         </Link>
                       </li>
                     </>
