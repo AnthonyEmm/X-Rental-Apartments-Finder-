@@ -8,7 +8,7 @@ install google node-geocoder
 Users:
 
 
-Meka Emm, meka@mail.com, Nnaemeka123
+Meka Emm, meka@mail.com, 123456789
 
 Brendan Johnson, jb@mail.com, brendan55
 

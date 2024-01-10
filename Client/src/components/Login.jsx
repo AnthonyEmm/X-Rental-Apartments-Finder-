@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import axiosClient from "../axiosClient";
 import { AuthContext } from "../context/AuthProvider";
 
 function Login() {
@@ -38,7 +37,7 @@ function Login() {
       setError("");
     } catch (error) {
       console.log("Login Failed:", error);
-      setError(true);
+      setError("Incorrect Email or Password. Please try again");
     } finally {
       setLoading(false);
     }
