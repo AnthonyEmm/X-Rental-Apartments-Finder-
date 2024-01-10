@@ -9,6 +9,20 @@ export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    axiosClient
+      .get(`/auth/profile/:id`)
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch((error) => {
+        setUser(null);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
   const login = async (data) => {
     setLoading(true);
     try {
