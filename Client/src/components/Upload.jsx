@@ -70,7 +70,6 @@ function Upload() {
   };
 
   const handleMouseLeave = (event) => {
-    // Reset to the original color or remove the style
     event.target.style.color = "";
   };
 

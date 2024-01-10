@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import axiosClient from "../axiosClient";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 function Login() {
   const navigate = useNavigate(true);

@@ -76,7 +76,6 @@ function PropertyDetails() {
               </div>
 
               <div className="map">
-                {/* <img src="../public/map.png" alt="" /> */}
                 <MapContainer
                   className="custom-leaflet"
                   center={center}
