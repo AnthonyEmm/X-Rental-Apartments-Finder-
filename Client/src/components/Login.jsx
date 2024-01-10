@@ -91,7 +91,7 @@ function Login() {
                 </span>
               </div>
               <Link
-                to="/Update"
+                to="#"
                 className="link-signup text-decoration-none gap-4 p-4"
               >
                 Forgot Password?
@@ -116,7 +116,7 @@ function Login() {
               </button>
             </form>
             <Link to="/sign-up" className="link-signup text-decoration-none">
-              Create an account
+              Don't have an account?
             </Link>
           </div>
         </div>

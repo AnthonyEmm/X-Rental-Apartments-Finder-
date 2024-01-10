@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PropertyDetails from "./components/PropertyDetails";
 import PropertyList from "./components/PropertyList";
 import ContactForm from "./components/contactForm";
+import UserProfile from "./components/userProfile";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/list" element={<PropertyList />} />
         <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
       <Footer />
     </div>
