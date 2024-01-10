@@ -61,7 +61,7 @@
 }
 
 #description:hover {
-  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+  box-shadow: 0 0 10px rgba(186, 189, 187, 0.7);
 }
 
 @media (max-width: 768px) {
