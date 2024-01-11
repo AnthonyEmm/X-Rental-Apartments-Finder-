@@ -40,7 +40,7 @@ function NavBar() {
           id="navbarNav"
           aria-labelledby="navbarNavLabel"
         >
-          <div className="offcanvas-header justify-content-end">
+          <div className="offcanvas-header justify-content-end ">
             <button
               type="button"
               className="btn-close text-reset"
@@ -91,45 +91,55 @@ function NavBar() {
                       </Link>
                     </li>
                   ) : (
-                    <>
-                      {/* <li className="nav-item">
-                        <Link to="/login" className="nav-link" onClick={logout}>
-                          Logout
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
-                          className="nav-link"
-                          to="/profile"
-                          onClick={handleCloseOffcanvas}
-                        >
-                          <img
-                            src={user.avatar}
-                            alt="profile"
-                            className="nav-item rounded-circle "
-                          />
-                        </Link>
-                      </li> */}
-                      <li className="nav-item">
-                        <Link to="/login" className="nav-link" onClick={logout}>
-                          Logout
-                        </Link>
-                      </li>
-                      <li className="nav-item" title="My Profile">
-                        <Link
-                          className="nav-link"
-                          to="/profile"
-                          onClick={handleCloseOffcanvas}
-                        >
-                          <img
-                            src={user.avatar || Avatar}
-                            alt="profile"
-                            className="nav-item rounded-circle object-cover"
-                            style={{ width: "30px", height: "30px" }}
-                          />
-                        </Link>
-                      </li>
-                    </>
+                    <li className="nav-item dropdown">
+                      <Link
+                        className="nav-link dropdown-toggle"
+                        to="/profile"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src={user.avatar || Avatar}
+                          alt="profile"
+                          className="nav-item rounded-circle object-cover"
+                          style={{ width: "30px", height: "30px" }}
+                        />
+                      </Link>
+                      <ul
+                        className="dropdown-menu dropdown-menu-end bg-dark"
+                        aria-labelledby="navbarDropdown"
+                      >
+                        <li>
+                          <Link
+                            className="dropdown-item text-successt"
+                            to="/profile"
+                            onClick={handleCloseOffcanvas}
+                          >
+                            My Profile
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="dropdown-item text-successt"
+                            to="/update"
+                            onClick={handleCloseOffcanvas}
+                          >
+                            Update Profile
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="dropdown-item text-successt"
+                            to="/login"
+                            onClick={logout}
+                          >
+                            Logout
+                          </Link>
+                        </li>
+                      </ul>
+                    </li>
                   )}
                 </>
               )}
