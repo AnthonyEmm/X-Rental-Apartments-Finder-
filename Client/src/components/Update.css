@@ -18,7 +18,8 @@
   background-color: rgb(17, 189, 74);
 }
 
-input {
+#email,
+#confirmPassword {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
