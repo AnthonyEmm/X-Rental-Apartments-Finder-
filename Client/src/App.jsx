@@ -12,13 +12,14 @@ import PropertyDetails from "./components/PropertyDetails";
 import PropertyList from "./components/PropertyList";
 import ContactForm from "./components/contactForm";
 import UserProfile from "./components/userProfile";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="bg-color">
       <NavBar />
       <Routes>
-        <Route path="/" element="" />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/update" element={<Update />} />
