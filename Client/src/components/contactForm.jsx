@@ -119,9 +119,8 @@ const ContactForm = () => {
     e.preventDefault();
 
     // Elastic Email API endpoint
-    const apiUrl = "https://api.elasticemail.com/v2/email/send";
+    const apiUrl = "https://api.elasticemail.com/v4/email/send";
 
-    // Elastic Email API key
     const password = "9DC1DAFD33DF60CB6BB64D7B1E40584899DF";
 
     const emailData = {

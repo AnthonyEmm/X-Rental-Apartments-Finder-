@@ -56,7 +56,6 @@ function UserProfile() {
               <div className="user-profile text-light d-flex flex-column justify-content-center align-items-center gap-2 ">
                 <div className="profile mt-4 mb-5">
                   <img src={userProfile.avatar || Avatar} />
-                  {/* <img src={userProfile.avatar} /> */}
                 </div>
                 <h3 className="profile-txt ">Name: {userProfile.name}</h3>
                 <h3 className="profile-txt">Email: {userProfile.email}</h3>
