@@ -50,7 +50,12 @@ const login = async (req, res, next) => {
     if (!userMatch) throw Error("Incorrect password");
 
     // This step is for User who signed up be send to login page immediately after the signup process //
-    const payload = { id: user._id, name: user.name, email: user.email };
+    const payload = {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar,
+    };
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
       expiresIn: "500m",
     });

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import Avatar from "../assets/user-circle-fill.svg";
 
 function NavBar() {
   const { logout, loading, user } = useContext(AuthContext);
@@ -121,7 +122,7 @@ function NavBar() {
                           onClick={handleCloseOffcanvas}
                         >
                           <img
-                            src={user.avatar}
+                            src={user.avatar || Avatar}
                             alt="profile"
                             className="nav-item rounded-circle object-cover"
                             style={{ width: "30px", height: "30px" }}
