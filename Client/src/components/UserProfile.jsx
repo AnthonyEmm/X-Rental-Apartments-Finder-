@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axiosClient from "../axiosClient";
 import { Link, useParams } from "react-router-dom";
 import "../components/UserProfile.css";
+import Avatar from "../assets/user-circle-fill.svg";
 
 function UserProfile() {
   const [userProfile, setUserProfile] = useState([]);
@@ -45,8 +46,8 @@ function UserProfile() {
 
   return (
     <>
-      <div className="bg w-100 p-5 d-flex justify-content-center align-items-center ">
-        <div className="container-profile mt-5 rounded">
+      <div className="bg w-100 p-5 d-flex justify-content-center align-items-center mb-4">
+        <div className="container-profile mt-4 rounded">
           <h1 className="header-title mt-5 d-flex justify-content-center align-items-start">
             PROFILE
           </h1>
@@ -54,10 +55,14 @@ function UserProfile() {
             <div className="profile mb-4">
               <div className="user-profile text-light d-flex flex-column justify-content-center align-items-center gap-2 ">
                 <div className="profile mt-4 mb-5">
-                  <img src={userProfile.avatar} />
+                  <img src={userProfile.avatar || Avatar} />
                 </div>
                 <h3 className="profile-txt ">Name: {userProfile.name}</h3>
                 <h3 className="profile-txt">Email: {userProfile.email}</h3>
+                <h3 className="profile-txt">
+                  Member since:{" "}
+                  {new Date(userProfile.createdAt).toLocaleDateString()}
+                </h3>
               </div>
               <Link
                 to="/Update"
