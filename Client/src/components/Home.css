@@ -1,0 +1,248 @@
+:root {
+  --bg-primary-color: hsl(0, 3%, 13%);
+  --bg-secondary-color: hsl(140, 83%, 40%);
+
+  --hl-primary-color: hsl(140, 83%, 40%);
+  --hl-secondary-color: hsl(0, 3%, 13%);
+
+  --text-primary-color: hsl(0, 0%, 93%);
+  --text-secondary-color: hsl(0, 0%, 7%);
+  --text-span-color: hsl(140, 83%, 40%);
+
+  --button-color: hsl(140, 83%, 40%);
+  --border-color: hsl(0, 0%, 93%);
+}
+
+#home {
+  background-color: var(--bg-primary-color);
+  color: white;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.title-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.464);
+}
+
+.title-overlay h1 {
+  font-weight: 900;
+  letter-spacing: 5px;
+  font-size: 100px;
+  color: rgb(17, 189, 74);
+}
+
+.title-overlay {
+  animation: disappear 0s 3s forwards;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------------------------------- */
+.dark-container {
+  padding: 2rem;
+}
+
+.green-container {
+  background-color: var(--bg-secondary-color);
+  display: grid;
+  place-items: center;
+}
+
+header,
+.vision,
+.benefits {
+  padding: 4rem 2rem 8rem;
+  margin: 0 auto;
+  max-width: 50rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+}
+
+header img {
+  max-width: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+header .cta,
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.cta h1 {
+  font-size: 4rem;
+  color: var(--hl-primary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cta span {
+  color: var(--hl-primary-color);
+  font-weight: bold;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.message p {
+  font-size: 1.8rem;
+  color: var(--text-secondary-color);
+}
+
+.benefits h3 {
+  color: var(--hl-primary-color);
+  margin: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.benefits .cards {
+  display: grid;
+  justify-items: center;
+  width: 30rem;
+  padding: 1rem;
+  margin: 1.6rem auto;
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+}
+
+.cards h4 {
+  font-size: 2.8rem;
+  color: var(--hl-primary-color);
+}
+
+.cta button {
+  background: var(--button-color);
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.cta button:hover {
+  filter: brightness(1.2);
+}
+
+.benefits button {
+  background: var(--button-color);
+  text-transform: capitalize;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.benefits button:hover {
+  filter: brightness(1.2);
+}
+
+@media (min-width: 770px) {
+  header,
+  .green-container {
+    height: 100vh;
+  }
+
+  header,
+  .vision,
+  .benefits {
+    max-width: 120rem;
+  }
+
+  header {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 3.2rem;
+    text-align: start;
+  }
+
+  header .cta {
+    align-items: start;
+  }
+
+  .cta h1 {
+    font-size: 4.8rem;
+  }
+
+  .cta p {
+    font-size: 2.6rem;
+  }
+
+  .cta button {
+    font-size: 1.8rem;
+  }
+
+  .cards img {
+    max-width: 50rem;
+  }
+
+  .vision {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .message {
+    text-align: start;
+  }
+
+  .message h2 {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .vision p,
+  .cards p {
+    font-size: 2.4rem;
+  }
+
+  .card-container {
+    flex-direction: row;
+  }
+
+  img {
+    max-height: 25rem;
+  }
+}
+
+header img,
+.cta {
+  animation: appear 1s 4s backwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
