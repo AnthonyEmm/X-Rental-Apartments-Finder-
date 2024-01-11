@@ -4,8 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
+  const navigate = useNavigate();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -22,11 +26,25 @@ const ContactForm = () => {
         (result) => {
           console.log(result.text);
           console.log("email sent!");
+          navigate("/");
         },
         (error) => {
           console.log(error.text);
         },
       );
+  };
+
+  const notify = () => {
+    toast.success("Email sent Successfully", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
@@ -56,9 +74,22 @@ const ContactForm = () => {
             className="form-control mb-3"
           />
           <input
+            onClick={notify}
             type="submit"
             value="SEND"
             className="btn btn-lg btn-success mb-5"
+          />
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
           />
         </form>
       </div>
