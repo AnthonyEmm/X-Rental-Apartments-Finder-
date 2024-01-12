@@ -110,9 +110,9 @@ function Login() {
               )}
 
               <button
+                onClick={handleLogin}
                 className="btn btn-lg bg-success"
                 type="button"
-                onClick={handleLogin}
               >
                 {loading ? "Signing In..." : "SIGN IN"}
               </button>

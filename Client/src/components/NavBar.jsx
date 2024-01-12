@@ -78,6 +78,16 @@ function NavBar() {
                 </Link>
               </li>
 
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/list"
+                  onClick={handleCloseOffcanvas}
+                >
+                  Listings
+                </Link>
+              </li>
+
               {!loading && (
                 <>
                   {!user ? (
@@ -141,7 +151,7 @@ function NavBar() {
                         <li>
                           <Link
                             className="dropdown-item text-successt"
-                            to="/login"
+                            to="/"
                             onClick={logout}
                           >
                             Logout

@@ -12,6 +12,7 @@ import PropertyDetails from "./components/PropertyDetails";
 import PropertyList from "./components/PropertyList";
 import ContactForm from "./components/contactForm";
 import UserProfile from "./components/UserProfile";
+import Protected from "./components/Protected";
 
 function App() {
   return (
@@ -21,12 +22,15 @@ function App() {
         <Route path="/" element="" />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/update" element={<Update />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/list" element={<PropertyList />} />
-        <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/profile" element={<UserProfile />} />
+
+        <Route path="/" element={<Protected />}>
+          <Route path="/list" element={<PropertyList />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/property/:id" element={<PropertyDetails />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/update" element={<Update />} />
+        </Route>
       </Routes>
       <Footer />
     </div>
