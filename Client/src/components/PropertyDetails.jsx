@@ -84,13 +84,13 @@ function PropertyDetails() {
                       type="text"
                       id="name"
                       placeholder="Add your name..."
+                      style={{ border: "none" }}
                     />
                     <div className="input-btn d-flex gap-2">
                       <textarea
                         className="rounded px-2"
                         onChange={handleInputComment}
                         value={comment}
-                        id="#"
                         cols="70"
                         rows="3"
                         placeholder="Post your comment..."

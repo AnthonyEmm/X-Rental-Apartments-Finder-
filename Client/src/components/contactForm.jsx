@@ -20,7 +20,7 @@ const ContactForm = () => {
         "service_39d8p2b",
         "template_ptoue0r",
         form.current,
-        "aU8koTSpQeqGZD8Wz",
+        "aU8koTSpQeqGZD8Wz"
       )
       .then(
         (result) => {
@@ -30,7 +30,7 @@ const ContactForm = () => {
         },
         (error) => {
           console.log(error.text);
-        },
+        }
       );
   };
 
@@ -50,7 +50,7 @@ const ContactForm = () => {
   return (
     <div className="bg">
       <div className="container d-flex  mt-4 text-success">
-        <div className="header d-flex justify-content-center align-items-center gap-3 mt-3">
+        <div className="head d-flex justify-content-center align-items-center gap-3 mt-3 mb-4">
           <h2>CONTACT FORM</h2>
           <div>
             <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: "2rem" }} />
@@ -59,19 +59,19 @@ const ContactForm = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="form d-flex flex-column gap-2 mt-3 mb-2"
+          className="form d-flex flex-column gap-2 mb-3"
         >
           <label className="form-label">Name</label>
-          <input type="text" name="user_name" />
+          <input type="text" name="user_name" className="user-name" />
           <label>Email</label>
-          <input type="email" name="user_email" />
+          <input type="email" name="user_email" className="user-email mb-1" />
           <label className="form-label">Message</label>
           <textarea
             id="message"
             rows="5"
             cols="30"
             name="message"
-            className="form-control mb-3"
+            className="form-control mb-4"
           />
           <input
             onClick={notify}

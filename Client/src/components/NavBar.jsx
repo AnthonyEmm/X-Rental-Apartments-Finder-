@@ -17,7 +17,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-inherit p-3">
+    <nav className="navbar sticky-top navbar-expand-lg bg-inherit p-3">
       <div className="container-fluid px-4">
         <Link className="navbar-brand fw-bold fs-4" to="/">
           <span>X Rental</span>
@@ -77,14 +77,13 @@ function NavBar() {
                   About
                 </Link>
               </li>
-
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  to="/list"
+                  to="/listing"
                   onClick={handleCloseOffcanvas}
                 >
-                  Listings
+                  Listing
                 </Link>
               </li>
 
@@ -118,8 +117,13 @@ function NavBar() {
                         />
                       </Link>
                       <ul
-                        className="dropdown-menu dropdown-menu-end bg-dark"
+                        className="dropdown-menu dropdown-menu-end"
                         aria-labelledby="navbarDropdown"
+                        style={{
+                          backgroundColor: "rgb(33, 31, 31)",
+                          width: "12rem",
+                          color: "rgb(17, 189, 74)",
+                        }}
                       >
                         <li>
                           <Link
