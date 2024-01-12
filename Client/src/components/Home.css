@@ -1,19 +1,19 @@
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 :root {
-  font-size: clamp(40%, 1% + 2vw, 62.5%);
+  /* font-size: clamp(40%, 1% + 2vw, 62.5%); */
 
   --bg-primary-color: hsl(0, 3%, 13%);
   --bg-secondary-color: hsl(140, 83%, 40%);
@@ -29,27 +29,23 @@
   --border-color: hsl(0, 0%, 93%);
 }
 
-body,
-button {
-  /* font-family: sans-serif; */
-  font-size: 1.6rem;
+#home {
+  font-size: 62.5%;
+  background-color: var(--bg-primary-color);
   text-wrap: pretty;
 }
 
-#home {
-  background-color: var(--bg-primary-color);
+.home-illustrations {
+  max-width: 100%;
+  object-fit: cover;
 }
 
-.green-container {
-  background-color: var(--bg-secondary-color);
-  display: grid;
-  place-items: center;
-}
-
-header,
+.header,
 .vision,
 .benefits {
-  padding: 4rem 2rem 8rem;
+  font-size: 1.6rem;
+
+  padding: 2rem 2rem 4rem;
   margin: 0 auto;
   max-width: 50rem;
 
@@ -60,30 +56,37 @@ header,
   gap: 0.8rem;
 }
 
-img {
-  max-width: 100%;
-  object-fit: cover;
+.green-container {
+  background-color: var(--bg-secondary-color);
+  display: grid;
+  place-items: center;
 }
 
-header .cta,
-.card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
+.message h2,
+.benefits h3 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-h1 {
-  font-size: 4rem;
+.message p,
+.benefits p,
+.home-cards p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 40ch;
+}
+
+.cta h1 {
+  font-size: 32px;
   color: var(--hl-primary-color);
   text-transform: uppercase;
   font-weight: 700;
 }
 
-p {
+.cta p {
+  font-size: 24px;
   color: var(--text-primary-color);
-  line-height: 1.5;
-  max-width: 40ch;
 }
 
 .cta span {
@@ -91,98 +94,105 @@ p {
   font-weight: bold;
 }
 
-h2,
-h3 {
-  font-size: 3.2rem;
-  text-transform: uppercase;
-  font-weight: 600;
+.cta,
+.home-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .message {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 8px;
 }
 
 .message p {
-  font-size: 1.8rem;
+  font-size: 16px;
   color: var(--text-secondary-color);
 }
 
 .benefits h3 {
   color: var(--hl-primary-color);
-  margin: 4rem;
+  margin: 40px 0 16px;
 }
 
-.benefits .cards {
+.benefits .home-cards {
   display: grid;
   justify-items: center;
 
-  padding: 4rem;
-  margin: 1.6rem auto;
+  padding: 20px;
+  margin: 16px auto;
   border: 1px solid var(--border-color);
-  border-radius: 0.8rem;
+  border-radius: 8px;
 }
 
-.cards h4 {
-  font-size: 2.8rem;
+.home-cards h4 {
+  font-size: 20px;
   color: var(--hl-primary-color);
 }
 
-button {
+.home-cards p {
+  font-size: 16px;
+  color: var(--text-primary-color);
+}
+
+.home-buttons {
+  font-size: 16px;
   background: var(--button-color);
   text-transform: capitalize;
   cursor: pointer;
 
-  padding: 0.8rem 1.6rem;
+  padding: 8px 16px;
   border: 1px solid var(--border-color);
-  border-radius: 0.8rem;
-  margin-top: 0.8rem;
+  border-radius: 8px;
+  margin-top: 8px;
 
   transition: filter 200ms linear;
 }
 
-button:hover {
+.home-buttons:hover {
   filter: brightness(1.2);
 }
 
-@media (min-width: 770px) {
+@media (min-width: 1100px) {
   header,
   .green-container {
     height: 100vh;
   }
 
-  header,
+  .header,
   .vision,
   .benefits {
-    max-width: 120rem;
+    max-width: 1024px;
   }
 
-  header {
+  .header {
     justify-content: space-between;
     flex-direction: row-reverse;
-    gap: 3.2rem;
+    gap: 32px;
     text-align: start;
   }
 
-  header .cta {
+  .header .cta {
     align-items: start;
   }
 
   .cta h1 {
-    font-size: 4.8rem;
+    font-size: 48px;
   }
 
   .cta p {
-    font-size: 2.6rem;
+    font-size: 26px;
   }
 
-  button {
-    font-size: 1.8rem;
+  .home-buttons {
+    font-size: 18px;
   }
 
-  img {
-    max-width: 50rem;
+  .home-illustrations {
+    max-width: 500px;
   }
 
   .vision {
@@ -194,28 +204,32 @@ button:hover {
     text-align: start;
   }
 
-  h2,
-  h3 {
-    font-size: 4rem;
+  .vision h2,
+  .benefits h3 {
+    font-size: 40px;
+  }
+
+  .home-cards h4 {
+    font-size: 32px;
   }
 
   .vision p,
-  .cards p {
-    font-size: 2.4rem;
+  .home-cards p {
+    font-size: 24px;
   }
 
-  .card-container {
+  .home-card-container {
     flex-direction: row;
   }
 
-  .cards img {
-    max-height: 25rem;
+  .home-cards img {
+    max-height: 250px;
   }
 }
 
-header img,
+.header img,
 .cta {
-  animation: appear 3s 1s backwards;
+  animation: appear 1s 3s backwards;
 }
 
 @keyframes appear {
@@ -227,4 +241,7 @@ header img,
   50% {
     transform: scale(1.1);
   }
+}
+
+@keyframes disappear {
 }
