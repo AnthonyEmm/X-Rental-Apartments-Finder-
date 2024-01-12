@@ -87,7 +87,7 @@ function NavBar() {
                         to="/login"
                         onClick={handleCloseOffcanvas}
                       >
-                        Sign-in
+                        Sign In
                       </Link>
                     </li>
                   ) : (
