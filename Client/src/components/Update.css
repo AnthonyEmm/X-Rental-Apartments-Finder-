@@ -19,13 +19,15 @@
 }
 
 #email,
-#confirmPassword {
+#confirmPassword,
+#password {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
   width: 20rem;
   outline: none;
   border-color: rgb(196, 237, 210);
+  background-color: rgb(40, 39, 39);
 }
 
 input:hover {
