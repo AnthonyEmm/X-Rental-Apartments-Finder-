@@ -108,9 +108,7 @@ function Home() {
                     alt="Illustration of a fully-equipped kitchen."
                   />
                   <h4>Chef&apos;s Delight</h4>
-                  <p>
-                    Indulge in the pleasure of cooking in your dream kitchen.
-                  </p>
+                  <p>Indulge in the pleasure of cooking in your own kitchen.</p>
                 </div>
               </div>
               <Link to="/login" className="button">
