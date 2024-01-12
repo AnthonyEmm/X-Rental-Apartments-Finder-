@@ -50,7 +50,7 @@ function Home() {
                 We are <span>X Rental</span> and we help you find an apartment
                 in Berlin.
               </p>
-              <Link to="/login" className="button">
+              <Link to="/list" className="button">
                 <button className="home-buttons">Explore</button>
               </Link>
             </section>
@@ -111,7 +111,7 @@ function Home() {
                   <p>Indulge in the pleasure of cooking in your own kitchen.</p>
                 </div>
               </div>
-              <Link to="/login" className="button">
+              <Link to="/list" className="button">
                 <button className="home-buttons">Find out more</button>
               </Link>
             </div>
