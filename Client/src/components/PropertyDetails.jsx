@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import axiosClient from "../axiosClient";
 import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 import CommentCard from "./CommentCard";
+import ImageGallery from "react-image-gallery";
 
 function PropertyDetails() {
   const [property, setProperty] = useState("");
@@ -22,31 +23,23 @@ function PropertyDetails() {
       console.log(error);
     }
   };
-
-  /* --------------Leaflet Logic Area */
-
   const center = [52.5232, 13.3653];
-
-  /* -------------- Comments Logic Area */
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [submit, setSubmit] = useState([]);
   const [error, setError] = useState(false);
 
   const handleInputName = (e) => {
-    console.log(e.target.value);
     setName(e.target.value);
   };
 
   const handleInputComment = (e) => {
-    console.log(e.target.value);
     setComment(e.target.value);
   };
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
     if (name === "" || comment === "") {
-      /* alert("Please add your Comment!"); */
       setError(true);
       setTimeout(() => {
         setError(false);
@@ -55,16 +48,10 @@ function PropertyDetails() {
       const submitOne = { id: new Date().getTime(), name, comment };
       console.log(submit);
       setSubmit([...submit, submitOne]);
-
-      // Clear input fields
-      /* setTitle("");
-      setPhoto(""); */
       setName("");
       setComment("");
     }
   };
-
-  // Event handler for removing a comment
   const handleRemoveComment = (commentId) => {
     const updatedSubmit = submit.filter((comment) => comment.id !== commentId);
     setSubmit(updatedSubmit);
@@ -77,7 +64,15 @@ function PropertyDetails() {
           <div className="list-container border border-secondary rounded d-flex gap-5 p-5">
             <div className="left-side d-flex flex-column gap-5">
               <div className="img mt-2">
-                <img src={property.image} />
+                <ImageGallery
+                  additionalClass=""
+                  items={property.images?.map((image) => {
+                    return {
+                      original: image,
+                      thumbnail: image,
+                    };
+                  })}
+                />
               </div>
               <div className="comments">
                 <form onSubmit={handleSubmitClick}>
@@ -123,7 +118,7 @@ function PropertyDetails() {
               </div>
             </div>
             <div className="right-side">
-              <div className="details d-flex flex-column gap-2">
+              <div className="details d-flex flex-column fw-bold">
                 <h3>{property.description}</h3>
                 <p>
                   <span>Property Size</span>: {property.area} M²
@@ -171,7 +166,7 @@ function PropertyDetails() {
                     }}
                     radius={300}
                   >
-                    <Popup>Property Zone Location</Popup>
+                    <Popup>Property Location</Popup>
                   </Circle>
                 </MapContainer>
               </div>

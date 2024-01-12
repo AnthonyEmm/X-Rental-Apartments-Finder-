@@ -20,7 +20,7 @@ function Upload() {
     area: "",
     areaCode: "",
     year: "",
-    image: "",
+    images: "",
   });
 
   const handleInputChange = (e) => {
@@ -42,7 +42,10 @@ function Upload() {
     data.append("area", formData.area);
     data.append("areaCode", formData.areaCode);
     data.append("year", formData.year);
-    data.append("image", formData.image[0]);
+
+    for (const key in formData.images) {
+      data.append("images", formData.images[key]);
+    }
 
     e.preventDefault();
     setLoading(true);
@@ -57,7 +60,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message
+        error.response ? error.response.data : error.message,
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
@@ -188,8 +191,9 @@ function Upload() {
                 <input
                   type="file"
                   onChange={handleInputChange}
-                  id="image"
+                  id="images"
                   accept="image/*"
+                  multiple={true}
                   required={true}
                 ></input>
               </div>

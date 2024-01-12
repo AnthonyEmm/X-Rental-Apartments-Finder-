@@ -13,9 +13,9 @@ const createProperty = async (req, res, next) => {
       propertyType,
       areaCode,
       year,
-      images,
       availability,
     } = req.body;
+
     const property = await Property.create({
       title,
       description,
@@ -25,14 +25,11 @@ const createProperty = async (req, res, next) => {
       propertyType,
       areaCode,
       year,
-      image: req.file.path,
-      images,
+      image: req.images[0],
+      images: req.images,
       owner: req.user.id,
       availability,
     });
-
-    // const foundProperty = await Property.findOne({ title });
-    // if (foundProperty) throw new Error("Property Already Exists");
 
     res.status(201).json(property);
   } catch (error) {

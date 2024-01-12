@@ -110,15 +110,15 @@ function Login() {
               )}
 
               <button
+                onClick={handleLogin}
                 className="btn btn-lg bg-success"
                 type="button"
-                onClick={handleLogin}
               >
                 {loading ? "Signing In..." : "SIGN IN"}
               </button>
             </form>
             <Link to="/sign-up" className="link-signup text-decoration-none">
-              Don't have an account?
+              Don&apos;t have an account?
             </Link>
           </div>
         </div>
