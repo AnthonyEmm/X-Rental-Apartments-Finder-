@@ -11,14 +11,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PropertyDetails from "./components/PropertyDetails";
 import PropertyList from "./components/PropertyList";
 import ContactForm from "./components/contactForm";
+
+
+import Home from "./components/Home";
+
 import UserProfile from "./components/UserProfile";
+
 
 function App() {
   return (
     <div className="bg-color">
       <NavBar />
       <Routes>
-        <Route path="/" element="" />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/update" element={<Update />} />
