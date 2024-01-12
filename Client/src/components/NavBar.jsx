@@ -114,6 +114,15 @@ function NavBar() {
                         <li>
                           <Link
                             className="dropdown-item text-successt"
+                            to="/sign-up"
+                            onClick={handleCloseOffcanvas}
+                          >
+                            Sign Up
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="dropdown-item text-successt"
                             to="/profile"
                             onClick={handleCloseOffcanvas}
                           >
