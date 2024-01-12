@@ -118,7 +118,7 @@ function Login() {
               </button>
             </form>
             <Link to="/sign-up" className="link-signup text-decoration-none">
-              Don't have an account?
+              Don&apos;t have an account?
             </Link>
           </div>
         </div>
