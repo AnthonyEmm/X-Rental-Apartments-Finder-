@@ -35,6 +35,11 @@ function CommentCard({ subs, onDelete }) {
   const timeOptions = { hour: "2-digit", minute: "2-digit" };
   const formattedTime = currentDate.toLocaleString([], timeOptions);
 
+  const dateTimeStyle = {
+    fontSize: "12px", // Adjust the font size as needed
+    color: "white", // Optional: Set the text color
+  };
+
   // Setters and handlers for Likes & Dislikes
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
@@ -67,7 +72,7 @@ function CommentCard({ subs, onDelete }) {
           >
             {subs.name}
           </Card.Title>
-          <div className="date-time text-light">
+          <div className="date-time text-light" style={dateTimeStyle}>
             {formattedTime} {formattedMonthYear}
           </div>
         </div>
