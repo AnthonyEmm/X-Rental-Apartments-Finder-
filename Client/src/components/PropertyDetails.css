@@ -32,6 +32,8 @@
 
 .name-input {
   height: 3rem;
+  background-color: transparent;
+  width: 50rem;
 }
 
 .comments-section input {
@@ -39,7 +41,7 @@
 }
 
 .comments textarea {
-  border: 1px solid rgba(255, 255, 255, 0.488);
+  border: none;
   background-color: transparent;
   width: 25rem;
   color: #fff;

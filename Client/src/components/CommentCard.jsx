@@ -64,7 +64,7 @@ function CommentCard({ subs, onDelete }) {
       }}
     >
       <Card.Body>
-        <div className="header d-flex justify-content-between ">
+        <div className="header-card d-flex justify-content-between ">
           <Card.Title
             style={{
               color: "#53b053",

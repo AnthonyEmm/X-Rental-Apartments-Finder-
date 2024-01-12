@@ -44,7 +44,6 @@
 .vision,
 .benefits {
   font-size: 1.6rem;
-
   padding: 2rem 2rem 4rem;
   margin: 0 auto;
   max-width: 50rem;
@@ -64,7 +63,7 @@
 
 .message h2,
 .benefits h3 {
-  font-size: 26px;
+  font-size: 30px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -113,6 +112,13 @@
   color: var(--text-secondary-color);
 }
 
+.benefits {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
 .benefits h3 {
   color: var(--hl-primary-color);
   margin: 40px 0 16px;
@@ -121,7 +127,7 @@
 .benefits .home-cards {
   display: grid;
   justify-items: center;
-
+  box-shadow: 0 0 20px rgba(186, 189, 187, 0.7);
   padding: 20px;
   margin: 16px auto;
   border: 1px solid var(--border-color);

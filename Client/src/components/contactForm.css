@@ -24,8 +24,15 @@
   padding: 0.7rem;
 }
 
-#email,
-#name,
+.user-name,
+.user-email {
+  padding: 1rem;
+  width: 20rem;
+  border-radius: 5px;
+}
+
+.user-name,
+.user-email,
 #message {
   color: white;
   border: 1px solid rgb(196, 237, 210);
