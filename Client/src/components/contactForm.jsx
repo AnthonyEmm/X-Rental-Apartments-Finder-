@@ -20,7 +20,7 @@ const ContactForm = () => {
         "service_39d8p2b",
         "template_ptoue0r",
         form.current,
-        "aU8koTSpQeqGZD8Wz"
+        "aU8koTSpQeqGZD8Wz",
       )
       .then(
         (result) => {
@@ -30,7 +30,7 @@ const ContactForm = () => {
         },
         (error) => {
           console.log(error.text);
-        }
+        },
       );
   };
 
@@ -62,9 +62,14 @@ const ContactForm = () => {
           className="form d-flex flex-column gap-2 mb-3"
         >
           <label className="form-label">Name</label>
-          <input type="text" name="user_name" className="user-name" />
+          <input type="text" name="user_name" required className="user-name" />
           <label>Email</label>
-          <input type="email" name="user_email" className="user-email mb-1" />
+          <input
+            type="email"
+            name="user_email"
+            required
+            className="user-email mb-1"
+          />
           <label className="form-label">Message</label>
           <textarea
             id="message"
@@ -72,6 +77,7 @@ const ContactForm = () => {
             cols="30"
             name="message"
             className="form-control mb-4"
+            required
           />
           <input
             onClick={notify}
