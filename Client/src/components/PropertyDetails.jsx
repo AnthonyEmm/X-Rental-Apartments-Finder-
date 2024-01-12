@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import axiosClient from "../axiosClient";
 import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 import CommentCard from "./CommentCard";
+import ImageGallery from "react-image-gallery";
 
 function PropertyDetails() {
   const [property, setProperty] = useState("");
@@ -63,7 +64,15 @@ function PropertyDetails() {
           <div className="list-container border border-secondary rounded d-flex gap-5 p-5">
             <div className="left-side d-flex flex-column gap-5">
               <div className="img mt-2">
-                <img src={property.image} />
+                <ImageGallery
+                  additionalClass=""
+                  items={property.images?.map((image) => {
+                    return {
+                      original: image,
+                      thumbnail: image,
+                    };
+                  })}
+                />
               </div>
               <div className="comments">
                 <form onSubmit={handleSubmitClick}>

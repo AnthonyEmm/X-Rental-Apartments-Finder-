@@ -151,7 +151,7 @@ function NavBar() {
                         <li>
                           <Link
                             className="dropdown-item text-successt"
-                            to="/"
+                            to="/login"
                             onClick={logout}
                           >
                             Logout

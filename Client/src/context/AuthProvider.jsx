@@ -41,7 +41,7 @@ export default function AuthProvider({ children }) {
     try {
       axiosClient.post("/auth/logout");
       setUser(null);
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.log("Logout Failed:", error);
     } finally {
