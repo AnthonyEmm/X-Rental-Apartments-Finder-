@@ -11,8 +11,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PropertyDetails from "./components/PropertyDetails";
 import PropertyList from "./components/PropertyList";
 import ContactForm from "./components/contactForm";
-import UserProfile from "./components/UserProfile";
 import Home from "./components/Home";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (

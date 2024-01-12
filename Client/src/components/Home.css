@@ -1,4 +1,20 @@
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
+
+/* * {
+  margin: 0;
+  padding: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
 :root {
+  /* font-size: clamp(40%, 1% + 2vw, 62.5%); */
+
   --bg-primary-color: hsl(0, 3%, 13%);
   --bg-secondary-color: hsl(140, 83%, 40%);
 
@@ -14,59 +30,22 @@
 }
 
 #home {
+  font-size: 62.5%;
   background-color: var(--bg-primary-color);
-  color: white;
+  text-wrap: pretty;
 }
 
-/* ----------------------------------------------------------------------------- */
-
-.title-overlay {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.464);
+.home-illustrations {
+  max-width: 100%;
+  object-fit: cover;
 }
 
-.title-overlay h1 {
-  font-weight: 900;
-  letter-spacing: 5px;
-  font-size: 100px;
-  color: rgb(17, 189, 74);
-}
-
-.title-overlay {
-  animation: disappear 0s 3s forwards;
-}
-
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/* ------------------------------------------------------------------------------- */
-.dark-container {
-  padding: 2rem;
-}
-
-.green-container {
-  background-color: var(--bg-secondary-color);
-  display: grid;
-  place-items: center;
-}
-
-header,
+.header,
 .vision,
 .benefits {
-  padding: 4rem 2rem 8rem;
+  font-size: 1.6rem;
+
+  padding: 2rem 2rem 4rem;
   margin: 0 auto;
   max-width: 50rem;
 
@@ -77,25 +56,37 @@ header,
   gap: 0.8rem;
 }
 
-header img {
-  max-width: 100%;
-  object-fit: cover;
-  z-index: 1;
+.green-container {
+  background-color: var(--bg-secondary-color);
+  display: grid;
+  place-items: center;
 }
 
-header .cta,
-.card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
+.message h2,
+.benefits h3 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.message p,
+.benefits p,
+.home-cards p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 40ch;
 }
 
 .cta h1 {
-  font-size: 4rem;
+  font-size: 32px;
   color: var(--hl-primary-color);
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.cta p {
+  font-size: 24px;
+  color: var(--text-primary-color);
 }
 
 .cta span {
@@ -103,146 +94,188 @@ header .cta,
   font-weight: bold;
 }
 
+.cta,
+.home-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
 .message {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 8px;
 }
 
 .message p {
-  font-size: 1.8rem;
+  font-size: 16px;
   color: var(--text-secondary-color);
 }
 
 .benefits h3 {
   color: var(--hl-primary-color);
-  margin: 4rem;
-  text-transform: uppercase;
-  font-weight: bold;
+  margin: 40px 0 16px;
 }
 
-.benefits .cards {
+.benefits .home-cards {
   display: grid;
   justify-items: center;
-  width: 30rem;
-  padding: 1rem;
-  margin: 1.6rem auto;
+
+  padding: 20px;
+  margin: 16px auto;
   border: 1px solid var(--border-color);
-  border-radius: 0.8rem;
+  border-radius: 8px;
 }
 
-.cards h4 {
-  font-size: 2.8rem;
+.home-cards h4 {
+  font-size: 20px;
   color: var(--hl-primary-color);
 }
 
-.cta button {
+.home-cards p {
+  font-size: 16px;
+  color: var(--text-primary-color);
+}
+
+.home-buttons {
+  font-size: 16px;
   background: var(--button-color);
   text-transform: capitalize;
   cursor: pointer;
-  padding: 0.8rem 1.6rem;
+
+  padding: 8px 16px;
   border: 1px solid var(--border-color);
-  border-radius: 0.8rem;
-  margin-top: 0.8rem;
+  border-radius: 8px;
+  margin-top: 8px;
+
+  transition: filter 200ms linear;
 }
 
-.cta button:hover {
+.home-buttons:hover {
   filter: brightness(1.2);
 }
 
-.benefits button {
-  background: var(--button-color);
-  text-transform: capitalize;
-  padding: 0.8rem 1.6rem;
-  cursor: pointer;
-  border: 1px solid var(--border-color);
-  border-radius: 0.8rem;
-  margin-top: 0.8rem;
-}
-
-.benefits button:hover {
-  filter: brightness(1.2);
-}
-
-@media (min-width: 770px) {
+@media (min-width: 1100px) {
   header,
   .green-container {
     height: 100vh;
   }
 
-  header,
+  .header,
   .vision,
   .benefits {
-    max-width: 120rem;
+    max-width: 1250px;
   }
 
-  header {
+  .header {
     justify-content: space-between;
     flex-direction: row-reverse;
-    gap: 3.2rem;
+    gap: 32px;
     text-align: start;
   }
 
-  header .cta {
+  .header .cta {
     align-items: start;
   }
 
   .cta h1 {
-    font-size: 4.8rem;
+    font-size: 48px;
   }
 
   .cta p {
-    font-size: 2.6rem;
+    font-size: 26px;
   }
 
-  .cta button {
-    font-size: 1.8rem;
+  .home-buttons {
+    font-size: 18px;
   }
 
-  .cards img {
-    max-width: 50rem;
+  .home-illustrations {
+    max-width: 600px;
   }
 
   .vision {
     flex-direction: row;
     justify-content: space-between;
+    gap: 8rem;
   }
 
   .message {
     text-align: start;
   }
 
-  .message h2 {
-    font-weight: 900;
-    text-transform: uppercase;
+  .vision h2,
+  .benefits h3 {
+    font-size: 40px;
+  }
+
+  .home-cards h4 {
+    font-size: 32px;
   }
 
   .vision p,
-  .cards p {
-    font-size: 2.4rem;
+  .home-cards p {
+    font-size: 24px;
   }
 
-  .card-container {
+  .home-card-container {
     flex-direction: row;
   }
 
-  img {
-    max-height: 25rem;
+  .home-cards img {
+    max-height: 250px;
   }
 }
 
-header img,
+.header img,
 .cta {
-  animation: appear 1s 4s backwards;
+  animation: appear 1s 3s backwards;
 }
 
 @keyframes appear {
   0% {
     opacity: 0;
-    transform: scale(0.6);
+    transform: scale(0.7);
   }
 
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
+  }
+}
+
+.title-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.464);
+}
+
+.title-overlay h1 {
+  font-weight: 900;
+  letter-spacing: 5px;
+  font-size: 90px;
+  color: rgb(17, 189, 74);
+}
+
+.title-overlay {
+  animation: disappear 0s 2s forwards;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    display: none;
   }
 }

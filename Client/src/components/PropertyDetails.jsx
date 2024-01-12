@@ -123,7 +123,7 @@ function PropertyDetails() {
               </div>
             </div>
             <div className="right-side">
-              <div className="details d-flex flex-column gap-2">
+              <div className="details d-flex flex-column fw-bold">
                 <h3>{property.description}</h3>
                 <p>
                   <span>Property Size</span>: {property.area} M²

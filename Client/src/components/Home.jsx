@@ -17,7 +17,7 @@ function Home() {
       targets: items,
       opacity: [0, 1],
       easing: "linear",
-      duration: 600,
+      duration: 500,
       delay: anime.stagger(100),
       loop: true, // Enable looping
       direction: "normal", // Reverse the animation on each iteration
@@ -28,29 +28,30 @@ function Home() {
 
   return (
     <>
-      <div className="title-overlay d-flex justify-content-center align-items-center">
-        {title.split("").map((char, index) => (
-          <h1 key={index} className="cascading-item">
-            {char}
-          </h1>
-        ))}
-      </div>
-
       <div id="home">
+        <div className="title-overlay d-flex justify-content-center align-items-center">
+          {title.split("").map((char, index) => (
+            <h1 key={index} className="cascading-item">
+              {char}
+            </h1>
+          ))}
+        </div>
         <div className="dark-container">
-          <header>
+          <header className="header">
             <img
+              className="home-illustrations"
               src="/hero.png"
               alt="Ilustration of a couple receiving their rent contract"
             />
+
             <section className="cta">
               <h1>Finally rent a flat</h1>
               <p>
                 We are <span>X Rental</span> and we help you finding an
                 apartment in Berlin.
               </p>
-              <Link to="/sign-up">
-                <button className="button">Explore More</button>
+              <Link to="/login" className="button">
+                <button className="home-buttons">Explore</button>
               </Link>
             </section>
           </header>
@@ -59,7 +60,11 @@ function Home() {
         <main>
           <div className="green-container">
             <div className="vision">
-              <img src="/vision.png" alt="Ilustration of inside a flat" />
+              <img
+                className="home-illustrations"
+                src="/vision.png"
+                alt="Ilustration of inside a flat"
+              />
               <div className="message">
                 <h2>Your sweet home</h2>
                 <p>
@@ -70,19 +75,25 @@ function Home() {
               </div>
             </div>
           </div>
+
           <div className="dark-container">
             <div className="benefits">
               <h3>Your benefits</h3>
 
-              <div className="card-container">
-                <div className="cards">
-                  <img src="/card1.png" alt="Illustration of a cozy couch." />
+              <div className="home-card-container">
+                <div className="home-cards">
+                  <img
+                    className="home-illustrations"
+                    src="/card1.png"
+                    alt="Illustration of a cozy couch."
+                  />
                   <h4>Comfort Living</h4>
                   <p>Find your perfect relaxation spot.</p>
                 </div>
 
-                <div className="cards">
+                <div className="home-cards">
                   <img
+                    className="home-illustrations"
                     src="/card2.png"
                     alt="Illustration of a couple painting the walls of their living room."
                   />
@@ -90,8 +101,9 @@ function Home() {
                   <p>Make a space your own with ease.</p>
                 </div>
 
-                <div className="cards">
+                <div className="home-cards">
                   <img
+                    className="home-illustrations"
                     src="/card3.png"
                     alt="Illustration of a fully-equipped kitchen."
                   />
@@ -99,8 +111,8 @@ function Home() {
                   <p>Enjoy cooking in a dream kitchen.</p>
                 </div>
               </div>
-              <Link to="/sign-up">
-                <button>Find out more</button>
+              <Link to="/login" className="button">
+                <button className="home-buttons">Find out more</button>
               </Link>
             </div>
           </div>
