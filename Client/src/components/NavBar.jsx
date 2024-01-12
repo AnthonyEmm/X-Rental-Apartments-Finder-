@@ -78,6 +78,16 @@ function NavBar() {
                 </Link>
               </li>
 
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/list"
+                  onClick={handleCloseOffcanvas}
+                >
+                  Listings
+                </Link>
+              </li>
+
               {!loading && (
                 <>
                   {!user ? (

@@ -6,6 +6,10 @@ const {
   testUpload,
 } = require("../controllers/properties.controller.js");
 const uploadImage = require("../middlewares/uploadImage");
+const {
+  uploadMultiple,
+  cloudinaryUpload,
+} = require("../middlewares/uploadImages.js");
 const { authenticate } = require("../middlewares/auth.js");
 
 const propertiesRouter = express.Router();
@@ -13,7 +17,13 @@ const propertiesRouter = express.Router();
 propertiesRouter.get("/properties", getProperties);
 propertiesRouter
   .route("/createlisting")
-  .post(uploadImage.single("image"), authenticate, createProperty);
+  .post(
+    authenticate,
+    uploadMultiple.array("images"),
+    cloudinaryUpload,
+    createProperty,
+  );
+
 propertiesRouter.route("/properties/:id").get(getProperty);
 propertiesRouter.route("/test").post(uploadImage.single("image"), testUpload);
 
