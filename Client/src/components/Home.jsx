@@ -47,8 +47,8 @@ function Home() {
             <section className="cta">
               <h1>Finally rent a flat</h1>
               <p>
-                We are <span>X Rental</span> and we help you finding an
-                apartment in Berlin.
+                We are <span>X Rental</span> and we help you find an apartment
+                in Berlin.
               </p>
               <Link to="/login" className="button">
                 <button className="home-buttons">Explore</button>
@@ -88,7 +88,7 @@ function Home() {
                     alt="Illustration of a cozy couch."
                   />
                   <h4>Comfort Living</h4>
-                  <p>Find your perfect relaxation spot.</p>
+                  <p>Discover your perfect sanctuary for your relaxation.</p>
                 </div>
 
                 <div className="home-cards">
@@ -98,7 +98,7 @@ function Home() {
                     alt="Illustration of a couple painting the walls of their living room."
                   />
                   <h4>Personal Touch</h4>
-                  <p>Make a space your own with ease.</p>
+                  <p>Make a home effortlessly to your personalized haven.</p>
                 </div>
 
                 <div className="home-cards">
@@ -108,7 +108,9 @@ function Home() {
                     alt="Illustration of a fully-equipped kitchen."
                   />
                   <h4>Chef&apos;s Delight</h4>
-                  <p>Enjoy cooking in a dream kitchen.</p>
+                  <p>
+                    Indulge in the pleasure of cooking in your dream kitchen.
+                  </p>
                 </div>
               </div>
               <Link to="/login" className="button">
