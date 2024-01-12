@@ -30,6 +30,26 @@
   border: 3px solid azure;
 }
 
+.name-input {
+  height: 3rem;
+}
+
+.comments-section input {
+  width: 30rem;
+}
+
+.comments textarea {
+  border: 1px solid rgba(255, 255, 255, 0.488);
+  background-color: transparent;
+  width: 25rem;
+  color: #fff;
+  resize: none;
+}
+
+.comments textarea:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+}
+
 .details span {
   color: chartreuse;
 }
@@ -42,4 +62,3 @@
 .custom-leaflet.leaflet-container {
   background-color: #fff !important;
 }
-
