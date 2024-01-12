@@ -135,7 +135,7 @@ function SignUp() {
               required={true}
             />
             <button
-              className="btn btn-lg bg-success mt-3"
+              className="btn btn-lg bg-success mt-5"
               onClick={handleSignUp}
               type="submit"
             >
