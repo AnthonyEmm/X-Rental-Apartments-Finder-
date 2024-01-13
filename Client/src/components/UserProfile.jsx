@@ -73,10 +73,10 @@ function UserProfile() {
                 </button>
               </Link>
               <Link
-                to="/list"
+                to="/delete-profile"
                 className="link-signup d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none mt-5 fw-bold fs-5"
               >
-                Back to Properties
+                DELETE ACCOUNT
               </Link>
             </div>
           )}

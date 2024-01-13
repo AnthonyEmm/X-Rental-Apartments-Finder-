@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import React from "react";
 import "./Login.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -42,6 +42,18 @@ function Login() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "Enter") {
+        handleLogin(e);
+      }
+    };
+    document.addEventListener("keypress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  }, [handleLogin]);
 
   return (
     <>

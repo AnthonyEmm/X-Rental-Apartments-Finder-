@@ -83,7 +83,7 @@ function NavBar() {
                   to="/list"
                   onClick={handleCloseOffcanvas}
                 >
-                  Listing
+                  Listings
                 </Link>
               </li>
 
