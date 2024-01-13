@@ -95,7 +95,7 @@ function PropertyDetails() {
                         rows="3"
                         placeholder="Post your comment..."
                       ></textarea>
-                      <button className="btn btn-outline-success" type="submit">
+                      <button className="btn btn-lg" type="submit">
                         Send
                       </button>
                     </div>

@@ -32,7 +32,6 @@
 
 .name-input {
   height: 3rem;
-  background-color: transparent;
   width: 50rem;
 }
 
@@ -42,7 +41,7 @@
 
 .comments textarea {
   border: none;
-  background-color: transparent;
+  background-color: rgb(40, 39, 39);
   width: 25rem;
   color: #fff;
   resize: none;
@@ -52,6 +51,17 @@
   box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
 }
 
+.input-btn button {
+  background-color: transparent;
+  color: green;
+}
+
+.input-btn button:hover {
+  font-weight: bold;
+  color: rgb(9, 208, 9);
+  border: 1px solid green;
+}
+
 .details span {
   color: chartreuse;
 }
@@ -59,8 +69,4 @@
 .button-section button {
   background-color: rgb(17, 189, 74);
   color: black;
-}
-
-.custom-leaflet.leaflet-container {
-  background-color: #fff !important;
 }
