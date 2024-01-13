@@ -5,8 +5,8 @@ const {
   logout,
   updateUser,
   getProfile,
+  deleteProfile,
 } = require("../controllers/users.controller.js");
-const verifyToken = require("../middlewares/verifyToken.js");
 const { authenticate } = require("../middlewares/auth.js");
 const upload = require("../middlewares/uploadImage.js");
 
@@ -17,5 +17,6 @@ userRouter.post("/login", login);
 userRouter.post("/logout", logout);
 userRouter.post("/update/:id", authenticate, updateUser);
 userRouter.get("/profile/:id", authenticate, getProfile);
+userRouter.post("/delete/:id", authenticate, deleteProfile);
 
 module.exports = userRouter;

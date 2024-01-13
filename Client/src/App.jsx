@@ -14,6 +14,7 @@ import ContactForm from "./components/contactForm";
 import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
 import Protected from "./components/Protected";
+import DeleteUserProfile from "./components/DeleteProfile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/property/:id" element={<PropertyDetails />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/update" element={<Update />} />
+          <Route path="/delete-profile" element={<DeleteUserProfile />} />
         </Route>
       </Routes>
       <Footer />

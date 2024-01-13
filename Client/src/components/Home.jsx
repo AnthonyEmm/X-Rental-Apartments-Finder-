@@ -50,7 +50,7 @@ function Home() {
                 We are <span>X Rental</span> and we help you find an apartment
                 in Berlin.
               </p>
-              <Link to="/login" className="button">
+              <Link to="/list" className="button">
                 <button className="home-buttons">Explore</button>
               </Link>
             </section>
@@ -88,7 +88,9 @@ function Home() {
                     alt="Illustration of a cozy couch."
                   />
                   <h4>Comfort Living</h4>
-                  <p>Discover your perfect sanctuary for your relaxation.</p>
+                  <p>
+                    Discover your perfect sanctuary for ease and relaxation.
+                  </p>
                 </div>
 
                 <div className="home-cards">
@@ -98,7 +100,10 @@ function Home() {
                     alt="Illustration of a couple painting the walls of their living room."
                   />
                   <h4>Personal Touch</h4>
-                  <p>Make a home effortlessly to your personalized haven.</p>
+                  <p>
+                    Make your home effortlessly to your personalized living
+                    space.
+                  </p>
                 </div>
 
                 <div className="home-cards">
@@ -108,10 +113,13 @@ function Home() {
                     alt="Illustration of a fully-equipped kitchen."
                   />
                   <h4>Chef&apos;s Delight</h4>
-                  <p>Indulge in the pleasure of cooking in your own kitchen.</p>
+                  <p>
+                    Indulge in the joy of cooking with pleasure in your own
+                    kitchen.
+                  </p>
                 </div>
               </div>
-              <Link to="/login" className="button">
+              <Link to="/list" className="button">
                 <button className="home-buttons">Find out more</button>
               </Link>
             </div>

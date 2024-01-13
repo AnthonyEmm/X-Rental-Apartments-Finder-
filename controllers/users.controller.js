@@ -127,10 +127,30 @@ const updateUser = async (req, res, next) => {
   }
 };
 
+// Creating a POST request to delete User profile //
+const deleteProfile = async (req, res, next) => {
+  try {
+    const {
+      user: { id },
+    } = req;
+    const user = await User.findByIdAndDelete(id);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+};
+
 module.exports = {
   register,
   login,
   logout,
   updateUser,
   getProfile,
+  deleteProfile,
 };
