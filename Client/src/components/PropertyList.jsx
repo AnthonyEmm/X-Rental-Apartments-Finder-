@@ -124,12 +124,9 @@ function PropertyList() {
                         className="btn btn-sm btn-success"
                         title="Property Details"
                       >
-                        <NavLink
-                          to={`/property/${property._id}`}
-                          className="btn"
-                        >
+                        <Link to={`/property/${property._id}`} className="btn">
                           VIEW MORE
-                        </NavLink>
+                        </Link>
                       </button>
                     </div>
                   </div>

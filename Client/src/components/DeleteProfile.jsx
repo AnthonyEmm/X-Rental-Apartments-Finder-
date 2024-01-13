@@ -58,7 +58,7 @@ function DeleteUserProfile({ userId }) {
         to="/profile"
         className="back text-decoration-none text-success fw-bolder"
       >
-        Go Back
+        Back to Profile Page
       </Link>
       {error && (
         <p style={{ color: "red" }}>
