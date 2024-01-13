@@ -63,6 +63,17 @@ const getProperty = async (req, res, next) => {
   }
 };
 
+const deletePropertiesByUser = async (req, res, next) => {
+  try {
+    const { id } = req.user;
+    await Property.deleteMany({ owner: id });
+    next();
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
 // Upload file to server (testing) //
 const testUpload = (req, res) => {
   console.log(req.body);
@@ -74,4 +85,5 @@ module.exports = {
   getProperties,
   getProperty,
   testUpload,
+  deletePropertiesByUser,
 };
