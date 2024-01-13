@@ -86,7 +86,6 @@ function NavBar() {
                   Listings
                 </Link>
               </li>
-
               {!loading && (
                 <>
                   {!user ? (
