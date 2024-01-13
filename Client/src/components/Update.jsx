@@ -1,7 +1,7 @@
 import React from "react";
 import "./Update.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
@@ -123,9 +123,9 @@ function Update({ id }) {
           {success && (
             <p style={{ color: "green" }}>User Updated Successfully</p>
           )}
-          <Link to="/login" className="link-login text-decoration-none mt-5">
+          <NavLink to="/login" className="link-login text-decoration-none mt-5">
             Back to sign-in
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>

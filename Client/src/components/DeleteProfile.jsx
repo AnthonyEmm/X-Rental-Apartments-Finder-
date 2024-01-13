@@ -44,7 +44,9 @@ function DeleteUserProfile({ userId }) {
       >
         Are you sure you want to delete your profile?
       </h4>
-      <p className="warning text-danger ">All your information will be lost</p>
+      <p className="warning text-danger ">
+        All your information will be lost including listed properties
+      </p>
       <button
         onClick={handleDelete}
         disabled={isDeleting}

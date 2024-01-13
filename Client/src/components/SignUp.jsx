@@ -2,7 +2,7 @@ import React from "react";
 import "./SignUp.css";
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
@@ -142,9 +142,9 @@ function SignUp() {
               {loading ? "Signing Up..." : "SIGN UP"}
             </button>
           </form>
-          <Link to="/login" className="link-login text-decoration-none mb-3">
+          <NavLink to="/login" className="link-login text-decoration-none mb-3">
             Back to sign-in
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>

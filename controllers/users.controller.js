@@ -104,8 +104,6 @@ const updateUser = async (req, res, next) => {
     if (req.body.password) {
       req.body.password = await bcrypt.hash(req.body.password, 10);
     }
-    // if (req.user.id !== req.params.id)
-    //   throw new Error("You can only update your own account");
 
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
