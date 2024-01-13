@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Home.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import anime from "animejs";
 
 function Home() {
@@ -44,9 +44,9 @@ function Home() {
                 We are <span>X Rental</span> and we help you find an apartment
                 in Berlin.
               </p>
-              <NavLink to="/list" className="button">
+              <Link to="/list" className="button">
                 <button className="home-buttons">Explore</button>
-              </NavLink>
+              </Link>
             </section>
           </header>
         </div>
@@ -113,9 +113,9 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <NavLink to="/list" className="button">
+              <Link to="/list" className="button">
                 <button className="home-buttons">Find out more</button>
-              </NavLink>
+              </Link>
             </div>
           </div>
         </main>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../components/PropertyDetails.css";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axiosClient from "../axiosClient";
 import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 import CommentCard from "./CommentCard";
@@ -172,17 +172,17 @@ function PropertyDetails() {
               </div>
 
               <div className="button-section mt-4 d-flex justify-content-between">
-                <NavLink to="/contact">
+                <Link to="/contact">
                   <button className="btn btn-lg btn-success" type="button">
                     Contact the Owner
                   </button>
-                </NavLink>
-                <NavLink
+                </Link>
+                <Link
                   to="/list"
                   className="link-signup text-decoration-none align-self-center "
                 >
                   Go back
-                </NavLink>
+                </Link>
               </div>
             </div>
           </div>

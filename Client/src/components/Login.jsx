@@ -2,7 +2,7 @@ import { useContext } from "react";
 import React from "react";
 import "./Login.css";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
@@ -104,12 +104,12 @@ function Login() {
                   )}
                 </span>
               </div>
-              <NavLink
+              <Link
                 to="#"
                 className="link-signup text-decoration-none gap-3 p-3"
               >
                 Forgot Password?
-              </NavLink>
+              </Link>
               {error && (
                 <p style={{ color: "red" }}>
                   {error ? "Incorrect Email or Password" : ""}
@@ -129,9 +129,9 @@ function Login() {
                 {loading ? "Signing In..." : "SIGN IN"}
               </button>
             </form>
-            <NavLink to="/sign-up" className="link-signup text-decoration-none">
+            <Link to="/sign-up" className="link-signup text-decoration-none">
               Don&apos;t have an account?
-            </NavLink>
+            </Link>
           </div>
         </div>
       </div>

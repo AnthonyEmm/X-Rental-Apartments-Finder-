@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -43,12 +43,12 @@ function Footer() {
                 />
               </a>
             </div>
-            <NavLink
+            <Link
               className="link text-decoration-none bg-transparent"
               to="/contact"
             >
               Need help? Contact us here
-            </NavLink>
+            </Link>
           </div>
         </div>
       </div>

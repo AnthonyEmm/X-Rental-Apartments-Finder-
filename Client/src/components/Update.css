@@ -28,6 +28,7 @@
   outline: none;
   border-color: rgb(196, 237, 210);
   background-color: rgb(40, 39, 39);
+  color: white;
 }
 
 input:hover {

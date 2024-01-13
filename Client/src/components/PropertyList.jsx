@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../components/PropertyList.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axiosClient from "../axiosClient";
 
 function PropertyList() {
@@ -91,13 +91,13 @@ function PropertyList() {
               </a>
             </div>
           </div>
-          <NavLink
+          <Link
             to="/upload"
             className=" add-listing text-decoration-none  d-flex flex-column align-items-center"
             title="List a Property"
           >
             List a Property
-          </NavLink>
+          </Link>
           <div className="list mt-4 mb-5 text-decoration-none">
             <div className="row row-cols-1 row-cols-md-3 g-4">
               {filteredProperties.map((property) => (

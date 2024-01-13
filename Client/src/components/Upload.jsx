@@ -1,6 +1,6 @@
 import React from "react";
 import "./Upload.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosClient from "../axiosClient";
@@ -82,13 +82,13 @@ function Upload() {
         <div className="title-form d-flex flex-column justify-content-center align-items-center border border-secondary rounded gap-2 p-4 mb-3">
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold mt-2">Add a property</h5>
-            <NavLink
+            <Link
               to="/list"
               className="link-signup text-decoration-none mt-2"
               title="Go back"
             >
               Back
-            </NavLink>
+            </Link>
           </div>
           <form onSubmit={handleUpload}>
             <div className="t-description d-flex flex-column gap-2 mb-3">

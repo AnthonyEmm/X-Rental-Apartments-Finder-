@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import "./NavBar.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Avatar from "../assets/user-circle-fill.svg";
 
 function NavBar() {
@@ -19,9 +19,9 @@ function NavBar() {
   return (
     <nav className="navbar sticky-top navbar-expand-lg bg-inherit p-3">
       <div className="container-fluid px-4">
-        <NavLink className="navbar-brand fw-bold fs-4" to="/">
+        <Link className="navbar-brand fw-bold fs-4" to="/">
           <span>X Rental</span>
-        </NavLink>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -59,48 +59,48 @@ function NavBar() {
           <div className="offcanvas-body justify-content-end w-100">
             <ul className="navbar-nav gap-4" role="menu">
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   aria-current="page"
                   to="/"
                   onClick={handleCloseOffcanvas}
                 >
                   Home
-                </NavLink>
+                </Link>
               </li>
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   to="/about"
                   onClick={handleCloseOffcanvas}
                 >
                   About
-                </NavLink>
+                </Link>
               </li>
               <li className="nav-item">
-                <NavLink
+                <Link
                   className="nav-link"
                   to="/list"
                   onClick={handleCloseOffcanvas}
                 >
                   Listings
-                </NavLink>
+                </Link>
               </li>
               {!loading && (
                 <>
                   {!user ? (
                     <li className="nav-item">
-                      <NavLink
+                      <Link
                         className="nav-link"
                         to="/login"
                         onClick={handleCloseOffcanvas}
                       >
                         Sign In
-                      </NavLink>
+                      </Link>
                     </li>
                   ) : (
                     <li className="nav-item dropdown">
-                      <NavLink
+                      <Link
                         className="nav-link dropdown-toggle"
                         to="/profile"
                         id="navbarDropdown"
@@ -114,7 +114,7 @@ function NavBar() {
                           className="nav-item rounded-circle object-cover"
                           style={{ width: "30px", height: "30px" }}
                         />
-                      </NavLink>
+                      </Link>
                       <ul
                         className="dropdown-menu dropdown-menu-end"
                         aria-labelledby="navbarDropdown"
@@ -125,40 +125,40 @@ function NavBar() {
                         }}
                       >
                         <li>
-                          <NavLink
+                          <Link
                             className="dropdown-item text-successt"
                             to="/sign-up"
                             onClick={handleCloseOffcanvas}
                           >
                             Sign Up
-                          </NavLink>
+                          </Link>
                         </li>
                         <li>
-                          <NavLink
+                          <Link
                             className="dropdown-item text-successt"
                             to="/profile"
                             onClick={handleCloseOffcanvas}
                           >
                             My Profile
-                          </NavLink>
+                          </Link>
                         </li>
                         <li>
-                          <NavLink
+                          <Link
                             className="dropdown-item text-successt"
                             to="/update"
                             onClick={handleCloseOffcanvas}
                           >
                             Update Profile
-                          </NavLink>
+                          </Link>
                         </li>
                         <li>
-                          <NavLink
+                          <Link
                             className="dropdown-item text-successt"
                             to="/login"
                             onClick={logout}
                           >
                             Logout
-                          </NavLink>
+                          </Link>
                         </li>
                       </ul>
                     </li>

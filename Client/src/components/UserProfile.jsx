@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axiosClient from "../axiosClient";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../components/UserProfile.css";
 import Avatar from "../assets/user-circle-fill.svg";
 
@@ -64,20 +64,20 @@ function UserProfile() {
                   {new Date(userProfile.createdAt).toLocaleDateString()}
                 </h3>
               </div>
-              <NavLink
+              <Link
                 to="/Update"
                 className="text-light d-flex justify-content-center align-items-start text-decoration-none"
               >
                 <button className="btn btn-lg bg-success mt-4 ">
                   UPDATE ACCOUNT
                 </button>
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 to="/delete-profile"
                 className="link-signup d-flex flex-column justify-content-center align-items-center gap-2 text-decoration-none mt-5 fw-bold fs-5"
               >
                 DELETE ACCOUNT
-              </NavLink>
+              </Link>
             </div>
           )}
         </div>
