@@ -19,7 +19,7 @@ function NavBar() {
   return (
     <nav className="navbar sticky-top navbar-expand-lg bg-inherit p-3">
       <div className="container-fluid px-4">
-        <Link className="navbar-brand fw-bold fs-4" to="/">
+        <Link to="/" className="navbar-brand fw-bold fs-4">
           <span>X Rental</span>
         </Link>
 
@@ -60,9 +60,9 @@ function NavBar() {
             <ul className="navbar-nav gap-4" role="menu">
               <li className="nav-item">
                 <Link
+                  to="/"
                   className="nav-link"
                   aria-current="page"
-                  to="/"
                   onClick={handleCloseOffcanvas}
                 >
                   Home
@@ -70,8 +70,8 @@ function NavBar() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link"
                   to="/about"
+                  className="nav-link"
                   onClick={handleCloseOffcanvas}
                 >
                   About
@@ -79,8 +79,8 @@ function NavBar() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link"
                   to="/list"
+                  className="nav-link"
                   onClick={handleCloseOffcanvas}
                 >
                   Listings
@@ -91,8 +91,8 @@ function NavBar() {
                   {!user ? (
                     <li className="nav-item">
                       <Link
-                        className="nav-link"
                         to="/login"
+                        className="nav-link"
                         onClick={handleCloseOffcanvas}
                       >
                         Sign In
@@ -126,8 +126,8 @@ function NavBar() {
                       >
                         <li>
                           <Link
-                            className="dropdown-item text-successt"
                             to="/sign-up"
+                            className="dropdown-item text-successt"
                             onClick={handleCloseOffcanvas}
                           >
                             Sign Up
@@ -135,8 +135,8 @@ function NavBar() {
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item text-successt"
                             to="/profile"
+                            className="dropdown-item text-successt"
                             onClick={handleCloseOffcanvas}
                           >
                             My Profile
@@ -144,8 +144,8 @@ function NavBar() {
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item text-successt"
                             to="/update"
+                            className="dropdown-item text-successt"
                             onClick={handleCloseOffcanvas}
                           >
                             Update Profile
@@ -153,8 +153,8 @@ function NavBar() {
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item text-successt"
                             to="/login"
+                            className="dropdown-item text-successt"
                             onClick={logout}
                           >
                             Logout

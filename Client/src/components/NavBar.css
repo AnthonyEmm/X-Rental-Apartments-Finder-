@@ -1,7 +1,7 @@
 .navbar {
   border-bottom: 1px solid rgb(17, 189, 74);
   cursor: pointer;
-  background-color: rgb(33, 31, 31);
+  background-color: rgba(33, 31, 31, 0.67);
 }
 
 .navbar-brand span {

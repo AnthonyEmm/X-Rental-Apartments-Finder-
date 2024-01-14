@@ -104,8 +104,6 @@ const updateUser = async (req, res, next) => {
     if (req.body.password) {
       req.body.password = await bcrypt.hash(req.body.password, 10);
     }
-    // if (req.user.id !== req.params.id)
-    //   throw new Error("You can only update your own account");
 
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
@@ -139,7 +137,7 @@ const deleteProfile = async (req, res, next) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    res.json(user);
+    res.cookie("access_token", "", { httpOnly: true, maxAge: 0 }).json(user);
   } catch (error) {
     console.error(error);
     next(error);

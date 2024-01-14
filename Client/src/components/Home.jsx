@@ -8,19 +8,13 @@ function Home() {
     const items = document.querySelectorAll(".cascading-item");
 
     anime({
-      /* targets: items,
-      opacity: [0, 1],
-      translateY: [20, 0],
-      easing: "easeInOutCubic",
-      duration: 800,
-      delay: anime.stagger(300), */
       targets: items,
       opacity: [0, 1],
       easing: "linear",
       duration: 500,
       delay: anime.stagger(100),
-      loop: true, // Enable looping
-      direction: "normal", // Reverse the animation on each iteration
+      loop: true,
+      direction: "normal",
     });
   }, []);
 
