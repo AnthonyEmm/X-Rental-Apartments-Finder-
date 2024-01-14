@@ -33,7 +33,7 @@ function PropertyList() {
     const searchTerm = e.target.value.toLowerCase();
     setSearchInput(searchTerm);
     const filtered = properties.filter((property) =>
-      property.propertyType.toLowerCase().includes(searchTerm)
+      property.propertyType.toLowerCase().includes(searchTerm),
     );
     e.preventDefault();
     setFilteredProperties(filtered);
@@ -57,7 +57,7 @@ function PropertyList() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-5">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
           <div className="search-tags d-flex flex-column align-items-center w-100 gap-2">
             <input

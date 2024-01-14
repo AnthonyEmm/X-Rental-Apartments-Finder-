@@ -44,7 +44,7 @@ function SignUp() {
 
       const response = await axios.post(
         "http://localhost:4050/auth/signup",
-        data
+        data,
       );
 
       console.log("SignUp Successful:", response.data);
@@ -65,7 +65,7 @@ function SignUp() {
         <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center">
           <h4 className="txt mt-5">CREATE ACCOUNT</h4>
           <form onSubmit={handleSignUp} className="container-box">
-            <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-5 mt-2">
+            <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4 mt-2">
               <input
                 className="name-contact"
                 type="text"

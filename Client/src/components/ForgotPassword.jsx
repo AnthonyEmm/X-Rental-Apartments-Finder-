@@ -7,7 +7,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
 import axiosClient from "../axiosClient";
 
-function Update({ id }) {
+function UpdatePassword({ id }) {
   const navigate = useNavigate(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,11 +21,11 @@ function Update({ id }) {
     setShowPassword(!showPassword);
   };
 
-  const handleUpdate = async (e) => {
+  const handleUpdatePassword = async (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
-      setError("Passwords do not match");
+    if (!email) {
+      setError("Email is incorrect. Please enter correct email address!");
       return;
     }
 
@@ -40,16 +40,16 @@ function Update({ id }) {
         },
         { withCredentials: true },
       );
-      console.log("User Updated Successfully:", response.data);
+      console.log("User Password Updated successfully:", response.data);
       setSuccess(true);
-      navigate("/profile");
+      navigate("/login");
       setError("");
     } catch (error) {
       console.error(
         "User Update Failed:",
         error.response ? error.response.data : error.message,
       );
-      setError("User Update Failed. Please try again.");
+      setError("User Password Update Failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -57,9 +57,9 @@ function Update({ id }) {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5 mb-4">
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
-          <h4 className="update fw-bold mb-5 mt-2">UPDATE ACCOUNT</h4>
+          <h4 className="update fw-bold mb-5 mt-2">CHANGE PASSWORD</h4>
 
           <div className="name-email d-flex flex-column gap-2 mb-2">
             <input
@@ -78,7 +78,7 @@ function Update({ id }) {
                 value={password}
                 id="password"
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
+                placeholder="New Password"
                 required={true}
               />
               <span
@@ -116,12 +116,15 @@ function Update({ id }) {
             />
           </div>
 
-          <button onClick={handleUpdate} className="btn btn-lg bg-success mt-5">
-            {loading ? "Updating..." : "UPDATE"}
+          <button
+            onClick={handleUpdatePassword}
+            className="btn btn-lg bg-success mt-5"
+          >
+            {loading ? "Updating Password..." : "SUBMIT"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
           {success && (
-            <p style={{ color: "green" }}>User Updated Successfully</p>
+            <p style={{ color: "green" }}>User Password Updated Successfully</p>
           )}
           <Link to="/login" className="link-login text-decoration-none mt-5">
             Back to sign-in
@@ -132,4 +135,4 @@ function Update({ id }) {
   );
 }
 
-export default Update;
+export default UpdatePassword;

@@ -52,6 +52,19 @@ function PropertyDetails() {
       setComment("");
     }
   };
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "Enter") {
+        handleSubmitClick(e);
+      }
+    };
+    document.addEventListener("keypress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  }, [handleSubmitClick]);
+
   const handleRemoveComment = (commentId) => {
     const updatedSubmit = submit.filter((comment) => comment.id !== commentId);
     setSubmit(updatedSubmit);
