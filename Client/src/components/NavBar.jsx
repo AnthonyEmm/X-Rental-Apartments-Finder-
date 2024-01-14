@@ -17,7 +17,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="navbar sticky-top navbar-expand-lg bg-inherit p-3">
+    <nav className="navbar sticky-top navbar-expand-lg bg-transparent opacity-100 p-3 text-success">
       <div className="container-fluid px-4">
         <Link to="/" className="navbar-brand fw-bold fs-4">
           <span>X Rental</span>

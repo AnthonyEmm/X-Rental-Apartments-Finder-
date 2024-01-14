@@ -163,6 +163,7 @@ function PropertyDetails() {
                       color: "green",
                       fillColor: "#71a900",
                       fillOpacity: 0.5,
+                      scrollWheelZoom: false,
                     }}
                     radius={300}
                   >
