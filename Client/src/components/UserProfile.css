@@ -27,8 +27,11 @@
   border-radius: 80px;
   background-size: cover;
 }
-.btn button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.profile button {
+  color: #000;
+}
+
+.profile button:hover {
+  color: #fff;
 }

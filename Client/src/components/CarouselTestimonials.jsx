@@ -15,7 +15,7 @@ function CarouselTestimonials() {
       interval={3000}
     >
       <div className="test-card">
-        <img src="../public/1.png" />
+        <img src="/1.png" />
         <div className="myCarousel">
           <h3>Monica Mattos</h3>
           <h4>Zoo Keeper</h4>
@@ -28,7 +28,7 @@ function CarouselTestimonials() {
       </div>
 
       <div className="test-card">
-        <img src="../public/2.png" />
+        <img src="/2.png" />
         <div className="myCarousel">
           <h3>Lupin</h3>
           <h4>Full Stack WebDev</h4>
@@ -41,7 +41,7 @@ function CarouselTestimonials() {
       </div>
 
       <div className="test-card">
-        <img src="../public/3.png" />
+        <img src="/3.png" />
         <div className="myCarousel">
           <h3>Kid Bengal</h3>
           <h4>Plumber</h4>
