@@ -33,7 +33,7 @@ function PropertyList() {
     const searchTerm = e.target.value.toLowerCase();
     setSearchInput(searchTerm);
     const filtered = properties.filter((property) =>
-      property.propertyType.toLowerCase().includes(searchTerm),
+      property.propertyType.toLowerCase().includes(searchTerm)
     );
     e.preventDefault();
     setFilteredProperties(filtered);
@@ -119,15 +119,15 @@ function PropertyList() {
                       <p className="card-text">
                         Price: €{property.price}/month
                       </p>
-                      <button
-                        type="submit"
-                        className="btn btn-sm btn-success"
-                        title="Property Details"
-                      >
-                        <Link to={`/property/${property._id}`} className="btn">
+                      <Link to={`/property/${property._id}`}>
+                        <button
+                          type="submit"
+                          className="btn btn-lg btn-success"
+                          title="Property Details"
+                        >
                           VIEW MORE
-                        </Link>
-                      </button>
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

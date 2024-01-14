@@ -60,8 +60,8 @@ function PropertyDetails() {
   return (
     <div className="bg text-white">
       {property && (
-        <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
-          <div className="list-container border border-secondary rounded d-flex gap-5 p-5">
+        <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4">
+          <div className="list-container border border-secondary rounded d-flex gap-5 p-5 mb-3">
             <div className="left-side d-flex flex-column gap-5">
               <div className="img mt-2">
                 <ImageGallery
@@ -95,7 +95,7 @@ function PropertyDetails() {
                         rows="3"
                         placeholder="Post your comment..."
                       ></textarea>
-                      <button className="btn btn-outline-success" type="submit">
+                      <button className="btn btn-lg" type="submit">
                         Send
                       </button>
                     </div>

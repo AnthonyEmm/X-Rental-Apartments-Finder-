@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import anime from "animejs";
+import CarouselTestimonials from "./CarouselTestimonials";
 
 function Home() {
   useEffect(() => {
@@ -44,8 +45,8 @@ function Home() {
                 We are <span>X Rental</span> and we help you find an apartment
                 in Berlin.
               </p>
-              <Link to="/list" className="button">
-                <button className="home-buttons">Explore</button>
+              <Link to="/list" className="btn">
+                <button className="btn btn-lg btn-success">Explore</button>
               </Link>
             </section>
           </header>
@@ -113,9 +114,19 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <Link to="/list" className="button">
-                <button className="home-buttons">Find out more</button>
-              </Link>
+              <section>
+                <Link to="/list" className="btn">
+                  <button className="btn btn-lg btn-success">
+                    Find out more
+                  </button>
+                </Link>
+              </section>
+            </div>
+          </div>
+          <div className="testimonials-header d-flex justify-content-center align-items-center ">
+            <div className="test-container">
+              <h1>Testimonials</h1>
+              <CarouselTestimonials />
             </div>
           </div>
         </main>

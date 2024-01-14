@@ -20,7 +20,7 @@ const ContactForm = () => {
         "service_39d8p2b",
         "template_ptoue0r",
         form.current,
-        "aU8koTSpQeqGZD8Wz",
+        "aU8koTSpQeqGZD8Wz"
       )
       .then(
         (result) => {
@@ -30,7 +30,7 @@ const ContactForm = () => {
         },
         (error) => {
           console.log(error.text);
-        },
+        }
       );
   };
 
@@ -49,7 +49,7 @@ const ContactForm = () => {
 
   return (
     <div className="bg">
-      <div className="container d-flex  mt-4 text-success">
+      <div className="container d-flex  mt-4 mb-4 text-success">
         <div className="head d-flex justify-content-center align-items-center gap-3 mt-3 mb-4">
           <h2>CONTACT FORM</h2>
           <div>

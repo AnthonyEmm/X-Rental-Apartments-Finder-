@@ -38,7 +38,7 @@ function Update({ id }) {
           email,
           password,
         },
-        { withCredentials: true },
+        { withCredentials: true }
       );
       console.log("User Updated Successfully:", response.data);
       setSuccess(true);
@@ -47,7 +47,7 @@ function Update({ id }) {
     } catch (error) {
       console.error(
         "User Update Failed:",
-        error.response ? error.response.data : error.message,
+        error.response ? error.response.data : error.message
       );
       setError("User Update Failed. Please try again.");
     } finally {
@@ -57,7 +57,7 @@ function Update({ id }) {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5 mb-5">
+      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-4 p-5">
           <h4 className="update fw-bold mb-5 mt-2">UPDATE ACCOUNT</h4>
 
