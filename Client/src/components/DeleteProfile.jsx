@@ -50,13 +50,13 @@ function DeleteUserProfile({ userId }) {
       <button
         onClick={handleDelete}
         disabled={isDeleting}
-        className="btn btn-lg mt-5 mb-5 rounded-2"
+        className="btn btn-lg mt-5 mb-4 rounded-2"
       >
         {isDeleting ? "Deleting..." : "Delete Profile"}
       </button>
       <Link
         to="/profile"
-        className="back text-decoration-none text-success fw-bolder mb-4"
+        className="back text-decoration-none text-success fw-bolder mb-2"
       >
         Back to Profile Page
       </Link>

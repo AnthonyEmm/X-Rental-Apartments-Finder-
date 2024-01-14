@@ -21,35 +21,36 @@ function Footer() {
               </h5>
             </div>
             <div className="icons d-flex gap-3 bg-transparent mb-4">
-              <a href="#" className="instagram" title="Instagram">
+              <Link to="#" className="instagram" title="Instagram">
                 <FontAwesomeIcon
                   icon={faInstagram}
                   style={{ fontSize: "2em" }}
                 />
-              </a>
-              <a href="#" className="facebook" title="facebook">
+              </Link>
+              <Link to="#" className="facebook" title="facebook">
                 <FontAwesomeIcon
                   icon={faFacebook}
                   style={{ fontSize: "2em" }}
                 />
-              </a>
-              <a
-                href="https://github.com/AnthonyEmm/X-Rental-Apartments-Finder-"
+              </Link>
+              <Link
+                to="https://github.com/AnthonyEmm/X-Rental-Apartments-Finder-"
+                target="_blank"
                 className="github"
                 title="GitHub"
               >
                 <FontAwesomeIcon icon={faGithub} style={{ fontSize: "2em" }} />
-              </a>
-              <a href="#" className="twitter" title="X-Twitter">
+              </Link>
+              <Link to="#" className="twitter" title="X-Twitter">
                 <FontAwesomeIcon
                   icon={faXTwitter}
                   style={{ fontSize: "2em" }}
                 />
-              </a>
+              </Link>
             </div>
             <Link
-              className="link text-decoration-none bg-transparent"
               to="/contact"
+              className="link text-decoration-none bg-transparent"
             >
               Need help? Contact us here
             </Link>
