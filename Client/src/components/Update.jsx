@@ -116,7 +116,7 @@ function Update({ id }) {
             />
           </div>
 
-          <button onClick={handleUpdate} className="btn btn-lg bg-success mt-5">
+          <button onClick={handleUpdate} className="btn btn-lg rounded-2 mt-5">
             {loading ? "Updating..." : "UPDATE"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}

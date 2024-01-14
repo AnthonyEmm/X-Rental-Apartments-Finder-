@@ -40,7 +40,7 @@ function DeleteUserProfile({ userId }) {
         className="warning text-danger d-flex
         flex-column
         justify-content-center
-        align-items-center mt-3 "
+        align-items-center mt-4 "
       >
         Are you sure you want to delete your profile?
       </h4>
@@ -50,13 +50,13 @@ function DeleteUserProfile({ userId }) {
       <button
         onClick={handleDelete}
         disabled={isDeleting}
-        className="btn btn-lg bg-success mt-5 mb-4 text-light"
+        className="btn btn-lg mt-5 mb-5 rounded-2"
       >
         {isDeleting ? "Deleting..." : "Delete Profile"}
       </button>
       <Link
         to="/profile"
-        className="back text-decoration-none text-success fw-bolder"
+        className="back text-decoration-none text-success fw-bolder mb-4"
       >
         Back to Profile Page
       </Link>

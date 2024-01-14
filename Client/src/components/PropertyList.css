@@ -70,6 +70,14 @@ img {
   color: rgb(17, 189, 74);
 }
 
+.card-body button {
+  color: #fff;
+}
+
+.card-body button:hover {
+  color: #000;
+}
+
 .card-text {
   color: white;
 }

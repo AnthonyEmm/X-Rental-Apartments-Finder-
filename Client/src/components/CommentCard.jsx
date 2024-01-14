@@ -55,7 +55,7 @@ function CommentCard({ subs, onDelete }) {
   return (
     <Card
       style={{
-        width: "25rem",
+        width: "28rem",
         marginBottom: "20px",
         marginTop: "20px",
         backgroundColor: "transparent",
@@ -64,7 +64,7 @@ function CommentCard({ subs, onDelete }) {
       }}
     >
       <Card.Body>
-        <div className="header-card d-flex justify-content-between ">
+        <div className="header-card d-flex justify-content-between">
           <Card.Title
             style={{
               color: "#53b053",
@@ -117,6 +117,7 @@ function CommentCard({ subs, onDelete }) {
                   backgroundColor: "transparent",
                   border: "none",
                   color: "#53b053",
+                  pointer: "cursor",
                 }}
                 onClick={toggleShowComment}
               >

@@ -68,7 +68,7 @@ function UserProfile() {
                 to="/Update"
                 className="text-light d-flex justify-content-center align-items-start text-decoration-none"
               >
-                <button className="btn btn-lg bg-success mt-4 ">
+                <button className="btn btn-lg rounded-2 mt-4">
                   UPDATE ACCOUNT
                 </button>
               </Link>
