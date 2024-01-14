@@ -60,7 +60,7 @@ function Upload() {
     } catch (error) {
       console.log(
         "Upload Failed:",
-        error.response ? error.response.data : error.message
+        error.response ? error.response.data : error.message,
       );
       setError("Property Upload Failed. Please try again.");
     } finally {
@@ -206,7 +206,7 @@ function Upload() {
           <button
             onClick={handleUpload}
             type="submit"
-            className="btn btn-lg btn-success m-2"
+            className="btn btn-lg rounded-2 m-2"
           >
             {loading ? "Uploading..." : "SUBMIT"}
           </button>

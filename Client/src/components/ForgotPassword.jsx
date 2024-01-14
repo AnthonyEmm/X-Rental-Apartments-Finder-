@@ -118,7 +118,7 @@ function UpdatePassword({ id }) {
 
           <button
             onClick={handleUpdatePassword}
-            className="btn btn-lg bg-success mt-5"
+            className="btn btn-lg rounded-2 mt-5"
           >
             {loading ? "Updating Password..." : "SUBMIT"}
           </button>
