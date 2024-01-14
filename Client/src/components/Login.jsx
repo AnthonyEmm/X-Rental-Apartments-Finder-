@@ -123,7 +123,7 @@ function Login() {
 
               <button
                 onClick={handleLogin}
-                className="btn btn-lg bg-success"
+                className="btn btn-lg rounded-2"
                 type="button"
               >
                 {loading ? "Signing In..." : "SIGN IN"}

@@ -53,7 +53,10 @@ const ContactForm = () => {
         <div className="head d-flex justify-content-center align-items-center gap-3 mt-3 mb-4">
           <h2>CONTACT FORM</h2>
           <div>
-            <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: "2rem" }} />
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              style={{ fontSize: "2rem", color: "rgb(17, 189, 74)" }}
+            />
           </div>
         </div>
         <form
@@ -83,7 +86,7 @@ const ContactForm = () => {
             onClick={notify}
             type="submit"
             value="SEND"
-            className="btn btn-lg btn-success mb-5"
+            className="btn-send btn btn-lg rounded-2 mb-5"
           />
           <ToastContainer
             position="top-right"

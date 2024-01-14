@@ -122,7 +122,7 @@ function PropertyList() {
                       <Link to={`/property/${property._id}`}>
                         <button
                           type="submit"
-                          className="btn btn-lg btn-success"
+                          className="btn btn-lg rounded-1"
                           title="Property Details"
                         >
                           VIEW MORE

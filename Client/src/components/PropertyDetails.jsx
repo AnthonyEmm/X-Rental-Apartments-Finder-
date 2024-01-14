@@ -131,8 +131,8 @@ function PropertyDetails() {
               </div>
             </div>
             <div className="right-side">
-              <div className="details d-flex flex-column fw-bold">
-                <h3>{property.description}</h3>
+              <div className="details d-flex flex-column fw-bold mt-5">
+                <h3 className="mt-5">{property.description}</h3>
                 <p>
                   <span>Type</span>: {property.propertyType}
                 </p>
@@ -187,7 +187,10 @@ function PropertyDetails() {
 
               <div className="button-section mt-4 d-flex justify-content-between">
                 <Link to="/contact">
-                  <button className="btn btn-lg btn-success" type="button">
+                  <button
+                    className="btn btn-lg btn-success rounded-1 "
+                    type="button"
+                  >
                     Contact the Owner
                   </button>
                 </Link>

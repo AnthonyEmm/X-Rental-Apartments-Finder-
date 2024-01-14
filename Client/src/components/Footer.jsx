@@ -33,7 +33,11 @@ function Footer() {
                   style={{ fontSize: "2em" }}
                 />
               </a>
-              <a href="#" className="github" title="GitHub">
+              <a
+                href="https://github.com/AnthonyEmm/X-Rental-Apartments-Finder-"
+                className="github"
+                title="GitHub"
+              >
                 <FontAwesomeIcon icon={faGithub} style={{ fontSize: "2em" }} />
               </a>
               <a href="#" className="twitter" title="X-Twitter">
