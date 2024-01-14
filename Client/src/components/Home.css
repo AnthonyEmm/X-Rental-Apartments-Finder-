@@ -76,7 +76,7 @@
   font-weight: bold;
 }
 
-.cta button {
+/* .cta button {
   background-color: rgb(17, 189, 74);
   color: black;
   width: 8rem;
@@ -86,7 +86,7 @@
 .cta button:hover {
   background-color: rgba(17, 189, 74, 0.415);
   color: white;
-}
+} */
 
 .cta,
 .home-card-container {
@@ -151,8 +151,8 @@
   margin-top: 8px;
 
   transition: filter 200ms linear;
-} */
-/* 
+}
+
 .home-buttons:hover {
   filter: brightness(1.2);
 } */
@@ -298,6 +298,7 @@
 
 .testimonials-header {
   height: 100vh;
+  background-color: hsl(140, 83%, 40%);
 }
 
 .test-container {
@@ -306,10 +307,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 .test-container h1 {
-  color: hsl(140, 83%, 40%);
-  font-weight: 600;
+  color: #000;
+  font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 3rem;
 }

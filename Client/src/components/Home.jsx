@@ -9,19 +9,13 @@ function Home() {
     const items = document.querySelectorAll(".cascading-item");
 
     anime({
-      /* targets: items,
-      opacity: [0, 1],
-      translateY: [20, 0],
-      easing: "easeInOutCubic",
-      duration: 800,
-      delay: anime.stagger(300), */
       targets: items,
       opacity: [0, 1],
       easing: "linear",
       duration: 500,
       delay: anime.stagger(100),
-      loop: true, // Enable looping
-      direction: "normal", // Reverse the animation on each iteration
+      loop: true,
+      direction: "normal",
     });
   }, []);
 
@@ -51,7 +45,7 @@ function Home() {
                 We are <span>X Rental</span> and we help you find an apartment
                 in Berlin.
               </p>
-              <Link to="/list" className="button">
+              <Link to="/list" className="btn">
                 <button className="btn btn-lg btn-success">Explore</button>
               </Link>
             </section>
@@ -120,11 +114,13 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <Link to="/list" className="button">
-                <button className="btn btn-lg btn-success">
-                  Find out more
-                </button>
-              </Link>
+              <section>
+                <Link to="/list" className="btn">
+                  <button className="btn btn-lg btn-success">
+                    Find out more
+                  </button>
+                </Link>
+              </section>
             </div>
           </div>
           <div className="testimonials-header d-flex justify-content-center align-items-center ">
