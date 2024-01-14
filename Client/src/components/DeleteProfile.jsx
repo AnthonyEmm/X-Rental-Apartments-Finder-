@@ -44,7 +44,7 @@ function DeleteUserProfile({ userId }) {
       >
         Are you sure you want to delete your profile?
       </h4>
-      <p className="warning text-danger ">
+      <p className="warning text-danger fw-bold">
         All your information will be lost including listed properties
       </p>
       <button

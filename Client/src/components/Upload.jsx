@@ -144,7 +144,7 @@ function Upload() {
                   id="areaCode"
                   value={formData.areaCode}
                   onChange={handleInputChange}
-                  placeholder="PLZ"
+                  placeholder="Zip Code"
                   required={true}
                 />
                 <select

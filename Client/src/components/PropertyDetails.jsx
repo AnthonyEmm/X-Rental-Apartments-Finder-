@@ -121,26 +121,26 @@ function PropertyDetails() {
               <div className="details d-flex flex-column fw-bold">
                 <h3>{property.description}</h3>
                 <p>
-                  <span>Property Size</span>: {property.area} M²
+                  <span>Type</span>: {property.propertyType}
                 </p>
                 <p>
                   <span>Room(s)</span>: {property.bedrooms}
                 </p>
                 <p>
-                  <span>PLZ</span>: {property.areaCode}
-                </p>
-                <p>
-                  <span>Type</span>: {property.propertyType}
-                </p>
-                <p>
-                  <span>Construction year</span>: {property.year}
-                </p>
-                <p>
                   <span>Price</span>: €{property.price}/month
                 </p>
                 <p>
-                  <span>Availability</span>: {property.availability}
+                  <span>Zip Code</span>: {property.areaCode}
                 </p>
+
+                <p>
+                  <span>Property Size</span>: {property.area} M²
+                </p>
+
+                <p>
+                  <span>Construction year</span>: {property.year}
+                </p>
+
                 <p>
                   <span>Owner</span>: {property.owner.name}
                 </p>
