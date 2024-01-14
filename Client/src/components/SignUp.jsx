@@ -24,6 +24,11 @@ function SignUp() {
     setShowPassword(!showPassword);
   };
 
+  const validatePassword = () => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
+    return passwordRegex.test(password);
+  };
+
   const handleInputChange = (e) => {
     if (e.target.files) {
       setFormData({ ...formData, [e.target.id]: e.target.files[0] });
@@ -33,8 +38,9 @@ function SignUp() {
   };
 
   const handleSignUp = async (e) => {
+    e.preventDefault();
+
     try {
-      e.preventDefault();
       setLoading(true);
       const data = new FormData();
       data.append("name", formData.name);
@@ -46,14 +52,16 @@ function SignUp() {
         "http://localhost:4050/auth/signup",
         data,
       );
-
+      if (!validatePassword()) {
+        setError("Password must be 8-10 letters and one number!");
+        navigate("/login");
+      }
       console.log("SignUp Successful:", response.data);
       setSuccess("Sign Up Successful", response.message);
-      navigate("/login");
       setError("");
     } catch (error) {
       console.log(error);
-      setError("Invalid credentials. SignUp failed!");
+      setError("Password must be 8-10 letters and one number!");
     } finally {
       setLoading(false);
     }
@@ -118,9 +126,6 @@ function SignUp() {
                 </span>
               </div>
             </div>
-            <p className="info text-danger fs-6 bg-transparent mt-3">
-              Password must be 8-10 letters and one number
-            </p>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
             <label htmlFor="upload" className="upload text-success mb-4">
