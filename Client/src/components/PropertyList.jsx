@@ -59,7 +59,7 @@ function PropertyList() {
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
-          <div className="search-tags d-flex flex-column align-items-center w-100 gap-2">
+          <div className="search-tags d-flex flex-column align-items-center w-75 gap-2">
             <input
               className="search w-50"
               title="Search by property type"
