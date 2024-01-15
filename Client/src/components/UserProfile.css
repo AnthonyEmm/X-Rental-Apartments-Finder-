@@ -35,3 +35,7 @@
 .profile button:hover {
   color: #fff;
 }
+
+.profile-txt span {
+  color: chartreuse;
+}
