@@ -5,6 +5,7 @@ const {
   logout,
   updateUser,
   getProfile,
+  getOwnerProfile,
   deleteProfile,
 } = require("../controllers/users.controller.js");
 const { authenticate } = require("../middlewares/auth.js");
@@ -24,7 +25,8 @@ userRouter.post(
   upload.single("avatar"),
   updateUser,
 );
-userRouter.get("/profile/:id", authenticate, getProfile);
+userRouter.get("/profile", authenticate, getProfile);
+userRouter.get("/profile/:id", authenticate, getOwnerProfile);
 userRouter.post(
   "/delete/:id",
   authenticate,

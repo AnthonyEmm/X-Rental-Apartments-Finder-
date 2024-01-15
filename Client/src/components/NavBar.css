@@ -12,12 +12,17 @@
   text-shadow: 2px 2px 2px rgba(142, 142, 142, 0.561);
 }
 
-.nav-item a {
+.nav-item {
   color: rgba(16, 156, 63, 0.858);
 }
 
-.nav-item a:hover {
-  border-radius: 5px;
+.nav-item:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-item:focus {
   color: rgb(17, 189, 74);
   font-weight: bold;
   cursor: pointer;
@@ -39,4 +44,8 @@
 
 .offcanvas-end {
   width: 15rem !important;
+}
+
+.dropdown-item:hover {
+  background-color: transparent !important;
 }

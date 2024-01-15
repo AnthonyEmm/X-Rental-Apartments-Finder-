@@ -33,6 +33,7 @@ function App() {
           <Route path="/upload" element={<Upload />} />
           <Route path="/property/:id" element={<PropertyDetails />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/profile/:id" element={<UserProfile showOwner />} />
           <Route path="/update" element={<Update />} />
           <Route path="/delete-profile" element={<DeleteUserProfile />} />
         </Route>
