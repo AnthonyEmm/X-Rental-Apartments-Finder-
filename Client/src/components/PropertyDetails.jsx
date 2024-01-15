@@ -186,12 +186,12 @@ function PropertyDetails() {
               </div>
 
               <div className="button-section mt-5 d-flex justify-content-between">
-                <Link to="/contact">
+                <Link to={`/profile/${property.owner._id}`}>
                   <button
                     className="btn btn-lg btn-success rounded-1 "
                     type="button"
                   >
-                    Contact the Owner
+                    OWNER DETAILS
                   </button>
                 </Link>
                 <Link

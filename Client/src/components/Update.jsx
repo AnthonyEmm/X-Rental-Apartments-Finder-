@@ -79,7 +79,7 @@ function Update({ id }) {
                 value={password}
                 id="password"
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
+                placeholder="New Password"
                 required={true}
               />
               <span

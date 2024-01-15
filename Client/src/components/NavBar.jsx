@@ -58,110 +58,97 @@ function NavBar() {
           </div>
           <div className="offcanvas-body justify-content-end w-100">
             <ul className="navbar-nav gap-4" role="menu">
-              <li className="nav-item">
-                <Link
-                  to="/"
-                  className="nav-link"
-                  aria-current="page"
-                  onClick={handleCloseOffcanvas}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/about"
-                  className="nav-link"
-                  onClick={handleCloseOffcanvas}
-                >
-                  About
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/list"
-                  className="nav-link"
-                  onClick={handleCloseOffcanvas}
-                >
-                  Listings
-                </Link>
-              </li>
+              <Link
+                to="/"
+                className="nav-link nav-item"
+                aria-current="page"
+                onClick={handleCloseOffcanvas}
+              >
+                Home
+              </Link>
+
+              <Link
+                to="/about"
+                className="nav-link nav-item"
+                onClick={handleCloseOffcanvas}
+              >
+                About
+              </Link>
+
               {!loading && (
                 <>
                   {!user ? (
-                    <li className="nav-item">
+                    <Link
+                      to="/login"
+                      className="nav-link nav-item"
+                      onClick={handleCloseOffcanvas}
+                    >
+                      Sign In
+                    </Link>
+                  ) : (
+                    <>
                       <Link
-                        to="/login"
-                        className="nav-link"
+                        to="/list"
+                        className="nav-link nav-item"
                         onClick={handleCloseOffcanvas}
                       >
-                        Sign In
+                        Listings
                       </Link>
-                    </li>
-                  ) : (
-                    <li className="nav-item dropdown">
-                      <Link
-                        className="nav-link dropdown-toggle"
-                        to="/profile"
-                        id="navbarDropdown"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <img
-                          src={user.avatar || Avatar}
-                          alt="profile"
-                          className="nav-item rounded-circle object-cover"
-                          style={{ width: "30px", height: "30px" }}
-                        />
-                      </Link>
-                      <ul
-                        className="dropdown-menu dropdown-menu-end"
-                        aria-labelledby="navbarDropdown"
-                        style={{
-                          backgroundColor: "rgb(33, 31, 31)",
-                          width: "12rem",
-                          color: "rgb(17, 189, 74)",
-                        }}
-                      >
-                        <li>
-                          <Link
-                            to="/sign-up"
-                            className="dropdown-item text-successt"
-                            onClick={handleCloseOffcanvas}
-                          >
-                            Sign Up
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/profile"
-                            className="dropdown-item text-successt"
-                            onClick={handleCloseOffcanvas}
-                          >
-                            My Profile
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/update"
-                            className="dropdown-item text-successt"
-                            onClick={handleCloseOffcanvas}
-                          >
-                            Update Profile
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/login"
-                            className="dropdown-item text-successt"
-                            onClick={logout}
-                          >
-                            Logout
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
+                      <li className=" dropdown">
+                        <Link
+                          className="nav-link dropdown-toggle nav-item"
+                          to="/profile"
+                          id="navbarDropdown"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <img
+                            src={user.avatar || Avatar}
+                            alt="profile"
+                            className="nav-item rounded-circle object-cover"
+                            style={{ width: "30px", height: "30px" }}
+                          />
+                        </Link>
+                        <ul
+                          className="dropdown-menu dropdown-menu-end"
+                          aria-labelledby="navbarDropdown "
+                          style={{
+                            backgroundColor: "rgb(33, 31, 31)",
+                            width: "12rem",
+                            color: "rgb(17, 189, 74)",
+                          }}
+                        >
+                          <li>
+                            <Link
+                              to="/profile"
+                              className="dropdown-item nav-item"
+                              onClick={handleCloseOffcanvas}
+                            >
+                              My Profile
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/update"
+                              className="dropdown-item nav-item"
+                              onClick={handleCloseOffcanvas}
+                            >
+                              Update Profile
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/login"
+                              className="dropdown-item nav-item"
+                              onClick={logout}
+                            >
+                              Logout
+                            </Link>
+                          </li>
+                        </ul>
+                      </li>
+                    </>
                   )}
                 </>
               )}

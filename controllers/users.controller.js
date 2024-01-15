@@ -98,6 +98,19 @@ const getProfile = async (req, res, next) => {
   }
 };
 
+const getOwnerProfile = async (req, res, next) => {
+  try {
+    const {
+      params: { id },
+    } = req;
+
+    const user = await User.findById(id);
+    res.json(user);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
 // Creating a POST request for User credentials Update //
 const updateUser = async (req, res, next) => {
   try {
@@ -151,5 +164,6 @@ module.exports = {
   logout,
   updateUser,
   getProfile,
+  getOwnerProfile,
   deleteProfile,
 };
