@@ -29,6 +29,11 @@ function UpdatePassword({ id }) {
       return;
     }
 
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
     setLoading(true);
 
     try {
