@@ -74,7 +74,7 @@ function PropertyDetails() {
     <div className="bg text-white">
       {property && (
         <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
-          <div className="list-container border border-secondary rounded d-flex gap-5 p-5 mb-3">
+          <div className="list-container border border-secondary rounded d-flex gap-5 p-5 mb-4">
             <div className="left-side d-flex flex-column gap-5">
               <div className="img mt-2">
                 <ImageGallery
@@ -131,7 +131,7 @@ function PropertyDetails() {
               </div>
             </div>
             <div className="right-side">
-              <div className="details d-flex flex-column fw-bold">
+              <div className="details d-flex flex-column fw-bold mt-5">
                 <h3 className="mt-4">{property.description}</h3>
                 <p>
                   <span>Type</span>: {property.propertyType}
@@ -185,7 +185,7 @@ function PropertyDetails() {
                 </MapContainer>
               </div>
 
-              <div className="button-section mt-4 d-flex justify-content-between">
+              <div className="button-section mt-5 d-flex justify-content-between">
                 <Link to="/contact">
                   <button
                     className="btn btn-lg btn-success rounded-1 "
