@@ -3,10 +3,10 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import anime from "animejs";
 import CarouselTestimonials from "./CarouselTestimonials";
+import { useInView } from "react-intersection-observer";
 
 function Home() {
   useEffect(() => {
-    /* window.scrollTo(0, 0); */
     const items = document.querySelectorAll(".cascading-item");
 
     anime({
@@ -25,6 +25,17 @@ function Home() {
   }, []);
 
   const title = "X Rental";
+
+  /* -------------------------------------------------------------- */
+
+  const { ref: greenRef, inView: greenInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const { ref: darkRef, inView: darkInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   return (
     <>
@@ -58,7 +69,10 @@ function Home() {
         </div>
 
         <main>
-          <div className="green-container">
+          <div
+            className={`green-container ${greenInView ? "slider" : ""}`}
+            ref={greenRef}
+          >
             <div className="vision">
               <img
                 className="home-illustrations"
@@ -76,52 +90,61 @@ function Home() {
             </div>
           </div>
 
-          <div className="dark-container">
+          <div
+            className={`dark-container ${darkInView ? "jumper" : ""}`}
+            ref={darkRef}
+          >
             <div className="benefits">
               <h3>Your benefits</h3>
 
               <div className="home-card-container">
-                <div className="home-cards">
-                  <img
-                    className="home-illustrations"
-                    src="/card1.png"
-                    alt="Illustration of a cozy couch."
-                  />
-                  <h4>Comfort Living</h4>
-                  <p>
-                    Discover your perfect sanctuary for ease and relaxation.
-                  </p>
+                <div className="card1">
+                  <div className="home-cards">
+                    <img
+                      className="home-illustrations"
+                      src="/card1.png"
+                      alt="Illustration of a cozy couch."
+                    />
+                    <h4>Comfort Living</h4>
+                    <p>
+                      Discover your perfect sanctuary for ease and relaxation.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="home-cards">
-                  <img
-                    className="home-illustrations"
-                    src="/card2.png"
-                    alt="Illustration of a couple painting the walls of their living room."
-                  />
-                  <h4>Personal Touch</h4>
-                  <p>
-                    Make your home effortlessly to your personalized living
-                    space.
-                  </p>
+                <div className="card2">
+                  <div className="home-cards">
+                    <img
+                      className="home-illustrations"
+                      src="/card2.png"
+                      alt="Illustration of a couple painting the walls of their living room."
+                    />
+                    <h4>Personal Touch</h4>
+                    <p>
+                      Make your home effortlessly to your personalized living
+                      space.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="home-cards">
-                  <img
-                    className="home-illustrations"
-                    src="/card3.png"
-                    alt="Illustration of a fully-equipped kitchen."
-                  />
-                  <h4>Chef&apos;s Delight</h4>
-                  <p>
-                    Indulge in the joy of cooking with pleasure in your own
-                    kitchen.
-                  </p>
+                <div className="card3">
+                  <div className="home-cards">
+                    <img
+                      className="home-illustrations"
+                      src="/card3.png"
+                      alt="Illustration of a fully-equipped kitchen."
+                    />
+                    <h4>Chef&apos;s Delight</h4>
+                    <p>
+                      Indulge in the joy of cooking with pleasure in your own
+                      kitchen.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <Link to="/list" className="button">
-                <button className="btn btn-lg rounded-2">Find out more</button>
-              </Link>
+              <h1 className="text-light text-uppercase fw-bolder ">
+                We are X Rental!
+              </h1>
             </div>
           </div>
           <div className="testimonials-header d-flex justify-content-center align-items-center ">
