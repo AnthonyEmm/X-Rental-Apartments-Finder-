@@ -10,6 +10,7 @@ import axiosClient from "../axiosClient";
 function Update({ id }) {
   const navigate = useNavigate(true);
   const [email, setEmail] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
@@ -22,6 +23,11 @@ function Update({ id }) {
   };
 
   const handleUpdate = async (e) => {
+    const data = new FormData();
+    data.append("email", email);
+    data.append("password", password);
+    data.append("avatar", avatar);
+
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -32,14 +38,9 @@ function Update({ id }) {
     setLoading(true);
 
     try {
-      const response = await axiosClient.post(
-        `/auth/update/:id`,
-        {
-          email,
-          password,
-        },
-        { withCredentials: true },
-      );
+      const response = await axiosClient.post(`/auth/update/:id`, data, {
+        withCredentials: true,
+      });
       console.log("User Updated Successfully:", response.data);
       setSuccess(true);
       navigate("/profile");
@@ -57,7 +58,7 @@ function Update({ id }) {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
+      <div className="container-main d-flex justify-content-center align-items-center mt-4 mb-4">
         <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
           <h4 className="update fw-bold mb-5 mt-2">UPDATE ACCOUNT</h4>
 
@@ -114,16 +115,32 @@ function Update({ id }) {
               placeholder="Confirm Password"
               required={true}
             />
+            <label
+              htmlFor="upload"
+              className="upload d-flex justify-content-center align-items-center text-success mt-4 mb-3"
+            >
+              Update Profile Photo
+            </label>
+            <input
+              className="upload"
+              type="file"
+              onChange={(e) => {
+                setAvatar(e.target.files[0]);
+              }}
+              id="avatar"
+              accept="image/*"
+              required={true}
+            />
           </div>
 
-          <button onClick={handleUpdate} className="btn btn-lg rounded-2 mt-5">
+          <button onClick={handleUpdate} className="btn btn-lg rounded-2 mt-2">
             {loading ? "Updating..." : "UPDATE"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
           {success && (
             <p style={{ color: "green" }}>User Updated Successfully</p>
           )}
-          <Link to="/login" className="link-login text-decoration-none mt-5">
+          <Link to="/login" className="link-login text-decoration-none mt-3">
             Back to sign-in
           </Link>
         </div>

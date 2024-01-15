@@ -69,11 +69,11 @@ function SignUp() {
 
   return (
     <div className="bg text-white">
-      <div className="container-main d-flex justify-content-center align-items-center mt-4 mb-4">
-        <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center">
+      <div className="container-main d-flex justify-content-center align-items-center mb-1">
+        <div className="title-form border border-secondary rounded-2 d-flex flex-column align-items-center mt-4 mb-4">
           <h4 className="txt mt-5">CREATE ACCOUNT</h4>
           <form onSubmit={handleSignUp} className="container-box">
-            <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4 mt-2">
+            <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4 mt-4">
               <input
                 className="name-contact"
                 type="text"
@@ -128,7 +128,7 @@ function SignUp() {
             </div>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
-            <label htmlFor="upload" className="upload text-success mb-4">
+            <label htmlFor="upload" className="upload text-success mt-2">
               Upload Profile Photo
             </label>
             <input
@@ -139,15 +139,15 @@ function SignUp() {
               accept="image/*"
               required={true}
             />
-            <button
-              className="btn btn-lg mt-5 rounded-2"
-              onClick={handleSignUp}
-              type="submit"
-            >
-              {loading ? "Signing Up..." : "SIGN UP"}
-            </button>
           </form>
-          <Link to="/login" className="link-login text-decoration-none mb-3">
+          <button
+            className="btn btn-lg rounded-2 mb-5"
+            onClick={handleSignUp}
+            type="submit"
+          >
+            {loading ? "Signing Up..." : "SIGN UP"}
+          </button>
+          <Link to="/login" className="link-login text-decoration-none mb-3 ">
             Back to sign-in
           </Link>
         </div>

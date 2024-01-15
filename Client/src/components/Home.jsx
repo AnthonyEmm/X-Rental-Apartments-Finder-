@@ -18,7 +18,6 @@ function Home() {
       loop: true,
       direction: "normal",
       begin: () => {
-        // Scroll to the top when the animation begins
         window.scrollTo(0, 0);
       },
     });
