@@ -275,12 +275,12 @@
 }
 
 .slider img {
-  animation: slide-in-left 1s ease-in;
+  animation: slide-in-left 2s ease-in;
 }
 
 .slider h2,
 .slider p {
-  animation: slide-in-right 1s ease-in;
+  animation: slide-in-right 2s ease-in;
 }
 
 @keyframes slide-in-left {
@@ -302,20 +302,20 @@
 }
 
 .jumper .card1 {
-  animation: slide-in-top 0.9s ease-in;
+  animation: slide-in-top 1.5s ease-in;
 }
 
 .jumper .card2 {
-  animation: slide-in-bottom 0.9s ease-in;
+  animation: slide-in-bottom 1.5s ease-in;
 }
 
 .jumper .card3 {
-  animation: slide-in-top 0.9s ease-in;
+  animation: slide-in-top 1.5s ease-in;
 }
 
 @keyframes slide-in-top {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
   to {
     transform: translateY(0);
