@@ -104,12 +104,12 @@ function Login() {
                   )}
                 </span>
               </div>
-              <Link
+              {/* <Link
                 to="/update-passsword"
                 className="link-signup text-decoration-none gap-3 p-3"
               >
                 Forgot Password?
-              </Link>
+              </Link> */}
               {error && (
                 <p style={{ color: "red" }}>
                   {error ? "Incorrect Email or Password" : ""}
@@ -129,7 +129,10 @@ function Login() {
                 {loading ? "Signing In..." : "SIGN IN"}
               </button>
             </form>
-            <Link to="/sign-up" className="link-signup text-decoration-none">
+            <Link
+              to="/sign-up"
+              className="link-signup text-decoration-none mb-5"
+            >
               Don&apos;t have an account?
             </Link>
           </div>

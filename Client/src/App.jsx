@@ -15,7 +15,6 @@ import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
 import Protected from "./components/Protected";
 import DeleteUserProfile from "./components/DeleteProfile";
-import UpdatePassword from "./components/ForgotPassword";
 import About from "./components/About";
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/update-passsword" element={<UpdatePassword />} />
 
         <Route path="/" element={<Protected />}>
           <Route path="/list" element={<PropertyList />} />

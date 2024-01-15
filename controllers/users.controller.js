@@ -101,17 +101,18 @@ const getProfile = async (req, res, next) => {
 // Creating a POST request for User credentials Update //
 const updateUser = async (req, res, next) => {
   try {
+    console.log(req.file);
     if (req.body.password) {
       req.body.password = await bcrypt.hash(req.body.password, 10);
     }
-
+    console.log(req.body.password);
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
       {
         $set: {
           email: req.body.email,
           password: req.body.password,
-          avatar: req.body.avatar,
+          avatar: req.file.path,
         },
       },
       { new: true },

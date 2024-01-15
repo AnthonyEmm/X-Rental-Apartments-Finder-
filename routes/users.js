@@ -18,7 +18,12 @@ const userRouter = express.Router();
 userRouter.post("/signup", upload.single("avatar"), register);
 userRouter.post("/login", login);
 userRouter.post("/logout", logout);
-userRouter.post("/update/:id", authenticate, updateUser);
+userRouter.post(
+  "/update/:id",
+  authenticate,
+  upload.single("avatar"),
+  updateUser,
+);
 userRouter.get("/profile/:id", authenticate, getProfile);
 userRouter.post(
   "/delete/:id",
