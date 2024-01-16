@@ -48,7 +48,6 @@ function SignUp() {
       data.append("password", formData.password);
       data.append("avatar", formData.avatar);
 
-
       const response = await axiosClient.post("/auth/signup", data);
       if (!validatePassword()) {
         setError("Password must be 8-10 letters and one number!");
@@ -67,9 +66,8 @@ function SignUp() {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center mb-2">
-
         <div className="title-form rounded-2 d-flex flex-column align-items-center mt-4 mb-5">
-          <h4 className="txt mt-5">CREATE ACCOUNT</h4>
+          <h4 className="txt fw-bolder mt-5">CREATE ACCOUNT</h4>
 
           <form onSubmit={handleSignUp} className="container-box">
             <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4 mt-4">
