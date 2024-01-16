@@ -90,6 +90,8 @@ select {
   font-weight: 600;
   cursor: pointer;
   color: #52a546;
+  background-color: #2e2d2d;
+  margin-bottom: 0.5rem;
 }
 
 select:hover {

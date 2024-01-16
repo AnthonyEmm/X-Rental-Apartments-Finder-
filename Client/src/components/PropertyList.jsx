@@ -52,7 +52,7 @@ function PropertyList() {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
-        <div className="list-container border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
+        <div className="list-container  d-flex flex-column align-items-center gap-4 p-4">
           <div className="search-tags d-flex flex-column align-items-center w-75 gap-2">
             <div className="d-flex gap-2  w-50  justify-content-center">
               <input
@@ -92,15 +92,15 @@ function PropertyList() {
                   }
                 }}
               >
-                <option value="">Select M²</option>
-                <option value={50}> &lt;=50</option>
-                <option value={100}> &lt;=100</option>
-                <option value={150}> &lt;=150</option>
-                <option value={200}> &lt;=200</option>
-                <option value={300}> &lt;=300</option>
-                <option value={400}> &lt;=400</option>
-                <option value={500}> &lt;=500</option>
-                <option value={1000}> &lt;=1000</option>
+                <option value=""> M²</option>
+                <option value={50}>0-50</option>
+                <option value={100}>50-100</option>
+                <option value={150}>100-150</option>
+                <option value={200}>150-200</option>
+                <option value={300}>200-300</option>
+                <option value={400}>300-400</option>
+                <option value={500}>400-500</option>
+                <option value={1000}>500-1000</option>
               </select>
               <select
                 onChange={(e) => {
@@ -111,15 +111,15 @@ function PropertyList() {
                   }
                 }}
               >
-                <option value="">Select Price</option>
-                <option value={500}> &lt;=500 €</option>
-                <option value={700}> &lt;=700 €</option>
-                <option value={900}> &lt;=900 €</option>
-                <option value={1200}> &lt;=1200 €</option>
-                <option value={1500}> &lt;=1500 €</option>
-                <option value={2000}> &lt;=2000 €</option>
-                <option value={3000}> &lt;=3000 €</option>
-                <option value={Infinity}> &gt;=3000 €</option>
+                <option value="">Price</option>
+                <option value={500}> 0-500 €</option>
+                <option value={700}> 500-700 €</option>
+                <option value={900}> 700-900 €</option>
+                <option value={1200}>900-1200 €</option>
+                <option value={1500}> 1200-1500 €</option>
+                <option value={2000}> 1500-2000 €</option>
+                <option value={3000}> 2000-3000 €</option>
+                <option value={Infinity}> Above 3000 €</option>
               </select>
               <select
                 onChange={(e) => {
@@ -130,7 +130,7 @@ function PropertyList() {
                   }
                 }}
               >
-                <option value="">Select Bedrooms</option>
+                <option value="">Bedrooms</option>
                 <option value={1}> 1</option>
                 <option value={1.5}> 1.5</option>
                 <option value={2}> 2</option>
@@ -148,7 +148,7 @@ function PropertyList() {
                   }
                 }}
               >
-                <option value="">Select Type</option>
+                <option value="">Type</option>
                 <option value={"Apartment"}> Apartment</option>
                 <option value={"Cottage"}> Cottage</option>
                 <option value={"Duplex"}> Duplex</option>
@@ -164,15 +164,15 @@ function PropertyList() {
                   }
                 }}
               >
-                <option value="">Select Year</option>
-                <option value={1980}> &lt;=1980</option>
-                <option value={1985}> &lt;=1985</option>
-                <option value={1990}> &lt;=1990</option>
-                <option value={1995}> &lt;=1995</option>
-                <option value={2000}> &lt;=2000</option>
-                <option value={2005}> &lt;=2005</option>
-                <option value={2010}> &lt;=2010</option>
-                <option value={Infinity}> &gt;=2020</option>
+                <option value="">Year</option>
+                <option value={1980}>1900-1980</option>
+                <option value={1985}>1980-1985</option>
+                <option value={1990}>1985-1990</option>
+                <option value={1995}>1990-1995</option>
+                <option value={2000}>1995-2000</option>
+                <option value={2005}>2000-2005</option>
+                <option value={2010}>2005-2010</option>
+                <option value={Infinity}>Above 2020</option>
               </select>
             </div>
           </div>
