@@ -339,12 +339,12 @@
 }
 
 .test-container {
-  padding: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .test-container h1 {

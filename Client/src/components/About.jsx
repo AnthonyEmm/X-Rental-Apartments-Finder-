@@ -2,6 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import "../components/About.css";
 import { TypeAnimation } from "react-type-animation";
+import eu from "../assets/eu.png";
+import meka from "../assets/meka.png";
+import dinho from "../assets/dinho.png";
 
 function About() {
   return (
@@ -10,19 +13,19 @@ function About() {
         <div className="aboutus d-flex justify-content-center align-items-center gap-5">
           <div className="backPhotos d-flex flex-column justify-content-center align-items-center p-5 ">
             <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
-              <img src="/eu.png" alt="" />
-              <p className="text-light">Bernard Costa</p>
+              <img src={eu} alt="" />
+              <p className="text-light">Bernard Almeida</p>
             </div>
             <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
-              <img src="/meka.png" alt="" />
+              <img src={meka} alt="" />
               <p className="text-light">Nnaemeka Emesowum</p>
             </div>
             <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
-              <img src="/dinho.png" alt="" />
+              <img src={dinho} alt="" />
               <p className="text-light">Eudes Costa</p>
             </div>
           </div>
-          <div className="text-box">
+          <div className="text-box w-50">
             <h1 className="mb-5 fst-italic">About Us!</h1>
             <div className="text">
               <TypeAnimation
@@ -40,6 +43,7 @@ function About() {
                 ]}
                 speed={{ type: "keyStrokeDelayInMs", value: 80 }}
                 style={{
+                  whiteSpace: "pre-line",
                   fontSize: "1.6rem",
                   display: "block",
                   minHeight: "50vh",
