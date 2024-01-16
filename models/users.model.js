@@ -18,7 +18,6 @@ userSchema.pre("findOne", function (next) {
 });
 
 userSchema.pre("save", async function (next) {
-  console.log("save");
   if (this.isModified("password"))
     this.password = await bcrypt.hash(this.password, 10);
 

@@ -57,7 +57,6 @@ function Update({ id }) {
       const response = await axiosClient.post(`/auth/update/:id`, data, {
         withCredentials: true,
       });
-      console.log("User Updated Successfully:", response.data);
       setSuccess(true);
       navigate("/profile");
       setError("");

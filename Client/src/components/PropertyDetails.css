@@ -18,9 +18,12 @@
   margin-right: 30rem;
 }
 
-.right-side .details {
-  margin-bottom: 10rem;
+
+.right-side {
+  height: 70vh;
 }
+
+
 
 .right-side h3 {
   letter-spacing: 1px;

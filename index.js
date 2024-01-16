@@ -1,5 +1,6 @@
 require("dotenv/config");
 const cors = require("cors");
+const path = require("path");
 const cookieParser = require("cookie-parser");
 require("./db.js");
 const express = require("express");
@@ -17,10 +18,15 @@ app.use(
     credentials: true,
   }),
 );
+app.use(express.static(path.join(__dirname, "Client", "dist")));
 app.use(express.json());
 
-app.use("/auth", userRouter);
-app.use("/", propertiesRouter);
+app.use("/api/auth", userRouter);
+app.use("/api/", propertiesRouter);
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "Client", "dist", "index.html"));
+});
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

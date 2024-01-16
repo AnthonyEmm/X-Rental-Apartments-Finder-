@@ -30,8 +30,6 @@ function Home() {
 
   const title = "X Rental";
 
-  /* -------------------------------------------------------------- */
-
   const { ref: greenRef, inView: greenInView } = useInView({
     threshold: 0.1,
     triggerOnce: true,

@@ -1,11 +1,11 @@
 import React from "react";
 import "./SignUp.css";
 import { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import axiosClient from "../axiosClient";
 
 function SignUp() {
   const navigate = useNavigate(true);
@@ -48,15 +48,12 @@ function SignUp() {
       data.append("password", formData.password);
       data.append("avatar", formData.avatar);
 
-      const response = await axios.post(
-        "http://localhost:4050/auth/signup",
-        data
-      );
+
+      const response = await axiosClient.post("/auth/signup", data);
       if (!validatePassword()) {
         setError("Password must be 8-10 letters and one number!");
         navigate("/login");
       }
-      console.log("SignUp Successful:", response.data);
       setSuccess("Sign Up Successful", response.message);
       setError("");
     } catch (error) {
@@ -70,8 +67,10 @@ function SignUp() {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center mb-2">
+
         <div className="title-form rounded-2 d-flex flex-column align-items-center mt-4 mb-5">
           <h4 className="txt mt-5">CREATE ACCOUNT</h4>
+
           <form onSubmit={handleSignUp} className="container-box">
             <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4 mt-4">
               <input

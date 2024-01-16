@@ -52,8 +52,6 @@ function Upload() {
 
     try {
       const response = await axiosClient.post("/createlisting", data);
-
-      console.log("Upload Successful:", response.data);
       setSuccess(true);
       navigate("/list");
       setError("");

@@ -14,7 +14,7 @@ function DeleteUserProfile({ userId }) {
   const handleDelete = async () => {
     try {
       setIsDeleting(true);
-      const apiUrl = `http://localhost:4050/auth/delete/${userId}`;
+      const apiUrl = `/auth/delete/${userId}`;
       const response = await axiosClient.post(apiUrl);
       console.log(response.data);
       setSuccess(true);
