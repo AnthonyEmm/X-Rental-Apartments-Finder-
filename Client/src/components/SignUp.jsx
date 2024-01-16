@@ -50,7 +50,7 @@ function SignUp() {
 
       const response = await axios.post(
         "http://localhost:4050/auth/signup",
-        data,
+        data
       );
       if (!validatePassword()) {
         setError("Password must be 8-10 letters and one number!");
@@ -70,7 +70,7 @@ function SignUp() {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center mb-2">
-        <div className="title-form rounded-2 d-flex flex-column align-items-center mt-4 mb-4">
+        <div className="title-form rounded-2 d-flex flex-column align-items-center mt-4 mb-5">
           <h4 className="txt mt-5">CREATE ACCOUNT</h4>
           <form onSubmit={handleSignUp} className="container-box">
             <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4 mt-4">
@@ -141,16 +141,13 @@ function SignUp() {
             />
           </form>
           <button
-            className="btn btn-lg rounded-2 mb-3 mt-2"
+            className="btn btn-lg rounded-2 mb-4 mt-2"
             onClick={handleSignUp}
             type="submit"
           >
             {loading ? "Signing Up..." : "SIGN UP"}
           </button>
-          <Link
-            to="/login"
-            className="link-login text-decoration-none mb-3 gap-1"
-          >
+          <Link to="/login" className="link-login text-decoration-none mb-4">
             Back to sign-in
           </Link>
         </div>

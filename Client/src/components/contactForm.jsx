@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
 
 const ContactForm = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const ContactForm = () => {
         "service_39d8p2b",
         "template_ptoue0r",
         form.current,
-        "aU8koTSpQeqGZD8Wz",
+        "aU8koTSpQeqGZD8Wz"
       )
       .then(
         (result) => {
@@ -30,7 +31,7 @@ const ContactForm = () => {
         },
         (error) => {
           console.log(error.text);
-        },
+        }
       );
   };
 
@@ -49,7 +50,22 @@ const ContactForm = () => {
 
   return (
     <div className="bg">
-      <div className="container d-flex mt-4 mb-4 text-success">
+      <TypeAnimation
+        splitter={(str) => str.split(/(?= )/)}
+        sequence={[`Write us a message. We'll be glad!`, 1000, ""]}
+        speed={{ type: "keyStrokeDelayInMs", value: 100 }}
+        repeat={Infinity}
+        omitDeletionAnimation={true}
+        style={{
+          fontSize: "1.6rem",
+          display: "flex",
+          justifyContent: "center",
+          color: "#fff",
+          textAlign: "justify",
+          marginBottom: "2rem",
+        }}
+      />
+      <div className="container mt-2 mb-4 text-success">
         <div className="head d-flex justify-content-center align-items-center gap-3 mt-3 mb-4">
           <h2>CONTACT FORM</h2>
           <div>

@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import anime from "animejs";
 import CarouselTestimonials from "./CarouselTestimonials";
 import { useInView } from "react-intersection-observer";
+import vision from "../assets/vision.png";
+import hero from "../assets/hero.png";
+import card1 from "../assets/card1.png";
+import card2 from "../assets/card2.png";
+import card3 from "../assets/card3.png";
 
 function Home() {
   useEffect(() => {
@@ -50,7 +55,7 @@ function Home() {
           <header className="header">
             <img
               className="home-illustrations"
-              src="/hero.png"
+              src={hero}
               alt="Ilustration of a couple receiving their rent contract"
             />
 
@@ -75,7 +80,7 @@ function Home() {
             <div className="vision">
               <img
                 className="home-illustrations"
-                src="/vision.png"
+                src={vision}
                 alt="Ilustration of inside a flat"
               />
               <div className="message">
@@ -101,7 +106,7 @@ function Home() {
                   <div className="home-cards">
                     <img
                       className="home-illustrations"
-                      src="/card1.png"
+                      src={card1}
                       alt="Illustration of a cozy couch."
                     />
                     <h4>Comfort Living</h4>
@@ -115,7 +120,7 @@ function Home() {
                   <div className="home-cards">
                     <img
                       className="home-illustrations"
-                      src="/card2.png"
+                      src={card2}
                       alt="Illustration of a couple painting the walls of their living room."
                     />
                     <h4>Personal Touch</h4>
@@ -130,7 +135,7 @@ function Home() {
                   <div className="home-cards">
                     <img
                       className="home-illustrations"
-                      src="/card3.png"
+                      src={card3}
                       alt="Illustration of a fully-equipped kitchen."
                     />
                     <h4>Chef&apos;s Delight</h4>
@@ -146,9 +151,9 @@ function Home() {
               </h1>
             </div>
           </div>
-          <div className="testimonials-header d-flex justify-content-center align-items-center ">
+          <div className="testimonials-header d-flex justify-content-center align-items-center">
             <div className="test-container">
-              <h1>Testimonials</h1>
+              <h1 className="m-0">Testimonials</h1>
               <CarouselTestimonials />
             </div>
           </div>

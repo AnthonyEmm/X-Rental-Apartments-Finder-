@@ -50,13 +50,13 @@ function UserProfile({ showOwner }) {
 
   return (
     <>
-      <div className="bg w-100 d-flex justify-content-center align-items-center mb-5">
+      <div className="bg w-100 d-flex justify-content-center align-items-center mb-4">
         <div className="container-profile mt-4 rounded">
           <h1 className="header-title mt-5 d-flex justify-content-center align-items-start">
             PROFILE
           </h1>
           {userProfile && (
-            <div className="profile mb-4">
+            <div className="profile">
               <div className="user-profile text-light d-flex flex-column justify-content-center align-items-center gap-2 ">
                 <div className="profile mt-4 mb-5">
                   <img src={userProfile.avatar || Avatar} />

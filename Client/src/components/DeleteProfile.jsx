@@ -55,7 +55,7 @@ function DeleteUserProfile({ userId }) {
       >
         {isDeleting ? "Deleting..." : "Delete Profile"}
       </button>
-      <Link to="/profile" className="back text-decoration-none fw-bolder mb-2">
+      <Link to="/profile" className="back text-decoration-none fw-bolder mb-5">
         Back to Profile Page
       </Link>
       {error && (
