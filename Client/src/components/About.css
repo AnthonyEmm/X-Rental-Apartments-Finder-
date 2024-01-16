@@ -4,8 +4,8 @@
 }
 
 .backPhotos img {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   border-radius: 100px;
   box-shadow: 0 0 10px rgba(186, 189, 187, 0.7);
   margin-top: 20px;
@@ -24,7 +24,7 @@
 
 .aboutus h1 {
   text-transform: uppercase;
-  font-size: 90px;
+  font-size: 50px;
   font-weight: 800;
   color: rgb(17, 189, 74);
   font-family: "Exo", sans-serif;

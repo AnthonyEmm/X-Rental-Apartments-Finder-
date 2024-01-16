@@ -26,7 +26,7 @@ function About() {
             </div>
           </div>
           <div className="text-box w-50">
-            <h1 className="mb-5 fst-italic">About Us!</h1>
+            <h1 className="mb-2 fst-italic">About Us!</h1>
             <div className="text">
               <TypeAnimation
                 splitter={(str) => str.split(/(?= )/)}
@@ -44,11 +44,11 @@ function About() {
                 speed={{ type: "keyStrokeDelayInMs", value: 80 }}
                 style={{
                   whiteSpace: "pre-line",
-                  fontSize: "1.6rem",
+                  fontSize: "1.1rem",
                   display: "block",
-                  minHeight: "50vh",
+                  minHeight: "40vh",
                   color: "#fff",
-                  lineHeight: "3rem",
+                  lineHeight: "2rem",
                   textAlign: "justify",
                 }}
               />
