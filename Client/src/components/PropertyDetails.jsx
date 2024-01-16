@@ -160,55 +160,6 @@ function PropertyDetails() {
                   </Circle>
                 </MapContainer>
               </div>
-
-              {/*               <div className="comments d-flex justify-content-between  w-100">
-                <form onSubmit={handleSubmitClick}>
-                  <div className="comments-section w-100">
-                    <input
-                      className="name-input"
-                      onChange={handleInputName}
-                      value={name}
-                      type="text"
-                      id="name"
-                      placeholder="Add your name..."
-                      style={{ border: "none" }}
-                    />
-                    <div className="input-btn d-flex gap-2">
-                      <textarea
-                        className="rounded px-2"
-                        onChange={handleInputComment}
-                        value={comment}
-                        cols="70"
-                        rows="3"
-                        placeholder="Post your comment..."
-                      ></textarea>
-                      <button className="btn btn-lg" type="submit">
-                        Send
-                      </button>
-                    </div>
-                  </div>
-                  {error && (
-                    <p style={{ color: "red" }}>
-                      {error ? "Please add your Name and Comment!" : ""}
-                    </p>
-                  )}
-                  <div className="card-area">
-                    {submit.map((subs) => (
-                      <CommentCard
-                        key={subs.id}
-                        subs={subs}
-                        onDelete={handleRemoveComment}
-                      />
-                    ))}
-                  </div>
-                </form>
-                <Link
-                  to="/list"
-                  className="link-signup text-decoration-none align-self-start"
-                >
-                  Go back
-                </Link>
-              </div> */}
             </div>
           </div>
         </div>

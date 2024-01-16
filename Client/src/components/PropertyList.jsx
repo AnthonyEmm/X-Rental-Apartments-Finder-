@@ -52,7 +52,7 @@ function PropertyList() {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
-        <div className="d-flex flex-column align-items-center gap-4 p-4 w-75">
+        <div className="d-flex flex-column align-items-center gap-4 p-4 w-100">
           <div className="search-tags d-flex flex-column align-items-center gap-2">
             <div className="d-flex gap-2  w-50  justify-content-center">
               <input
