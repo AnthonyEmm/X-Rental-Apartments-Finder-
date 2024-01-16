@@ -24,11 +24,9 @@ const cloudinaryUpload = async (req, res, next) => {
   try {
     const { files } = req;
     const images = [];
-    console.log(files);
     for (const file of files) {
       const response = await cloudinary.uploader.upload(file.path);
       images.push(response.secure_url);
-      console.log(response.secure_url);
       fs.unlink(file.path, (err, data) => {
         if (err) {
           console.error(err);

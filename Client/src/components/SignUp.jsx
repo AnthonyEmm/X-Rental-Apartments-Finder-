@@ -56,7 +56,6 @@ function SignUp() {
         setError("Password must be 8-10 letters and one number!");
         navigate("/login");
       }
-      console.log("SignUp Successful:", response.data);
       setSuccess("Sign Up Successful", response.message);
       setError("");
     } catch (error) {

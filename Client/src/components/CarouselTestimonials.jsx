@@ -58,9 +58,8 @@ function CarouselTestimonials() {
           <h3>Tomas Müller</h3>
           <h4>Physics Teacher</h4>
           <p>
-            Couldn't be happier with my choice to use X Rental. Quality living,
-            zero hassle. Found my dream home effortlessly. Trust me, your ideal
-            home is just a click away – X Rental delivers!
+            X Rental I would recommend to any tenant to search for and deal with
+            property owners. Awesome experience I must say!
           </p>
         </div>
       </div>

@@ -8,7 +8,6 @@ const register = async (req, res, next) => {
     const {
       body: { email, password, name },
     } = req;
-    console.log(req.file);
     const foundUser = await User.findOne({ email });
     if (foundUser) throw new Error("User Already Exists");
 
@@ -59,9 +58,6 @@ const login = async (req, res, next) => {
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
       expiresIn: "500m",
     });
-
-    console.log(token);
-
     res
       .cookie("access_token", token, { httpOnly: true, maxAge: 28800000 })
       .json(payload);
@@ -115,11 +111,9 @@ const getOwnerProfile = async (req, res, next) => {
 // Creating a POST request for User credentials Update //
 const updateUser = async (req, res, next) => {
   try {
-    console.log(req.file);
     if (req.body.password) {
       req.body.password = await bcrypt.hash(req.body.password, 10);
     }
-    console.log(req.body.password);
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
       {

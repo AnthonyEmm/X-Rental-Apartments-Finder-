@@ -10,17 +10,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function CommentCard({ subs, onDelete }) {
-  // Initialize state variable showFullComment and its setter function
   const [showFullComment, setShowFullComment] = useState(false);
 
-  // Function to toggle the visibility of the full comment
   const toggleShowComment = () => {
     setShowFullComment(!showFullComment);
   };
 
   const currentDate = new Date();
 
-  // Format date to display month/year
   const monthYearOptions = {
     year: "2-digit",
     month: "2-digit",
@@ -28,19 +25,17 @@ function CommentCard({ subs, onDelete }) {
   };
   const formattedMonthYear = currentDate.toLocaleString(
     "us-US",
-    monthYearOptions
+    monthYearOptions,
   );
 
-  // Format time to display hour/minutes
   const timeOptions = { hour: "2-digit", minute: "2-digit" };
   const formattedTime = currentDate.toLocaleString([], timeOptions);
 
   const dateTimeStyle = {
-    fontSize: "12px", // Adjust the font size as needed
-    color: "white", // Optional: Set the text color
+    fontSize: "12px",
+    color: "white",
   };
 
-  // Setters and handlers for Likes & Dislikes
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
 

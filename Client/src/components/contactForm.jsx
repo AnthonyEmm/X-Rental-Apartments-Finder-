@@ -24,8 +24,6 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          console.log("email sent!");
           navigate("/");
         },
         (error) => {

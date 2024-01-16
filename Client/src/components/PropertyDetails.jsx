@@ -46,7 +46,6 @@ function PropertyDetails() {
       }, 3000);
     } else {
       const submitOne = { id: new Date().getTime(), name, comment };
-      console.log(submit);
       setSubmit([...submit, submitOne]);
       setName("");
       setComment("");

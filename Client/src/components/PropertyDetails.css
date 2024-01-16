@@ -10,7 +10,6 @@
 .left-side {
   height: 70vh;
   width: 100%;
-  /* border: 1px solid yellow; */
 }
 
 .left-side .img img {
@@ -23,7 +22,6 @@
 
 .right-side {
   height: 70vh;
-  /* border: 1px solid red; */
 }
 
 .right-side .details {
