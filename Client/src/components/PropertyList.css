@@ -52,7 +52,7 @@
 }
 
 .list .card {
-  border: 1px solid #343434;
+  border: 1px solid #292828c1;
   transition: box-shadow 0.3s ease;
   height: 100%;
 }
@@ -80,4 +80,30 @@ img {
 
 .card-text {
   color: white;
+}
+
+select {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #52a546;
+}
+
+select:hover {
+  background-color: #2e2d2d;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.bg-transparent {
+  background-color: transparent;
 }

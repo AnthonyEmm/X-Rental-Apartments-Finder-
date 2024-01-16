@@ -111,6 +111,7 @@ const getOwnerProfile = async (req, res, next) => {
     next(error);
   }
 };
+
 // Creating a POST request for User credentials Update //
 const updateUser = async (req, res, next) => {
   try {

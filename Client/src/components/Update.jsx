@@ -22,17 +22,33 @@ function Update({ id }) {
     setShowPassword(!showPassword);
   };
 
+  const validatePassword = () => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
+    return passwordRegex.test(password);
+  };
+
   const handleUpdate = async (e) => {
+    e.preventDefault();
+
     const data = new FormData();
     data.append("email", email);
     data.append("password", password);
     data.append("avatar", avatar);
 
-    e.preventDefault();
+    if (!email) {
+      setError("Please Enter Correct Email Address");
+      return;
+    }
 
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
+    }
+
+    if (!validatePassword()) {
+      setError("");
+    } else {
+      setSuccess(true);
     }
 
     setLoading(true);
@@ -50,7 +66,7 @@ function Update({ id }) {
         "User Update Failed:",
         error.response ? error.response.data : error.message,
       );
-      setError("User Update Failed. Please try again.");
+      setError("User Update Failed. Please add a profile photo!");
     } finally {
       setLoading(false);
     }
@@ -104,8 +120,8 @@ function Update({ id }) {
                 )}
               </span>
             </div>
-            <p className="info text-danger fs-6 bg-transparent mt-2">
-              Password must be 8-10 letters and a number
+            <p className="info text-danger fst-italic fs-6 bg-transparent mt-2">
+              Password must be 8-10 letters and one number
             </p>
             <input
               type="password"
@@ -133,7 +149,7 @@ function Update({ id }) {
             />
           </div>
 
-          <button onClick={handleUpdate} className="btn btn-lg rounded-2 mt-2">
+          <button onClick={handleUpdate} className="btn btn-lg rounded-2">
             {loading ? "Updating..." : "UPDATE"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
