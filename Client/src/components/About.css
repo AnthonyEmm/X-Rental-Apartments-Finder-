@@ -4,17 +4,22 @@
 }
 
 .backPhotos img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 100px;
+  position: relative;
   box-shadow: 0 0 10px rgba(186, 189, 187, 0.7);
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .section {
   height: 100vh;
-  margin-left: 10rem;
   padding-inline: 10rem;
+}
+
+.text-box {
+  width: 40rem;
+  height: 28rem;
 }
 
 .aboutus {
