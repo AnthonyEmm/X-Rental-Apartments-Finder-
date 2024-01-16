@@ -70,7 +70,7 @@ function SignUp() {
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center mb-2">
         <div className="title-form rounded-2 d-flex flex-column align-items-center mt-4 mb-4">
-          <h4 className="txt mt-5">CREATE ACCOUNT</h4>
+          <h4 className="txt mt-5 fw-bolder">CREATE ACCOUNT</h4>
           <form onSubmit={handleSignUp} className="container-box">
             <div className="inputs-area d-flex flex-column justify-content-center align-items-center gap-4 mt-4">
               <input
