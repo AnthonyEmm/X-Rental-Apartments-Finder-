@@ -75,7 +75,7 @@ function Update({ id }) {
   return (
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center mt-4 mb-4">
-        <div className="title-form border border-secondary rounded d-flex flex-column align-items-center gap-4 p-4">
+        <div className="title-form rounded d-flex flex-column align-items-center gap-4 p-4">
           <h4 className="update fw-bold mb-5 mt-2">UPDATE ACCOUNT</h4>
 
           <div className="name-email d-flex flex-column gap-2 mb-2">

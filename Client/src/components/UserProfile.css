@@ -15,7 +15,7 @@
 .container-profile {
   width: 45rem;
   height: 40rem;
-  box-shadow: 0 0 10px rgba(43, 212, 100, 0.7);
+  background-color: #2e2d2d;
 }
 
 .link-signup:hover {

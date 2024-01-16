@@ -22,10 +22,10 @@
   padding: 14px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  border: 1px solid #fff;
   border-radius: 5px;
   color: azure;
   background-color: rgb(40, 39, 39);
+  border: 0;
 }
 
 .btn {

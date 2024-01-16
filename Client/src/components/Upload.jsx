@@ -79,7 +79,7 @@ function Upload() {
   return (
     <div className="bg">
       <div className="container-main d-flex justify-content-center align-items-center mt-4">
-        <div className="title-form d-flex flex-column justify-content-center align-items-center border border-secondary rounded gap-2 p-4 mb-4">
+        <div className="title-form d-flex flex-column justify-content-center align-items-center rounded gap-2 p-4 mb-4">
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold mt-2">Add a property</h5>
             <Link
@@ -111,7 +111,7 @@ function Upload() {
               ></textarea>
             </div>
 
-            <div className="form-body d-flex gap-2 mb-3">
+            <div className="form-body d-flex gap-2">
               <div className="left-section d-flex flex-column gap-2">
                 <input
                   type="text"
@@ -129,9 +129,7 @@ function Upload() {
                   required={true}
                   title="Select a Property type"
                 >
-                  <option value="select property">
-                    Select type of Property
-                  </option>
+                  <option value="select property">Type of Property</option>
 
                   <option value="Apartment">Apartment</option>
                   <option value="Cottage">Cottage</option>

@@ -50,7 +50,7 @@ function UserProfile({ showOwner }) {
 
   return (
     <>
-      <div className="bg w-100 d-flex justify-content-center align-items-center mb-4">
+      <div className="bg w-100 d-flex justify-content-center align-items-center mb-5">
         <div className="container-profile mt-4 rounded">
           <h1 className="header-title mt-5 d-flex justify-content-center align-items-start">
             PROFILE

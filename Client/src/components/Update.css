@@ -5,9 +5,10 @@
 
 .title-form {
   width: 30rem;
-  border: 1px solid white;
-  border-color: rgb(20, 216, 86);
-  box-shadow: 0 0 10px rgba(26, 231, 95, 0.9);
+  /* border: 1px solid white;
+  border-color: rgb(20, 216, 86); */
+  background-color: #2e2d2d;
+  /* box-shadow: 0 0 10px rgba(26, 231, 95, 0.9); */
 }
 
 .title-form h1 {
@@ -21,14 +22,13 @@
 #email,
 #confirmPassword,
 #password {
-  border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
   width: 22rem;
   outline: none;
-  border-color: rgb(196, 237, 210);
   background-color: rgb(40, 39, 39);
   color: white;
+  border: 0;
 }
 
 input:hover {

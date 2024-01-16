@@ -82,7 +82,7 @@ function PropertyList() {
                 Search
               </button>
             </div>
-            <div className="tags bg-transparent d-flex justify-content-center gap-4">
+            <div className="tags w-auto bg-transparent d-flex justify-content-center gap-4">
               <select
                 onChange={(e) => {
                   if (e.target.value) {

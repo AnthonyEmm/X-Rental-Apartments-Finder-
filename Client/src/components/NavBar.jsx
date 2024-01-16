@@ -99,7 +99,7 @@ function NavBar() {
                         Listings
                       </Link>
                       <Link to="/upload" className="nav-link nav-item">
-                        Add New Property
+                        Create Property
                       </Link>
                       <li className=" dropdown">
                         <Link
