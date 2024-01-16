@@ -3,6 +3,7 @@ import { AuthContext } from "../context/AuthProvider";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import Avatar from "../assets/user-circle-fill.svg";
+import logo from "../assets/logo.svg";
 
 function NavBar() {
   const { logout, loading, user } = useContext(AuthContext);
@@ -23,7 +24,7 @@ function NavBar() {
           to="/"
           className="navbar-brand d-flex justify-content-center align-items-center gap-2 fw-bold fs-4 "
         >
-          <img src="/logo.svg" alt="" />
+          <img src={logo} alt="Logo" />
           <span>X Rental</span>
         </Link>
 
