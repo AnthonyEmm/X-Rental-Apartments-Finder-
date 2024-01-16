@@ -29,3 +29,8 @@
   color: rgba(17, 189, 74, 0.612);
   font-size: small;
 }
+
+.link:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
+}

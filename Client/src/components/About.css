@@ -1,4 +1,36 @@
-.container-fluid h1,
-p {
-  color: #fff;
+.bg {
+  width: auto;
+  height: auto;
+}
+
+.backPhotos img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(186, 189, 187, 0.7);
+  margin-top: 20px;
+}
+
+.section {
+  height: 100vh;
+  margin-left: 10rem;
+  padding-inline: 10rem;
+}
+
+.aboutus {
+  /* border: 1px solid blue; */
+  width: 85%;
+  margin-bottom: 5rem;
+}
+
+.aboutus h1 {
+  text-transform: uppercase;
+  font-size: 90px;
+  font-weight: 800;
+  color: rgb(17, 189, 74);
+  font-family: Fira Code;
+}
+
+.avatar p {
+  font-size: 18px;
 }

@@ -50,7 +50,7 @@ function UserProfile({ showOwner }) {
 
   return (
     <>
-      <div className="bg w-100 p-5 d-flex justify-content-center align-items-center mb-4">
+      <div className="bg w-100 d-flex justify-content-center align-items-center mb-4">
         <div className="container-profile mt-4 rounded">
           <h1 className="header-title mt-5 d-flex justify-content-center align-items-start">
             PROFILE
@@ -61,12 +61,16 @@ function UserProfile({ showOwner }) {
                 <div className="profile mt-4 mb-5">
                   <img src={userProfile.avatar || Avatar} />
                 </div>
-                <h3 className="profile-txt ">Name: {userProfile.name}</h3>
-                <h3 className="profile-txt">Email: {userProfile.email}</h3>
-                <h3 className="profile-txt">
-                  Member since:{" "}
+                <div className="profile-txt ">
+                  <span>Name:</span> {userProfile.name}
+                </div>
+                <div className="profile-txt">
+                  <span>Email:</span> {userProfile.email}
+                </div>
+                <div className="profile-txt">
+                  <span>Member since:</span>{" "}
                   {new Date(userProfile.createdAt).toLocaleDateString()}
-                </h3>
+                </div>
               </div>
 
               {!showOwner && (

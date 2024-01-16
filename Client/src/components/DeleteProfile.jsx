@@ -2,6 +2,7 @@ import { AuthContext } from "../context/AuthProvider";
 import { useContext, useState } from "react";
 import axiosClient from "../axiosClient";
 import { useNavigate, Link } from "react-router-dom";
+import "./DeleteProfile.css";
 
 function DeleteUserProfile({ userId }) {
   const { setUser } = useContext(AuthContext);
@@ -54,10 +55,7 @@ function DeleteUserProfile({ userId }) {
       >
         {isDeleting ? "Deleting..." : "Delete Profile"}
       </button>
-      <Link
-        to="/profile"
-        className="back text-decoration-none text-success fw-bolder mb-2"
-      >
+      <Link to="/profile" className="back text-decoration-none fw-bolder mb-2">
         Back to Profile Page
       </Link>
       {error && (

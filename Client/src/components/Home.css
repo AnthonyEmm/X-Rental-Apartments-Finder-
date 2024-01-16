@@ -315,7 +315,7 @@
 
 @keyframes slide-in-top {
   from {
-    transform: translateY(-50%);
+    transform: translateY(-40%);
   }
   to {
     transform: translateY(0);
@@ -324,7 +324,7 @@
 
 @keyframes slide-in-bottom {
   from {
-    transform: translateY(100%);
+    transform: translateY(40%);
   }
   to {
     transform: translateY(0);

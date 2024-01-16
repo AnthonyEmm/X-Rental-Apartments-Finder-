@@ -11,6 +11,11 @@
   color: rgb(17, 189, 74);
 }
 
+.title-form h3 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
 #email,
 #password {
   width: 100%;

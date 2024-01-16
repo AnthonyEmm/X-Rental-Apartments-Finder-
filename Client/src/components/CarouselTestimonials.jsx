@@ -30,8 +30,8 @@ function CarouselTestimonials() {
       <div className="test-card">
         <img src="/2.png" />
         <div className="myCarousel">
-          <h3>Lupin</h3>
-          <h4>Full Stack WebDev</h4>
+          <h3>Albrecht Dürer</h3>
+          <h4>Full Stack Web Developer</h4>
           <p>
             X Rental turned my house-hunting stress into a joyous experience.
             From premium listings to hassle-free rentals, they redefine the way
@@ -43,8 +43,20 @@ function CarouselTestimonials() {
       <div className="test-card">
         <img src="/3.png" />
         <div className="myCarousel">
-          <h3>Kid Bengal</h3>
-          <h4>Plumber</h4>
+          <h3>Mustafa Al Shamud</h3>
+          <h4>Data Science</h4>
+          <p>
+            Couldn't be happier with my choice to use X Rental. Quality living,
+            zero hassle. Found my dream home effortlessly. Trust me, your ideal
+            home is just a click away – X Rental delivers!
+          </p>
+        </div>
+      </div>
+      <div className="test-card">
+        <img src="/3.png" />
+        <div className="myCarousel">
+          <h3>Tomas Müller</h3>
+          <h4>Physics Teacher</h4>
           <p>
             Couldn't be happier with my choice to use X Rental. Quality living,
             zero hassle. Found my dream home effortlessly. Trust me, your ideal
