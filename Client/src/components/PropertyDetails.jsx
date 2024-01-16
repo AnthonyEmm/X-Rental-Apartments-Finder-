@@ -4,7 +4,6 @@ import "../components/PropertyDetails.css";
 import { Link, useParams } from "react-router-dom";
 import axiosClient from "../axiosClient";
 import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
-import CommentCard from "./CommentCard";
 import ImageGallery from "react-image-gallery";
 
 function PropertyDetails() {
