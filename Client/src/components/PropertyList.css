@@ -7,6 +7,19 @@
   width: 100rem;
 }
 
+.load {
+  border: 0;
+  background-color: transparent;
+  color: rgb(17, 189, 74);
+}
+
+.load:hover {
+  color: rgb(25, 245, 99);
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+  padding: 0.7rem 0.5rem;
+  transition: 0.5s ease-in-out;
+}
+
 #search {
   border-color: rgb(196, 237, 210);
   border-radius: 5px;

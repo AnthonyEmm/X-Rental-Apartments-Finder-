@@ -6,11 +6,13 @@ import axiosClient from "../axiosClient";
 import { useSearchParams } from "react-router-dom";
 
 function PropertyList() {
-  const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
   const [searchParams] = useSearchParams("");
+  const [properties, setProperties] = useState([]);
+  const [isLastPage, setIsLastPage] = useState(false);
 
   useEffect(() => {
     if (query) {
@@ -20,10 +22,21 @@ function PropertyList() {
     }
   }, [query]);
 
-  const fetchProperties = async (url) => {
+  const fetchProperties = async (url, clear) => {
     try {
       const response = await axiosClient.get(url);
-      setProperties(response.data);
+
+      if (clear) {
+        setProperties([...response.data]);
+        setPage(1);
+      } else {
+        setProperties([...properties, ...response.data]);
+      }
+      if (response.data.length < 6) {
+        setIsLastPage(true);
+      } else {
+        setIsLastPage(false);
+      }
       setLoading(false);
       console.log(response.data);
     } catch (error) {
@@ -76,7 +89,11 @@ function PropertyList() {
                 title="Search Property"
                 type="button"
                 onClick={() => {
-                  setQuery(searchParams.toString());
+                  searchParams.delete("page");
+                  fetchProperties(
+                    `/properties?${searchParams.toString()}`,
+                    true,
+                  );
                 }}
               >
                 Search
@@ -215,6 +232,21 @@ function PropertyList() {
               ))}
             </div>
           </div>
+          {!isLastPage && (
+            <Link>
+              <button
+                type="submit"
+                className="load rounded-1"
+                onClick={() => {
+                  searchParams.set("page", page);
+                  setQuery(searchParams.toString());
+                  setPage(page + 1);
+                }}
+              >
+                Show More...
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

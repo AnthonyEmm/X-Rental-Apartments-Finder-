@@ -42,6 +42,8 @@ const createProperty = async (req, res, next) => {
 const getProperties = async (req, res, next) => {
   try {
     const { query } = req;
+    const { page = 0 } = query;
+    const limit = 6;
 
     if (query.price) {
       query.price = { $lte: query.price };
@@ -53,7 +55,10 @@ const getProperties = async (req, res, next) => {
       query.year = { $lte: query.year };
     }
 
-    const property = await Property.find(query);
+    if (query.page) delete query.page;
+    const property = await Property.find(query)
+      .skip(page * limit)
+      .limit(limit);
 
     res.json(property);
   } catch (error) {
