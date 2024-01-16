@@ -104,12 +104,6 @@ function Login() {
                   )}
                 </span>
               </div>
-              {/* <Link
-                to="/update-passsword"
-                className="link-signup text-decoration-none gap-3 p-3"
-              >
-                Forgot Password?
-              </Link> */}
               {error && (
                 <p style={{ color: "red" }}>
                   {error ? "Incorrect Email or Password" : ""}

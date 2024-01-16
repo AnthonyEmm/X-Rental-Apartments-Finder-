@@ -41,7 +41,19 @@ const createProperty = async (req, res, next) => {
 // Get and display all properties from the DataBase //
 const getProperties = async (req, res, next) => {
   try {
-    const property = await Property.find({});
+    const { query } = req;
+
+    if (query.price) {
+      query.price = { $lte: query.price };
+    }
+    if (query.area) {
+      query.area = { $lte: query.area };
+    }
+    if (query.year) {
+      query.year = { $lte: query.year };
+    }
+
+    const property = await Property.find(query);
 
     res.json(property);
   } catch (error) {

@@ -15,7 +15,7 @@
 #name,
 #email,
 #password {
-  width: 21rem;
+  width: 22rem;
   padding: 14px;
   margin-bottom: 10px;
   border: 1px solid #fff;
@@ -39,4 +39,5 @@
 .upload {
   border: none;
   background-color: transparent;
+  margin-bottom: 0.7rem;
 }
