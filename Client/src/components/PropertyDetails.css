@@ -8,15 +8,26 @@
 }
 
 .left-side {
-  width: 50%;
+  height: 70vh;
+  width: 100%;
+  /* border: 1px solid yellow; */
+}
+
+.left-side .img img {
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(183, 184, 183, 0.7);
+  border: 3px solid azure;
+  margin-right: 30rem;
+}
+
+.right-side {
+  height: 70vh;
+  /* border: 1px solid red; */
 }
 
 .right-side .details {
   margin-bottom: 10rem;
-}
-
-.right-side {
-  width: 50%;
 }
 
 .right-side h3 {
@@ -25,13 +36,6 @@
 
 .right-side p {
   font-size: 1.1rem;
-}
-
-.img img {
-  cursor: pointer;
-  width: 100%;
-  box-shadow: 0 0 10px rgba(183, 184, 183, 0.7);
-  border: 3px solid azure;
 }
 
 .name-input {

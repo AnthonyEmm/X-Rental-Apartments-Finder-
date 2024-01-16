@@ -74,9 +74,9 @@ function PropertyDetails() {
     <div className="bg text-white">
       {property && (
         <div className="container-main d-flex justify-content-center align-items-center d-flex mt-5">
-          <div className="list-container border border-secondary rounded d-flex gap-5 p-5 mb-4">
-            <div className="left-side d-flex flex-column gap-5">
-              <div className="img mt-2">
+          <div className="list-container d-flex flex-column border border-secondary rounded gap-5 p-5 mb-4">
+            <div className="left-side d-flex justify-content-center gap-5">
+              <div className="img">
                 <ImageGallery
                   additionalClass=""
                   items={property.images?.map((image) => {
@@ -87,7 +87,75 @@ function PropertyDetails() {
                   })}
                 />
               </div>
-              <div className="comments">
+              <div className="details d-flex flex-column fw-bold">
+                <h3 className="mt-4">{property.description}</h3>
+                <p>
+                  <span>Type</span>: {property.propertyType}
+                </p>
+                <p>
+                  <span>Room(s)</span>: {property.bedrooms}
+                </p>
+                <p>
+                  <span>Price</span>: €{property.price}/month
+                </p>
+                <p>
+                  <span>Zip Code</span>: {property.areaCode}
+                </p>
+
+                <p>
+                  <span>Property Size</span>: {property.area} M²
+                </p>
+
+                <p>
+                  <span>Construction year</span>: {property.year}
+                </p>
+
+                <p>
+                  <span>Owner</span>: {property.owner.name}
+                </p>
+                <div className="button-section mt-5 d-flex justify-content-between">
+                  <Link to={`/profile/${property.owner._id}`}>
+                    <button
+                      className="btn btn-lg btn-success rounded-1 "
+                      type="button"
+                    >
+                      OWNER DETAILS
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="right-side d-flex flex-column justify-content-center align-items-center  gap-5">
+              <div className="map">
+                <MapContainer
+                  className="custom-leaflet"
+                  center={center}
+                  zoom={15}
+                  style={{
+                    height: "50vh",
+                    width: "40vw",
+                  }}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  <Circle
+                    center={center}
+                    pathOptions={{
+                      color: "green",
+                      fillColor: "#71a900",
+                      fillOpacity: 0.5,
+                      scrollWheelZoom: false,
+                    }}
+                    radius={300}
+                  >
+                    <Popup>Property Location</Popup>
+                  </Circle>
+                </MapContainer>
+              </div>
+
+              <div className="comments d-flex justify-content-between align-items-center w-50">
                 <form onSubmit={handleSubmitClick}>
                   <div className="comments-section w-100">
                     <input
@@ -128,75 +196,9 @@ function PropertyDetails() {
                     ))}
                   </div>
                 </form>
-              </div>
-            </div>
-            <div className="right-side">
-              <div className="details d-flex flex-column fw-bold mt-5">
-                <h3 className="mt-4">{property.description}</h3>
-                <p>
-                  <span>Type</span>: {property.propertyType}
-                </p>
-                <p>
-                  <span>Room(s)</span>: {property.bedrooms}
-                </p>
-                <p>
-                  <span>Price</span>: €{property.price}/month
-                </p>
-                <p>
-                  <span>Zip Code</span>: {property.areaCode}
-                </p>
-
-                <p>
-                  <span>Property Size</span>: {property.area} M²
-                </p>
-
-                <p>
-                  <span>Construction year</span>: {property.year}
-                </p>
-
-                <p>
-                  <span>Owner</span>: {property.owner.name}
-                </p>
-              </div>
-
-              <div className="map">
-                <MapContainer
-                  className="custom-leaflet"
-                  center={center}
-                  zoom={15}
-                  style={{ height: "50vh" }}
-                >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Circle
-                    center={center}
-                    pathOptions={{
-                      color: "green",
-                      fillColor: "#71a900",
-                      fillOpacity: 0.5,
-                      scrollWheelZoom: false,
-                    }}
-                    radius={300}
-                  >
-                    <Popup>Property Location</Popup>
-                  </Circle>
-                </MapContainer>
-              </div>
-
-              <div className="button-section mt-5 d-flex justify-content-between">
-                <Link to={`/profile/${property.owner._id}`}>
-                  <button
-                    className="btn btn-lg btn-success rounded-1 "
-                    type="button"
-                  >
-                    OWNER DETAILS
-                  </button>
-                </Link>
                 <Link
                   to="/list"
-                  className="link-signup text-decoration-none align-self-center"
+                  className="link-signup text-decoration-none align-self-start"
                 >
                   Go back
                 </Link>

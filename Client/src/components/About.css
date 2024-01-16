@@ -13,27 +13,24 @@
 
 .section {
   height: 100vh;
+  margin-left: 10rem;
   padding-inline: 10rem;
 }
 
 .aboutus {
   /* border: 1px solid blue; */
-  width: 100%;
-}
-
-.aboutus h1 {
-  color: #fff;
+  width: 85%;
+  margin-bottom: 5rem;
 }
 
 .aboutus h1 {
   text-transform: uppercase;
   font-size: 90px;
   font-weight: 800;
+  color: rgb(17, 189, 74);
+  font-family: Fira Code;
 }
 
-.typewriter {
-  overflow: hidden;
-  border: 1px solid green;
-  width: 100%;
-  text-align: center;
+.avatar p {
+  font-size: 18px;
 }

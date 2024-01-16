@@ -19,7 +19,11 @@ function NavBar() {
   return (
     <nav className="navbar sticky-top navbar-expand-lg bg-inherit p-3">
       <div className="container-fluid px-4">
-        <Link to="/" className="navbar-brand fw-bold fs-4">
+        <Link
+          to="/"
+          className="navbar-brand d-flex justify-content-center align-items-center gap-2 fw-bold fs-4 "
+        >
+          <img src="/logo.svg" alt="" />
           <span>X Rental</span>
         </Link>
 
