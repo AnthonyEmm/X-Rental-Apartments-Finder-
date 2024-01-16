@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import "../components/About.css";
 import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-router-dom";
 import eu from "../assets/eu.png";
 import meka from "../assets/meka.png";
 import dinho from "../assets/dinho.png";
@@ -9,24 +10,10 @@ import dinho from "../assets/dinho.png";
 function About() {
   return (
     <div className="bg">
-      <div className="section d-flex align-items-center">
-        <div className="aboutus d-flex justify-content-center align-items-center gap-5">
-          <div className="backPhotos d-flex flex-column justify-content-center align-items-center p-5 ">
-            <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
-              <img src={eu} alt="" />
-              <p className="text-light">Bernard Almeida</p>
-            </div>
-            <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
-              <img src={meka} alt="" />
-              <p className="text-light">Nnaemeka Emesowum</p>
-            </div>
-            <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
-              <img src={dinho} alt="" />
-              <p className="text-light">Eudes Costa</p>
-            </div>
-          </div>
-          <div className="text-box w-50">
-            <h1 className="mb-2 fst-italic">About Us!</h1>
+      <div className="section d-flex justify-content-center align-items-center">
+        <div className="aboutus d-flex flex-column justify-content-center align-items-center gap-5">
+          <div className="text-box">
+            <h1 className="mb-5 mt-3 fw-bolder">About Us</h1>
             <div className="text">
               <TypeAnimation
                 splitter={(str) => str.split(/(?= )/)}
@@ -43,15 +30,41 @@ function About() {
                 ]}
                 speed={{ type: "keyStrokeDelayInMs", value: 80 }}
                 style={{
-                  whiteSpace: "pre-line",
+                  whiteSpace: "initial",
                   fontSize: "1.1rem",
                   display: "block",
                   minHeight: "40vh",
                   color: "#fff",
-                  lineHeight: "2rem",
+                  lineHeight: "2.2rem",
                   textAlign: "justify",
                 }}
               />
+            </div>
+          </div>
+          <div className="backPhotos d-flex justify-content-center align-items-center gap-5 mt-5 mb-1">
+            <div className="avatar d-flex flex-column justify-content-center align-items-center gap-2 fs-4">
+              <Link
+                to="https://www.linkedin.com/in/bernard-almeida-da-costa/"
+                target="_blank"
+              >
+                <img src={eu} alt="Bernard Almeida da Costa" />
+              </Link>
+              <p className="text-light">Bernard Almeida</p>
+            </div>
+            <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
+              <Link
+                to="https://www.linkedin.com/in/nnaemeka-emesowum/"
+                target="_blank"
+              >
+                <img src={meka} alt="Nnaemeka C. Emesowum" />
+              </Link>
+              <p className="text-light">Nnaemeka Emesowum</p>
+            </div>
+            <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
+              <Link to="https://www.linkedin.com/in/costa-jr/" target="_blank">
+                <img src={dinho} alt="Eudes Costa Junior" />
+              </Link>
+              <p className="text-light">Eudes Costa</p>
             </div>
           </div>
         </div>
