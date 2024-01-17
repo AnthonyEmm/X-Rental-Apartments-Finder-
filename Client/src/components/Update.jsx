@@ -35,29 +35,29 @@ function Update({ id }) {
     data.append("password", password);
     data.append("avatar", avatar);
 
-    if (!email) {
-      setError("Please Enter Correct Email Address");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setError("Passwords do not match");
-      return;
-    }
-
-    if (!validatePassword()) {
-      setError("");
-    } else {
-      setSuccess(true);
-    }
-
     setLoading(true);
 
     try {
+      if (!email) {
+        setError("Please Enter Your Email Address");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        setError("Passwords do not match");
+        return;
+      }
+
+      if (!validatePassword()) {
+        setError("Password must be 8-10 letters and one number");
+      } else {
+        setSuccess(true);
+      }
+
       const response = await axiosClient.post(`/auth/update/:id`, data, {
         withCredentials: true,
       });
-      setSuccess(true);
+      setSuccess(response.data);
       navigate("/profile");
       setError("");
     } catch (error) {
@@ -65,7 +65,7 @@ function Update({ id }) {
         "User Update Failed:",
         error.response ? error.response.data : error.message,
       );
-      setError("User Update Failed. Please add a profile photo!");
+      setError("User Update Failed. Please add a profile Image!");
     } finally {
       setLoading(false);
     }
