@@ -69,7 +69,7 @@ function PropertyList() {
           <div className="search-tags d-flex flex-column align-items-center gap-2">
             <div className="d-flex gap-2  w-50  justify-content-center">
               <input
-                className="search w-50 mt-3 mb-5"
+                className="search w-75 mt-3 mb-5"
                 type="text"
                 name="search"
                 title="Search by Postal Code"
@@ -189,7 +189,8 @@ function PropertyList() {
                 <option value={2000}>1995-2000</option>
                 <option value={2005}>2000-2005</option>
                 <option value={2010}>2005-2010</option>
-                <option value={Infinity}>Above 2020</option>
+                <option value={2020}>2010-2020</option>
+                <option value={Infinity}>2020 Above</option>
               </select>
             </div>
           </div>

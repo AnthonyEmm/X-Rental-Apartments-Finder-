@@ -116,7 +116,7 @@
 
 .benefits h3 {
   color: var(--hl-primary-color);
-  margin: 40px 0 16px;
+  margin: 10px 0 16px;
 }
 
 .benefits .home-cards {
@@ -124,7 +124,7 @@
   justify-items: center;
   box-shadow: 0 0 20px rgba(186, 189, 187, 0.7);
   padding: 20px;
-  margin: 16px auto;
+  margin: 2px auto;
   border: 1px solid var(--border-color);
   border-radius: 8px;
 }
@@ -343,13 +343,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .test-container h1 {
   color: #000;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 }
