@@ -13,7 +13,7 @@ function About() {
       <div className="section d-flex justify-content-center align-items-center">
         <div className="aboutus d-flex flex-column justify-content-center align-items-center gap-5">
           <div className="text-box">
-            <h1 className="mb-5 mt-5 fw-bolder">About Us</h1>
+            <h1 className="mb-5 fw-bolder">About Us</h1>
             <div className="text">
               <TypeAnimation
                 splitter={(str) => str.split(/(?= )/)}
