@@ -33,7 +33,7 @@ function Login() {
       });
 
       setSuccess(true);
-      navigate("/");
+      navigate("/list");
       setError("");
     } catch (error) {
       console.log("Login Failed:", error);
