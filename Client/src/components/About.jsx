@@ -13,7 +13,7 @@ function About() {
       <div className="section d-flex justify-content-center align-items-center">
         <div className="aboutus d-flex flex-column justify-content-center align-items-center gap-5">
           <div className="text-box">
-            <h1 className="mb-5 mt-3 fw-bolder">About Us</h1>
+            <h1 className="mb-5 mt-5 fw-bolder">About Us</h1>
             <div className="text">
               <TypeAnimation
                 splitter={(str) => str.split(/(?= )/)}
@@ -41,7 +41,7 @@ function About() {
               />
             </div>
           </div>
-          <div className="backPhotos d-flex justify-content-center align-items-center gap-5 mt-5 mb-1">
+          <div className="backPhotos d-flex justify-content-center align-items-center gap-5 mt-5 mb-5">
             <div className="avatar d-flex flex-column justify-content-center align-items-center gap-2 fs-4">
               <Link
                 to="https://www.linkedin.com/in/bernard-almeida-da-costa/"
