@@ -108,7 +108,7 @@
 }
 
 .benefits {
-  height: 100vh;
+  height: 110vh;
   display: flex;
   justify-content: center;
   gap: 60px;
@@ -334,7 +334,7 @@
 /* Testimonials ------------------------------------------- */
 
 .testimonials-header {
-  height: 100vh;
+  height: 110vh;
   background-color: hsl(140, 83%, 40%);
 }
 
@@ -351,5 +351,17 @@
   color: #000;
   font-weight: 700;
   text-transform: uppercase;
-  /* margin-bottom: 3rem; */
+}
+
+.testimonials-header .top-btn {
+  border: none;
+  padding: 0.4rem;
+  background-color: transparent;
+  border-radius: 8px;
+  color: rgb(2, 68, 2);
+  margin-top: 2rem;
+}
+
+.testimonials-header .top-btn:hover {
+  border: 0.5px solid black;
 }

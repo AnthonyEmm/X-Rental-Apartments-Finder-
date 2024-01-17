@@ -9,6 +9,8 @@ import hero from "../assets/hero.png";
 import card1 from "../assets/card1.png";
 import card2 from "../assets/card2.png";
 import card3 from "../assets/card3.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   useEffect(() => {
@@ -151,8 +153,17 @@ function Home() {
           </div>
           <div className="testimonials-header d-flex justify-content-center align-items-center">
             <div className="test-container">
-              <h1 className="m-0">Testimonials</h1>
+              <h1>Testimonials</h1>
               <CarouselTestimonials />
+              <button
+                className="top-btn"
+                title="Back to Top"
+                onClick={() => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }}
+              >
+                <FontAwesomeIcon icon={faArrowUp} style={{ fontSize: "2em" }} />
+              </button>
             </div>
           </div>
         </main>
