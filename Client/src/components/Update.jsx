@@ -51,7 +51,7 @@ function Update({ id }) {
       if (!validatePassword()) {
         setError("Password must be 8-10 letters and one number");
       } else {
-        setSuccess(true);
+        setSuccess("Update Successful!");
       }
 
       const response = await axiosClient.post(`/auth/update/:id`, data, {
