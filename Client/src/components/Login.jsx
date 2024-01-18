@@ -30,7 +30,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!validatePassword()) {
-      setError("Incorrect Email or Password. Please try again!");
+      setError("Password must be at least 8-10 letters and one number!");
     }
 
     setLoading(true);
@@ -40,10 +40,10 @@ function Login() {
         password,
       });
 
-      setSuccess(true);
+      setSuccess("Login successful");
     } catch (error) {
       console.log("Login Failed:", error);
-      setError("Incorrect Email or Password. Please try again!");
+      setError(error);
     } finally {
       setLoading(false);
     }
