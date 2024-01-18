@@ -22,8 +22,16 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
+  const validatePassword = () => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
+    return passwordRegex.test(password);
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!validatePassword()) {
+      setError("Incorrect Email or Password. Please try again!");
+    }
 
     setLoading(true);
     try {
@@ -33,11 +41,9 @@ function Login() {
       });
 
       setSuccess(true);
-      navigate("/list");
-      setError("");
     } catch (error) {
       console.log("Login Failed:", error);
-      setError("Incorrect Email or Password. Please try again");
+      setError("Incorrect Email or Password. Please try again!");
     } finally {
       setLoading(false);
     }
@@ -106,12 +112,9 @@ function Login() {
               </div>
               {error && (
                 <p style={{ color: "red" }}>
-                  {error ? "Incorrect Email or Password" : ""}
-                </p>
-              )}
-              {success && (
-                <p style={{ color: "green" }}>
-                  {success ? "Login Successful" : ""}
+                  {error
+                    ? "Incorrect Email or Password. Please try again!"
+                    : ""}
                 </p>
               )}
 
