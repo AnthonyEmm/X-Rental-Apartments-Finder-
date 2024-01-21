@@ -1,12 +1,6 @@
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
-const fs = require("fs");
-const path = require("path");
-
-const uploadDir = path.join(__dirname, "uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
-}
+const fs = require("fs").promises;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -33,12 +27,7 @@ const cloudinaryUpload = async (req, res, next) => {
     for (const file of files) {
       const response = await cloudinary.uploader.upload(file.path);
       images.push(response.secure_url);
-      fs.unlink(file.path, (err, data) => {
-        if (err) {
-          console.error(err);
-          throw err;
-        }
-      });
+      await fs.unlink(file.path); // Use fs.promises.unlink and await here
     }
 
     req.images = images;
