@@ -27,7 +27,7 @@ const cloudinaryUpload = async (req, res, next) => {
     for (const file of files) {
       const response = await cloudinary.uploader.upload(file.path);
       images.push(response.secure_url);
-      await fs.unlink(file.path); // Use fs.promises.unlink and await here
+      await fs.unlink(file.path);
     }
 
     req.images = images;
