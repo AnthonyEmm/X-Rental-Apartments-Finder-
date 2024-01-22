@@ -121,7 +121,7 @@ function PropertyDetails() {
                     </button>
                   </Link>
                   <Link
-                    to="/list"
+                    to="/listings"
                     className="btn btn-lg btn-success rounded-1 text-black "
                   >
                     Go back
