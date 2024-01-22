@@ -65,7 +65,7 @@ function Home() {
                 We are <span>X Rental</span> and we help you find an apartment
                 in Berlin.
               </p>
-              <Link to="/list" className="button">
+              <Link to="/listings" className="button">
                 <button className="btn btn-lg rounded-2">Explore</button>
               </Link>
             </section>

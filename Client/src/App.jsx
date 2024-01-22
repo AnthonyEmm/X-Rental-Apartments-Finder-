@@ -29,7 +29,7 @@ function App() {
         <Route path="/contact" element={<ContactForm />} />
 
         <Route path="/" element={<Protected />}>
-          <Route path="/list" element={<PropertyList />} />
+          <Route path="/listings" element={<PropertyList />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/property/:id" element={<PropertyDetails />} />
           <Route path="/profile" element={<UserProfile />} />

@@ -28,7 +28,7 @@ export default function AuthProvider({ children }) {
     try {
       const response = await axiosClient.post("/auth/login", data);
       setUser(response.data);
-      navigate("/list");
+      navigate("/listings");
     } catch (error) {
       console.log("Login Failed:", error);
       setUser(null);

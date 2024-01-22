@@ -53,7 +53,7 @@ function Upload() {
     try {
       const response = await axiosClient.post("/createlisting", data);
       setSuccess(true);
-      navigate("/list");
+      navigate("/listings");
       setError("");
     } catch (error) {
       console.log(
@@ -81,7 +81,7 @@ function Upload() {
           <div className="form-header d-flex justify-content-between mb-2">
             <h5 className="fw-bold mt-2">Add a property</h5>
             <Link
-              to="/list"
+              to="/listings"
               className="link-signup text-decoration-none mt-2"
               title="Go back"
             >

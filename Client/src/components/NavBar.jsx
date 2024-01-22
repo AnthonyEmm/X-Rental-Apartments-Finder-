@@ -93,7 +93,7 @@ function NavBar() {
                   ) : (
                     <>
                       <Link
-                        to="/list"
+                        to="/listings"
                         className="nav-link nav-item"
                         onClick={handleCloseOffcanvas}
                       >
