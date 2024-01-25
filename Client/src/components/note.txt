@@ -1,0 +1,27 @@
+.message h2,
+  .benefits h3,
+  .vision h2 {
+    font-size: 24px;
+  }
+
+  .message p,
+  .benefits p {
+    font-size: 18px;
+  }
+
+  .home-cards {
+    max-width: 10rem;
+    max-height: 15rem;
+  }
+
+  .home-cards img {
+    height: 5rem;
+  }
+
+  .home-cards p {
+    font-size: 10px;
+  }
+
+  .home-cards h4 {
+    font-size: 18px;
+  }
