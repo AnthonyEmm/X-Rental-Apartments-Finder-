@@ -104,7 +104,7 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 934px) {
+@media (min-width: 2000px) {
   .carousel-root {
     outline: 0;
     width: 93%;

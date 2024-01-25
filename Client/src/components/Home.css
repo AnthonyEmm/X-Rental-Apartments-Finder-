@@ -108,7 +108,7 @@
 }
 
 .benefits {
-  height: 110vh;
+  min-height: 110vh;
   display: flex;
   justify-content: center;
   gap: 60px;
@@ -154,7 +154,8 @@
 
 @media (min-width: 1200px) {
   header,
-  .green-container {
+  .vision,
+  .benefits {
     height: 100vh;
   }
 

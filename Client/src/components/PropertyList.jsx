@@ -66,8 +66,8 @@ function PropertyList() {
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="d-flex flex-column align-items-center gap-4 p-4 w-75">
-          <div className="search-tags d-flex flex-column align-items-center gap-2">
-            <div className="d-flex gap-2  w-50  justify-content-center">
+          <div className="search-tags d-flex flex-column align-items-center gap-2 w-auto">
+            <div className="search-area d-flex justify-content-center gap-2 w-50">
               <input
                 className="search w-75 mt-3 mb-5"
                 type="text"
@@ -92,14 +92,14 @@ function PropertyList() {
                   searchParams.delete("page");
                   fetchProperties(
                     `/properties?${searchParams.toString()}`,
-                    true,
+                    true
                   );
                 }}
               >
                 Search
               </button>
             </div>
-            <div className="tags w-auto bg-transparent d-flex justify-content-center gap-4">
+            <div className="tags bg-transparent d-flex justify-content-center gap-4">
               <select
                 onChange={(e) => {
                   if (e.target.value) {
@@ -195,9 +195,9 @@ function PropertyList() {
             </div>
           </div>
           <div className="list mt-4 mb-5 text-decoration-none w-100">
-            <div className="row row-cols-1 row-cols-md-3 g-4 ">
+            <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
               {properties.map((property) => (
-                <div key={property._id} className="col">
+                <div key={property._id}>
                   <div className="card bg-dark">
                     <img
                       src={property.image}

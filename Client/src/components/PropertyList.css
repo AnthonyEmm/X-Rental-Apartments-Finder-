@@ -3,10 +3,6 @@
   width: auto;
 }
 
-.list-container {
-  width: 100rem;
-}
-
 .load {
   border: 0;
   background-color: transparent;
@@ -52,14 +48,8 @@
   transition: 1s ease-out;
 }
 
-.tags a {
-  text-decoration: none;
-  color: rgba(17, 189, 74, 0.631);
-  background: none;
-}
-
-.tags a:hover {
-  color: rgb(17, 189, 74);
+.tags {
+  min-width: 1px;
 }
 
 .list .card {
@@ -68,7 +58,7 @@
   height: 100%;
 }
 
-img {
+.card img {
   height: 100%;
 }
 
