@@ -25,3 +25,7 @@
   .home-cards h4 {
     font-size: 18px;
   }
+
+
+  height: window.innerHeight >= 768 ? "400px" : "30vh",
+                    width: window.innerWidth >= 768 ? "100px" : "75vw",
