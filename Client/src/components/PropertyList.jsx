@@ -92,7 +92,7 @@ function PropertyList() {
                   searchParams.delete("page");
                   fetchProperties(
                     `/properties?${searchParams.toString()}`,
-                    true
+                    true,
                   );
                 }}
               >
@@ -101,6 +101,7 @@ function PropertyList() {
             </div>
             <div className="tags bg-transparent d-flex justify-content-center gap-4">
               <select
+                className="select"
                 onChange={(e) => {
                   if (e.target.value) {
                     searchParams.set("area", e.target.value);
@@ -119,25 +120,7 @@ function PropertyList() {
                 <option value={500}>400-500</option>
                 <option value={1000}>500-1000</option>
               </select>
-              <select
-                onChange={(e) => {
-                  if (e.target.value) {
-                    searchParams.set("price", e.target.value);
-                  } else {
-                    searchParams.delete("price");
-                  }
-                }}
-              >
-                <option value="">Price</option>
-                <option value={500}> 0-500 €</option>
-                <option value={700}> 500-700 €</option>
-                <option value={900}> 700-900 €</option>
-                <option value={1200}>900-1200 €</option>
-                <option value={1500}> 1200-1500 €</option>
-                <option value={2000}> 1500-2000 €</option>
-                <option value={3000}> 2000-3000 €</option>
-                <option value={Infinity}> Above 3000 €</option>
-              </select>
+
               <select
                 onChange={(e) => {
                   if (e.target.value) {
@@ -191,6 +174,25 @@ function PropertyList() {
                 <option value={2010}>2005-2010</option>
                 <option value={2020}>2010-2020</option>
                 <option value={Infinity}>2020 Above</option>
+              </select>
+              <select
+                onChange={(e) => {
+                  if (e.target.value) {
+                    searchParams.set("price", e.target.value);
+                  } else {
+                    searchParams.delete("price");
+                  }
+                }}
+              >
+                <option value="">Price</option>
+                <option value={500}> 0-500 €</option>
+                <option value={700}> 500-700 €</option>
+                <option value={900}> 700-900 €</option>
+                <option value={1200}>900-1200 €</option>
+                <option value={1500}> 1200-1500 €</option>
+                <option value={2000}> 1500-2000 €</option>
+                <option value={3000}> 2000-3000 €</option>
+                <option value={Infinity}> Above 3000 €</option>
               </select>
             </div>
           </div>
