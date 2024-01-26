@@ -7,30 +7,25 @@ import meka from "../assets/meka.png";
 import dinho from "../assets/dinho.png";
 
 function About() {
-  // Estado para armazenar a largura da tela
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Atualiza o estado quando o tamanho da tela muda
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    // Adiciona um ouvinte de redimensionamento
     window.addEventListener("resize", handleResize);
 
-    // Remove o ouvinte ao desmontar o componente
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // Define o estilo com base no tamanho da tela
   const textStyle =
     windowWidth < 768
       ? {
           whiteSpace: "initial",
-          fontSize: "15px", // Ajuste o tamanho da fonte para telas pequenas
+          fontSize: "15px",
           display: "block",
           minHeight: "50vh",
           color: "#fff",
@@ -47,7 +42,6 @@ function About() {
         };
 
   return (
-    // Resto do seu componente com a lógica de estilos
     <div className="bg">
       <div className="section d-flex justify-content-center align-items-center">
         <div className="aboutus d-flex flex-column justify-content-center align-items-center gap-5">
@@ -68,7 +62,7 @@ function About() {
                   Your dream home is just a click away with our tenant-owner approach.`,
                 ]}
                 speed={{ type: "keyStrokeDelayInMs", value: 80 }}
-                style={textStyle} // Aplica o estilo condicional
+                style={textStyle}
               />
             </div>
           </div>
