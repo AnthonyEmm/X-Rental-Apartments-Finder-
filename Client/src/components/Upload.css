@@ -72,15 +72,21 @@
   }
 
   #title,
-  #description,
-  #price,
-  #propertyType,
-  #areaCode,
-  #availability,
+  #description {
+    width: 100%;
+  }
+
   #bedrooms,
   #area,
   #year,
-  #image {
-    width: 100%;
+  #images {
+    width: 11rem;
+  }
+
+  #price,
+  #propertyType,
+  #areaCode,
+  #availability {
+    width: 11rem;
   }
 }
