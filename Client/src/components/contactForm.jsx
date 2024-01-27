@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/contactForm.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -46,6 +46,41 @@ const ContactForm = () => {
     });
   };
 
+  /* conditional to the media query of TypeAnimation */
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const textStyle =
+    windowWidth < 768
+      ? {
+          fontSize: "1.1rem",
+          display: "flex",
+          justifyContent: "center",
+          color: "#fff",
+          textAlign: "justify",
+          marginBottom: "2rem",
+        }
+      : {
+          fontSize: "1.6rem",
+          display: "flex",
+          justifyContent: "center",
+          color: "#fff",
+          textAlign: "justify",
+          marginBottom: "2rem",
+        };
+
   return (
     <div className="bg">
       <TypeAnimation
@@ -54,14 +89,7 @@ const ContactForm = () => {
         speed={{ type: "keyStrokeDelayInMs", value: 100 }}
         repeat={Infinity}
         omitDeletionAnimation={true}
-        style={{
-          fontSize: "1.6rem",
-          display: "flex",
-          justifyContent: "center",
-          color: "#fff",
-          textAlign: "justify",
-          marginBottom: "2rem",
-        }}
+        style={textStyle}
       />
       <div className="container mt-2 mb-4 text-success">
         <div className="head d-flex justify-content-center align-items-center gap-3 mt-3 mb-4">

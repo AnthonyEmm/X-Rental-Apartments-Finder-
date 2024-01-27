@@ -3,10 +3,6 @@
   width: auto;
 }
 
-.list-container {
-  width: 100rem;
-}
-
 .load {
   border: 0;
   background-color: transparent;
@@ -52,14 +48,8 @@
   transition: 1s ease-out;
 }
 
-.tags a {
-  text-decoration: none;
-  color: rgba(17, 189, 74, 0.631);
-  background: none;
-}
-
-.tags a:hover {
-  color: rgb(17, 189, 74);
+.tags {
+  min-width: 1px;
 }
 
 .list .card {
@@ -68,7 +58,7 @@
   height: 100%;
 }
 
-img {
+.card img {
   height: 100%;
 }
 
@@ -93,7 +83,7 @@ img {
   color: white;
 }
 
-select {
+.tags select {
   padding: 0.7rem;
   border: none;
   border-radius: 0.5rem;
@@ -102,16 +92,16 @@ select {
   cursor: pointer;
   color: #52a546;
   background-color: #2e2d2d;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
-select:hover {
+.tags select:hover {
   background-color: #2e2d2d;
   cursor: pointer;
   transition: 0.5s ease-in;
 }
 
-select:focus {
+.tags select:focus {
   outline: none;
   border-color: #4caf50;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
@@ -119,4 +109,13 @@ select:focus {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+@media only screen and (max-width: 790px) {
+  .grid-container {
+    width: 160vw;
+    flex-direction: column;
+    align-items: center;
+    gap: 0 !important;
+  }
 }

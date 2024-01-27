@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../components/About.css";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
@@ -8,6 +7,40 @@ import meka from "../assets/meka.png";
 import dinho from "../assets/dinho.png";
 
 function About() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const textStyle =
+    windowWidth < 768
+      ? {
+          whiteSpace: "initial",
+          fontSize: "15px",
+          display: "block",
+          minHeight: "50vh",
+          color: "#fff",
+          textAlign: "justify",
+        }
+      : {
+          whiteSpace: "initial",
+          fontSize: "1.1rem",
+          display: "block",
+          minHeight: "40vh",
+          color: "#fff",
+          lineHeight: "2.2rem",
+          textAlign: "justify",
+        };
+
   return (
     <div className="bg">
       <div className="section d-flex justify-content-center align-items-center">
@@ -29,15 +62,7 @@ function About() {
                   Your dream home is just a click away with our tenant-owner approach.`,
                 ]}
                 speed={{ type: "keyStrokeDelayInMs", value: 80 }}
-                style={{
-                  whiteSpace: "initial",
-                  fontSize: "1.1rem",
-                  display: "block",
-                  minHeight: "40vh",
-                  color: "#fff",
-                  lineHeight: "2.2rem",
-                  textAlign: "justify",
-                }}
+                style={textStyle}
               />
             </div>
           </div>
@@ -51,7 +76,7 @@ function About() {
               </Link>
               <p className="text-light">Bernard Almeida</p>
             </div>
-            <div className="avatar d-flex flex-column justify-content-center align-items-center  gap-2 fs-4">
+            <div className="avatar d-flex flex-column justify-content-center align-items-center gap-2 fs-4">
               <Link
                 to="https://www.linkedin.com/in/nnaemeka-emesowum/"
                 target="_blank"

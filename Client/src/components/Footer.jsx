@@ -16,7 +16,7 @@ function Footer() {
       <div className="bg">
         <div className="footer">
           <div className="contain d-flex flex-column justify-content-center align-items-center gap-4 mt-4">
-            <div className="head d-flex gap-2 mb-3">
+            <div className="head gap-2 mb-3 d-flex justify-content-center align-items-start">
               <img src={logo} alt="Logo" />
               <h5 className="bg-transparent">
                 &copy;2024 X Rental. All rights reserved.

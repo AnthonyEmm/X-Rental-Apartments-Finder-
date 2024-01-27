@@ -66,8 +66,8 @@ function PropertyList() {
     <div className="bg text-white">
       <div className="container-main d-flex justify-content-center align-items-center d-flex mt-4 mb-4">
         <div className="d-flex flex-column align-items-center gap-4 p-4 w-75">
-          <div className="search-tags d-flex flex-column align-items-center gap-2">
-            <div className="d-flex gap-2  w-50  justify-content-center">
+          <div className="search-tags d-flex flex-column align-items-center gap-2 w-auto">
+            <div className="search-area d-flex justify-content-center gap-2 w-50">
               <input
                 className="search w-75 mt-3 mb-5"
                 type="text"
@@ -92,15 +92,16 @@ function PropertyList() {
                   searchParams.delete("page");
                   fetchProperties(
                     `/properties?${searchParams.toString()}`,
-                    true,
+                    true
                   );
                 }}
               >
                 Search
               </button>
             </div>
-            <div className="tags w-auto bg-transparent d-flex justify-content-center gap-4">
+            <div className="tags grid-container bg-transparent d-flex justify-content-center gap-4">
               <select
+                className="select"
                 onChange={(e) => {
                   if (e.target.value) {
                     searchParams.set("area", e.target.value);
@@ -119,25 +120,7 @@ function PropertyList() {
                 <option value={500}>400-500</option>
                 <option value={1000}>500-1000</option>
               </select>
-              <select
-                onChange={(e) => {
-                  if (e.target.value) {
-                    searchParams.set("price", e.target.value);
-                  } else {
-                    searchParams.delete("price");
-                  }
-                }}
-              >
-                <option value="">Price</option>
-                <option value={500}> 0-500 €</option>
-                <option value={700}> 500-700 €</option>
-                <option value={900}> 700-900 €</option>
-                <option value={1200}>900-1200 €</option>
-                <option value={1500}> 1200-1500 €</option>
-                <option value={2000}> 1500-2000 €</option>
-                <option value={3000}> 2000-3000 €</option>
-                <option value={Infinity}> Above 3000 €</option>
-              </select>
+
               <select
                 onChange={(e) => {
                   if (e.target.value) {
@@ -192,12 +175,31 @@ function PropertyList() {
                 <option value={2020}>2010-2020</option>
                 <option value={Infinity}>2020 Above</option>
               </select>
+              <select
+                onChange={(e) => {
+                  if (e.target.value) {
+                    searchParams.set("price", e.target.value);
+                  } else {
+                    searchParams.delete("price");
+                  }
+                }}
+              >
+                <option value="">Price</option>
+                <option value={500}> 0-500 €</option>
+                <option value={700}> 500-700 €</option>
+                <option value={900}> 700-900 €</option>
+                <option value={1200}>900-1200 €</option>
+                <option value={1500}> 1200-1500 €</option>
+                <option value={2000}> 1500-2000 €</option>
+                <option value={3000}> 2000-3000 €</option>
+                <option value={Infinity}> Above 3000 €</option>
+              </select>
             </div>
           </div>
           <div className="list mt-4 mb-5 text-decoration-none w-100">
-            <div className="row row-cols-1 row-cols-md-3 g-4 ">
+            <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
               {properties.map((property) => (
-                <div key={property._id} className="col">
+                <div key={property._id}>
                   <div className="card bg-dark">
                     <img
                       src={property.image}
@@ -218,7 +220,10 @@ function PropertyList() {
                       <p className="card-text">
                         Price: €{property.price}/month
                       </p>
-                      <Link to={`/property/${property._id}`}>
+                      <Link
+                        to={`/property/${property._id}`}
+                        className="d-flex justify-content-center "
+                      >
                         <button
                           type="submit"
                           className="btn btn-lg rounded-1"
