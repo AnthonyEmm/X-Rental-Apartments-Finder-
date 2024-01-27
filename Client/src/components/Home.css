@@ -239,7 +239,7 @@
 }
 
 .title-overlay {
-  animation: disappear 0s 2s forwards;
+  animation: disappear 0s 1s forwards;
 }
 
 @keyframes disappear {
@@ -276,12 +276,12 @@
 }
 
 .slider img {
-  animation: slide-in-left 2s ease-in;
+  animation: slide-in-left 1s ease-in;
 }
 
 .slider h2,
 .slider p {
-  animation: slide-in-right 2s ease-in;
+  animation: slide-in-right 1s ease-in;
 }
 
 @keyframes slide-in-left {
@@ -303,20 +303,20 @@
 }
 
 .jumper .card1 {
-  animation: slide-in-top 1.5s ease-in;
+  animation: slide-in-top 0.5s ease-in;
 }
 
 .jumper .card2 {
-  animation: slide-in-bottom 1.5s ease-in;
+  animation: slide-in-bottom 0.5s ease-in;
 }
 
 .jumper .card3 {
-  animation: slide-in-top 1.5s ease-in;
+  animation: slide-in-top 0.5s ease-in;
 }
 
 @keyframes slide-in-top {
   from {
-    transform: translateY(-30%);
+    transform: translateY(-20%);
   }
   to {
     transform: translateY(0);
@@ -325,7 +325,7 @@
 
 @keyframes slide-in-bottom {
   from {
-    transform: translateY(30%);
+    transform: translateY(20%);
   }
   to {
     transform: translateY(0);
