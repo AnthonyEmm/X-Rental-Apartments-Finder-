@@ -92,14 +92,14 @@ function PropertyList() {
                   searchParams.delete("page");
                   fetchProperties(
                     `/properties?${searchParams.toString()}`,
-                    true
+                    true,
                   );
                 }}
               >
                 Search
               </button>
             </div>
-            <div className="tags grid-container bg-transparent d-flex justify-content-center gap-4">
+            <div className="tags bg-transparent d-flex justify-content-center gap-4">
               <select
                 className="select"
                 onChange={(e) => {
