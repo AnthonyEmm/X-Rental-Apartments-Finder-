@@ -66,17 +66,22 @@ function PropertyDetails() {
                 <p>
                   <span>Owner</span>: {property.owner.name}
                 </p>
-                <div className="button-section mt-5 d-flex justify-content-between px-2">
+                <div className="button-section mt-5 d-flex justify-content-start gap-5">
                   <Link to={`/profile/${property.owner._id}`}>
                     <button
-                      className="btn btn-success rounded-1 "
+                      className="btn btn-success rounded-1"
                       type="button"
+                      title="See owner details"
                     >
                       OWNER DETAILS
                     </button>
                   </Link>
                   <Link to="/listings">
-                    <button className="btn btn-success rounded-1" type="button">
+                    <button
+                      className="btn btn-success rounded-1"
+                      type="button"
+                      title="Back to listings"
+                    >
                       BACK
                     </button>
                   </Link>
