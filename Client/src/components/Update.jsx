@@ -39,33 +39,40 @@ function Update({ id }) {
 
     try {
       if (!email) {
-        setError("Please Enter Your Email Address");
+        setError("Please enter your email address!");
         return;
       }
 
       if (password !== confirmPassword) {
-        setError("Passwords do not match");
+        setError("Passwords do not match!");
         return;
       }
 
       if (!validatePassword()) {
-        setError("Password must be 8-10 letters and one number");
-      } else {
-        setSuccess("Update Successful!");
+        setError("Please follow password requirement!");
+        return;
       }
 
-      const response = await axiosClient.post(`/auth/update/:id`, data, {
+      const response = await axiosClient.post(`/auth/update/${id}`, data, {
         withCredentials: true,
       });
-      setSuccess(response.data);
-      navigate("/profile");
+
+      setSuccess("Update Successful!");
       setError("");
+      navigate("/profile");
     } catch (error) {
       console.error(
         "User Update Failed:",
         error.response ? error.response.data : error.message,
       );
-      setError("User Update Failed. Please add a profile Image!");
+
+      if (error.response && error.response.status === 400) {
+        setError("Bad Request. Please check your data and try again.");
+      } else if (error.response && error.response.status === 401) {
+        setError("Unauthorized. Please log in and try again.");
+      } else {
+        setError("Please add a profile photo to proceed.");
+      }
     } finally {
       setLoading(false);
     }
@@ -152,9 +159,7 @@ function Update({ id }) {
             {loading ? "Updating..." : "UPDATE"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
-          {success && (
-            <p style={{ color: "green" }}>User Updated Successfully</p>
-          )}
+          {success && <p style={{ color: "green" }}>{success}</p>}
           <Link to="/login" className="link-login text-decoration-none mt-3">
             Back to sign-in
           </Link>

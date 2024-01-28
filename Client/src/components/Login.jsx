@@ -28,22 +28,30 @@ function Login() {
   };
 
   const handleLogin = async (e) => {
-    e.preventDefault();
     if (!validatePassword()) {
-      setError("Password must be at least 8-10 letters and one number!");
+      setError("Password must be 8-10 letters and one number");
     }
-
+    e.preventDefault();
+    setError(false);
+    setSuccess(false);
     setLoading(true);
+
     try {
-      login({
+      await login({
         email,
         password,
       });
 
       setSuccess("Login successful");
+      setError("Incorrect Email or Password. Please try again!");
     } catch (error) {
-      console.log("Login Failed:", error);
-      setError(error);
+      console.error("Login Failed:", error);
+
+      if (error.response && error.response.status === 401) {
+        setError("Incorrect Email or Password. Please try again!");
+      } else {
+        setError("An error occurred during login. Please try again later.");
+      }
     } finally {
       setLoading(false);
     }
@@ -78,7 +86,6 @@ function Login() {
                 placeholder="Email"
                 required={true}
               />
-
               <div style={{ position: "relative" }}>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -117,7 +124,6 @@ function Login() {
                     : ""}
                 </p>
               )}
-
               <button
                 onClick={handleLogin}
                 className="btn btn-lg rounded-2"
