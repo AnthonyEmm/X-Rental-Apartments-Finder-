@@ -24,11 +24,6 @@ function SignUp() {
     setShowPassword(!showPassword);
   };
 
-  // const validatePassword = () => {
-  //   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
-  //   return passwordRegex.test(formData.password);
-  // };
-
   const validatePassword = () => {
     const passwordRegex =
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])?[A-Za-z\d@$!%*?&]{8,16}$/;
