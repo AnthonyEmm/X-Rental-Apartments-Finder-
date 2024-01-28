@@ -24,8 +24,14 @@ function SignUp() {
     setShowPassword(!showPassword);
   };
 
+  // const validatePassword = () => {
+  //   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
+  //   return passwordRegex.test(formData.password);
+  // };
+
   const validatePassword = () => {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])?[A-Za-z\d@$!%*?&]{8,16}$/;
     return passwordRegex.test(formData.password);
   };
 
@@ -54,7 +60,7 @@ function SignUp() {
       }
 
       if (!validatePassword()) {
-        setError("Password must be 8-10 letters and one number!");
+        setError("Password must meet requirements!");
         return;
       }
 
