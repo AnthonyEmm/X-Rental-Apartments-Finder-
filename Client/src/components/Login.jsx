@@ -99,7 +99,7 @@ function Login() {
                   style={{
                     position: "absolute",
                     right: "10px",
-                    top: "50%",
+                    top: "45%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
                     background: "transparent",

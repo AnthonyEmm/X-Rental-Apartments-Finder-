@@ -21,7 +21,7 @@ function PropertyDetails() {
       console.log(error);
     }
   };
-  const center = [52.5232, 13.3653];
+  const center = [52.520008, 13.404954];
 
   return (
     <div className="bg text-white">

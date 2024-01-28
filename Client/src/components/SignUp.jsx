@@ -125,7 +125,7 @@ function SignUp() {
                   id="password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  placeholder="Password (8-10 letters and one number)"
+                  placeholder="Password (8-16 characters, number incl.)"
                   required={true}
                 />
 
@@ -133,7 +133,7 @@ function SignUp() {
                   style={{
                     position: "absolute",
                     right: "10px",
-                    top: "50%",
+                    top: "45%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
                     background: "transparent",

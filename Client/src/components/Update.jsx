@@ -23,7 +23,8 @@ function Update({ id }) {
   };
 
   const validatePassword = () => {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])?[A-Za-z\d@$!%*?&]{8,16}$/;
     return passwordRegex.test(password);
   };
 
@@ -108,7 +109,7 @@ function Update({ id }) {
                 style={{
                   position: "absolute",
                   right: "10px",
-                  top: "50%",
+                  top: "45%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                   background: "transparent",
@@ -127,7 +128,7 @@ function Update({ id }) {
               </span>
             </div>
             <p className="info text-danger fst-italic fs-6 bg-transparent mt-2">
-              Password must be 8-10 letters and one number
+              8-16 characters long (letters, numbers, symbols)
             </p>
             <input
               type="password"
