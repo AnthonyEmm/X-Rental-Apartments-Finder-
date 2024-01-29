@@ -23,7 +23,8 @@ function Update({ id }) {
   };
 
   const validatePassword = () => {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])?[A-Za-z\d@$!%*?&]{8,16}$/;
     return passwordRegex.test(password);
   };
 
@@ -39,33 +40,40 @@ function Update({ id }) {
 
     try {
       if (!email) {
-        setError("Please Enter Your Email Address");
+        setError("Please enter your email address!");
         return;
       }
 
       if (password !== confirmPassword) {
-        setError("Passwords do not match");
+        setError("Passwords do not match!");
         return;
       }
 
       if (!validatePassword()) {
-        setError("Password must be 8-10 letters and one number");
-      } else {
-        setSuccess("Update Successful!");
+        setError("Please follow password requirement!");
+        return;
       }
 
-      const response = await axiosClient.post(`/auth/update/:id`, data, {
+      const response = await axiosClient.post(`/auth/update/${id}`, data, {
         withCredentials: true,
       });
-      setSuccess(response.data);
-      navigate("/profile");
+
+      setSuccess("Update Successful!");
       setError("");
+      navigate("/profile");
     } catch (error) {
       console.error(
         "User Update Failed:",
         error.response ? error.response.data : error.message,
       );
-      setError("User Update Failed. Please add a profile Image!");
+
+      if (error.response && error.response.status === 400) {
+        setError("Bad Request. Please check your data and try again.");
+      } else if (error.response && error.response.status === 401) {
+        setError("Unauthorized. Please log in and try again.");
+      } else {
+        setError("Please add a profile photo to proceed.");
+      }
     } finally {
       setLoading(false);
     }
@@ -101,7 +109,7 @@ function Update({ id }) {
                 style={{
                   position: "absolute",
                   right: "10px",
-                  top: "50%",
+                  top: "45%",
                   transform: "translateY(-50%)",
                   cursor: "pointer",
                   background: "transparent",
@@ -120,7 +128,7 @@ function Update({ id }) {
               </span>
             </div>
             <p className="info text-danger fst-italic fs-6 bg-transparent mt-2">
-              Password must be 8-10 letters and one number
+              8-16 characters long (letters, numbers, symbols)
             </p>
             <input
               type="password"
@@ -152,9 +160,7 @@ function Update({ id }) {
             {loading ? "Updating..." : "UPDATE"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
-          {success && (
-            <p style={{ color: "green" }}>User Updated Successfully</p>
-          )}
+          {success && <p style={{ color: "green" }}>{success}</p>}
           <Link to="/login" className="link-login text-decoration-none mt-3">
             Back to sign-in
           </Link>

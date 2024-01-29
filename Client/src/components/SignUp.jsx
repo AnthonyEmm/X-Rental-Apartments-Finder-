@@ -25,8 +25,9 @@ function SignUp() {
   };
 
   const validatePassword = () => {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,10}$/;
-    return passwordRegex.test(password);
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])?[A-Za-z\d@$!%*?&]{8,16}$/;
+    return passwordRegex.test(formData.password);
   };
 
   const handleInputChange = (e) => {
@@ -42,6 +43,22 @@ function SignUp() {
 
     try {
       setLoading(true);
+
+      if (!formData.name) {
+        setError("Please add your name!");
+        return;
+      }
+
+      if (!formData.email) {
+        setError("Please add an email address!");
+        return;
+      }
+
+      if (!validatePassword()) {
+        setError("Password must meet requirements!");
+        return;
+      }
+
       const data = new FormData();
       data.append("name", formData.name);
       data.append("email", formData.email);
@@ -49,15 +66,26 @@ function SignUp() {
       data.append("avatar", formData.avatar);
 
       const response = await axiosClient.post("/auth/signup", data);
-      if (!validatePassword()) {
-        setError("Password must be 8-10 letters and one number!");
-        navigate("/login");
-      }
-      setSuccess("Sign Up Successful", response.message);
+
+      setSuccess("Sign Up Successful. " + response.message);
       setError("");
+      navigate("/login");
     } catch (error) {
-      console.log(error);
-      setError("Password must be 8-10 letters and one number!");
+      console.error("User Sign Up Failed:", error);
+
+      if (error.response) {
+        if (error.response.status === 400) {
+          setError("Bad Request. Please check your data and try again.");
+        } else if (error.response.status === 401) {
+          setError("Unauthorized. Please try again.");
+        } else if (error.response.status === 409) {
+          setError("Email is already in use. Please choose another email.");
+        } else {
+          setError("Please add a profile photo to proceed!");
+        }
+      } else {
+        setError("An unexpected error occurred. Please try again later.");
+      }
     } finally {
       setLoading(false);
     }
@@ -97,14 +125,15 @@ function SignUp() {
                   id="password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  placeholder="Password"
+                  placeholder="Password (8-16 characters, number incl.)"
                   required={true}
                 />
+
                 <span
                   style={{
                     position: "absolute",
                     right: "10px",
-                    top: "50%",
+                    top: "45%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
                     background: "transparent",

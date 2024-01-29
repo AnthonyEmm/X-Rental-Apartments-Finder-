@@ -34,14 +34,14 @@ function DeleteUserProfile({ userId }) {
       className="delete-main d-flex
     flex-column
     justify-content-center
-    align-items-center mt-5 p-5 gap-5"
+    align-items-center mt-5 mb-5 p-5 gap-5"
     >
       <h1 className="warning text-danger fw-bold">WARNING!</h1>
       <h4
         className="warning text-danger d-flex
         flex-column
         justify-content-center
-        align-items-center mt-4 "
+        align-items-center mt-5 mb-5"
       >
         Are you sure you want to delete your profile?
       </h4>
@@ -51,7 +51,7 @@ function DeleteUserProfile({ userId }) {
       <button
         onClick={handleDelete}
         disabled={isDeleting}
-        className="btn btn-lg mt-5 mb-4 rounded-2"
+        className="btn btn-lg mt-5 mb-5 rounded-2"
       >
         {isDeleting ? "Deleting..." : "Delete Profile"}
       </button>

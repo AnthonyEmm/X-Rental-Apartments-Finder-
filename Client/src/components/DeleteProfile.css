@@ -6,3 +6,9 @@
   color: rgb(17, 189, 74);
   font-weight: bold;
 }
+
+@media screen and (max-width: 480px) {
+  .warning {
+    text-align: center;
+  }
+}
