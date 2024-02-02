@@ -1,7 +1,7 @@
 const Property = require("../models/property.js");
 const cloudinary = require("cloudinary").v2;
+const fs = require("fs");
 
-// Create a property Listing to the DataBase //
 const createProperty = async (req, res, next) => {
   try {
     const {
@@ -30,6 +30,12 @@ const createProperty = async (req, res, next) => {
       owner: req.user.id,
       availability,
     });
+
+    for (const path of req.paths) {
+      await fs.unlink(path, (err, res) => {
+        if (err) throw err;
+      });
+    }
 
     res.status(201).json(property);
   } catch (error) {
