@@ -1,0 +1,131 @@
+.container-main {
+  height: auto;
+  width: auto;
+}
+
+.load {
+  border: 0;
+  background-color: transparent;
+  color: rgb(17, 189, 74);
+}
+
+.load:hover {
+  color: rgb(25, 245, 99);
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+  padding: 0.7rem 0.5rem;
+  transition: 0.5s ease-in-out;
+}
+
+#search {
+  border-color: rgb(196, 237, 210);
+  border-radius: 5px;
+  padding: 1rem;
+  color: white;
+  background-color: rgb(40, 39, 39);
+}
+
+#search:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+}
+.text-center {
+  color: rgb(17, 189, 74);
+}
+
+.add-listing {
+  color: rgb(196, 237, 210);
+  border: 1px solid rgba(12, 108, 44, 0.631);
+  border-radius: 5px;
+  width: 10rem;
+  background-color: rgba(17, 189, 74, 0.631);
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.add-listing:hover {
+  color: rgba(5, 1, 1, 0.732);
+  background-color: rgb(17, 189, 74);
+  transition: 1s ease-out;
+}
+
+.tags {
+  min-width: 1px;
+}
+
+.list .card {
+  border: 1px solid #292828c1;
+  transition: box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.card img {
+  height: 100%;
+}
+
+.list .card:hover {
+  border-color: rgb(20, 216, 86);
+  box-shadow: 0 0 10px rgba(26, 231, 95, 0.9);
+}
+
+.card-body h5 {
+  color: rgb(17, 189, 74);
+}
+
+.card-body button {
+  color: #fff;
+}
+
+.card-body button:hover {
+  color: #000;
+}
+
+.card-text {
+  color: white;
+}
+
+.tags select {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #52a546;
+  background-color: #2e2d2d;
+  margin-bottom: 0.8rem;
+}
+
+.tags select:hover {
+  background-color: #2e2d2d;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+.tags select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 790px) {
+  .tags {
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0 !important;
+  }
+
+  .search-area input {
+    width: 35vw !important;
+  }
+
+  select {
+    width: 100%;
+  }
+}

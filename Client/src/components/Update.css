@@ -1,0 +1,45 @@
+.container-main {
+  height: auto;
+  width: auto;
+}
+
+.title-form {
+  width: 30rem;
+  background-color: #2e2d2d;
+}
+
+.title-form h1 {
+  color: rgb(17, 189, 74);
+}
+
+.title-form button {
+  background-color: rgb(17, 189, 74);
+}
+
+#email,
+#confirmPassword,
+#password {
+  border-radius: 5px;
+  padding: 1rem;
+  width: 22rem;
+  outline: none;
+  background-color: rgb(40, 39, 39);
+  color: white;
+  border: 0;
+}
+
+input:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+}
+
+.link-login {
+  color: rgba(17, 189, 74, 0.553);
+}
+
+.link-login:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
+}
+.update {
+  color: rgb(17, 189, 74);
+}

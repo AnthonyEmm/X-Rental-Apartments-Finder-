@@ -1,0 +1,42 @@
+.bg {
+  width: auto;
+  height: auto;
+}
+
+.footer {
+  border-top: 1px solid rgba(17, 189, 74, 0.559);
+  background-color: rgb(38, 36, 36);
+  height: 14rem;
+}
+
+.contain {
+  background-color: inherit;
+}
+
+.contain h5 {
+  color: rgb(17, 189, 74);
+}
+
+/* .head .top-btn {
+  border: none !important;
+  background-color: transparent;
+  color: green;
+} */
+
+.icons a {
+  color: rgba(17, 189, 74, 0.612);
+}
+
+.icons a:hover {
+  color: rgb(17, 189, 74);
+}
+
+.link {
+  color: rgba(17, 189, 74, 0.612);
+  font-size: small;
+}
+
+.link:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
+}

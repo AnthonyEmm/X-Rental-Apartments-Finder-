@@ -1,0 +1,92 @@
+.bg {
+  width: auto;
+  height: auto;
+}
+
+.form-header {
+  width: 30rem;
+}
+
+.title-form {
+  width: 40rem;
+}
+
+.title-form h5 {
+  color: rgb(17, 189, 74);
+}
+
+.title-form button {
+  background-color: rgb(17, 189, 74);
+  color: black;
+}
+
+.title-form button:hover {
+  background-color: rgba(17, 189, 74, 0.415);
+  color: white;
+}
+
+#price,
+#propertyType,
+#areaCode,
+#availability,
+#bedrooms,
+#area,
+#year {
+  color: white;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 15rem;
+  background-color: rgb(40, 39, 39);
+  border: 0;
+  margin: 0;
+  outline: none;
+}
+
+#images {
+  border-radius: 5px;
+  padding: 0.8rem 0.8rem;
+  width: 15rem;
+  color: white;
+  background-color: rgb(40, 39, 39);
+}
+
+#title,
+#description {
+  border-radius: 5px;
+  padding: 1rem;
+  outline: none;
+  color: white;
+  width: 30rem;
+  background-color: rgb(40, 39, 39);
+  resize: none;
+  border: 0;
+}
+
+#description:hover {
+  box-shadow: 0 0 10px rgba(17, 189, 74, 0.415);
+}
+
+@media (max-width: 768px) {
+  .form-header {
+    width: 100%;
+  }
+
+  #title,
+  #description {
+    width: 100%;
+  }
+
+  #bedrooms,
+  #area,
+  #year,
+  #images {
+    width: 11rem;
+  }
+
+  #price,
+  #propertyType,
+  #areaCode,
+  #availability {
+    width: 11rem;
+  }
+}

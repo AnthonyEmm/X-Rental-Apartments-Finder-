@@ -1,0 +1,66 @@
+.bg {
+  height: auto;
+  width: auto;
+}
+
+.container {
+  width: 40rem;
+  border-radius: 10px;
+  background-color: rgb(40, 39, 39);
+}
+
+.container h2 {
+  color: rgb(17, 189, 74);
+}
+
+.form label {
+  color: rgb(17, 189, 74);
+}
+
+.email-contact,
+.name-contact {
+  width: 23rem;
+  padding: 0.7rem;
+}
+
+.user-name,
+.user-email {
+  padding: 1rem;
+  width: 20rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.user-name,
+.user-email,
+#message {
+  color: white;
+  background: rgb(52, 52, 52);
+  outline: none;
+  border: none;
+}
+
+#name:hover,
+#email:hover,
+#message:hover {
+  box-shadow: 0 0 10px rgba(25, 151, 67, 0.7);
+  outline: none;
+  border: none;
+}
+
+#message:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+#message {
+  resize: none;
+}
+
+.container .btn-send {
+  color: #fff;
+}
+
+.container .btn-send:hover {
+  color: #000;
+}

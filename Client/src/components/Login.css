@@ -1,0 +1,51 @@
+.container-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.login {
+  color: rgb(17, 189, 74);
+}
+
+.title-form h3 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#email,
+#password {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: azure;
+  background-color: rgb(40, 39, 39);
+  border: 0;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.link-signup {
+  color: rgba(17, 189, 74, 0.553);
+}
+
+.link-signup:hover {
+  color: rgb(17, 189, 74);
+  font-weight: bold;
+}
