@@ -1,25 +1,42 @@
+// Importando React, useState e useContext do React
 import React, { useState, useContext } from "react";
+
+// Importando o contexto de autenticação
 import { AuthContext } from "../context/AuthProvider";
+
+// Importando estilos específicos do componente NavBar
 import "./NavBar.css";
+
+// Importando o componente Link do React Router
 import { Link } from "react-router-dom";
+
+// Importando a imagem do avatar padrão e o logo da aplicação
 import Avatar from "../assets/user-circle-fill.svg";
 import logo from "../assets/logo.svg";
 
+// Componente NavBar responsável pela navegação
 function NavBar() {
+  // Obtendo dados do contexto de autenticação
   const { logout, loading, user } = useContext(AuthContext);
+
+  // Estado para controlar a abertura/fechamento do menu offcanvas
   const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
 
+  // Função para alternar a visibilidade do menu offcanvas
   const handleToggleOffcanvas = () => {
     setIsOffcanvasOpen(!isOffcanvasOpen);
   };
 
+  // Função para fechar o menu offcanvas
   const handleCloseOffcanvas = () => {
     setIsOffcanvasOpen(false);
   };
 
+  // Renderização do componente NavBar
   return (
     <nav className="navbar sticky-top navbar-expand-lg bg-inherit p-3">
       <div className="container-fluid px-4">
+        {/* Link para a página inicial com o logo da aplicação */}
         <Link
           to="/"
           className="navbar-brand d-flex justify-content-center align-items-center gap-2 fw-bold fs-4 "
@@ -28,6 +45,7 @@ function NavBar() {
           <span>X Rental</span>
         </Link>
 
+        {/* Botão de toggle para o menu offcanvas */}
         <button
           className="navbar-toggler"
           type="button"
@@ -37,6 +55,7 @@ function NavBar() {
           <span className="navbar-toggler-icon custom-toggler-icon"></span>
         </button>
 
+        {/* Menu offcanvas */}
         <div
           className={`offcanvas bg-dark offcanvas-end ${
             isOffcanvasOpen ? "show" : ""
@@ -46,6 +65,7 @@ function NavBar() {
           aria-labelledby="navbarNavLabel"
         >
           <div className="offcanvas-header justify-content-end ">
+            {/* Botão para fechar o menu offcanvas */}
             <button
               type="button"
               className="btn-close text-reset"
@@ -62,7 +82,9 @@ function NavBar() {
             ></button>
           </div>
           <div className="offcanvas-body justify-content-end w-100">
+            {/* Lista de links do menu */}
             <ul className="navbar-nav gap-4" role="menu">
+              {/* Link para a página inicial */}
               <Link
                 to="/"
                 className="nav-link nav-item"
@@ -72,6 +94,7 @@ function NavBar() {
                 Home
               </Link>
 
+              {/* Link para a página "Sobre" */}
               <Link
                 to="/about"
                 className="nav-link nav-item"
@@ -80,8 +103,10 @@ function NavBar() {
                 About
               </Link>
 
+              {/* Condicional para renderizar links dependendo do estado de autenticação */}
               {!loading && (
                 <>
+                  {/* Se o usuário não estiver autenticado */}
                   {!user ? (
                     <Link
                       to="/login"
@@ -92,6 +117,7 @@ function NavBar() {
                     </Link>
                   ) : (
                     <>
+                      {/* Links para usuários autenticados */}
                       <Link
                         to="/listings"
                         className="nav-link nav-item"
@@ -102,6 +128,7 @@ function NavBar() {
                       <Link to="/upload" className="nav-link nav-item">
                         Create Property
                       </Link>
+                      {/* Dropdown para o perfil do usuário */}
                       <li className=" dropdown">
                         <Link
                           className="nav-link dropdown-toggle nav-item"
@@ -111,6 +138,7 @@ function NavBar() {
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
+                          {/* Exibindo o avatar do usuário */}
                           <img
                             src={user.avatar || Avatar}
                             alt="profile"
@@ -118,6 +146,7 @@ function NavBar() {
                             style={{ width: "30px", height: "30px" }}
                           />
                         </Link>
+                        {/* Menu dropdown com opções do perfil */}
                         <ul
                           className="dropdown-menu dropdown-menu-end"
                           aria-labelledby="navbarDropdown "
@@ -168,4 +197,5 @@ function NavBar() {
   );
 }
 
+// Exportando o componente NavBar
 export default NavBar;

@@ -1,18 +1,36 @@
+// Importando estilos Bootstrap e estilos específicos do componente ContactForm
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/contactForm.css";
+
+// Importando FontAwesome para ícone de envelope
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+// Importando React, useRef, useState, useEffect
 import React, { useRef, useState, useEffect } from "react";
+
+// Importando a biblioteca de envio de e-mail (emailjs)
 import emailjs from "@emailjs/browser";
+
+// Importando componentes da biblioteca de notificações (react-toastify)
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// Importando o hook useNavigate do React Router para navegação programática
 import { useNavigate } from "react-router-dom";
+
+// Importando o componente TypeAnimation para animação de texto digitado
 import { TypeAnimation } from "react-type-animation";
 
+// Componente ContactForm responsável pelo formulário de contato
 const ContactForm = () => {
+  // Hook useNavigate para navegação programática
   const navigate = useNavigate();
+
+  // Referência para o formulário
   const form = useRef();
 
+  // Função para enviar e-mail
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -25,6 +43,7 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
+          // Redirecionando para a página inicial após o envio bem-sucedido
           navigate("/");
         },
         (error) => {
@@ -33,6 +52,7 @@ const ContactForm = () => {
       );
   };
 
+  // Função para exibir notificação de sucesso
   const notify = () => {
     toast.success("Email sent Successfully", {
       position: "top-right",
@@ -46,8 +66,7 @@ const ContactForm = () => {
     });
   };
 
-  /* conditional to the media query of TypeAnimation */
-
+  // Condicional para a largura da janela (media query para TypeAnimation)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -62,6 +81,7 @@ const ContactForm = () => {
     };
   }, []);
 
+  // Estilo condicional para o texto do TypeAnimation
   const textStyle =
     windowWidth < 768
       ? {
@@ -81,8 +101,10 @@ const ContactForm = () => {
           marginBottom: "2rem",
         };
 
+  // Renderização do componente ContactForm
   return (
     <div className="bg">
+      {/* Componente TypeAnimation para animação de texto digitado */}
       <TypeAnimation
         splitter={(str) => str.split(/(?= )/)}
         sequence={[`Write us a message. We'll be glad!`, 1000, ""]}
@@ -91,9 +113,12 @@ const ContactForm = () => {
         omitDeletionAnimation={true}
         style={textStyle}
       />
+
       <div className="container mt-2 mb-4 text-success">
+        {/* Cabeçalho do formulário de contato */}
         <div className="head d-flex justify-content-center align-items-center gap-3 mt-3 mb-4">
           <h2>CONTACT FORM</h2>
+          {/* Ícone de envelope FontAwesome */}
           <div>
             <FontAwesomeIcon
               icon={faEnvelope}
@@ -101,6 +126,8 @@ const ContactForm = () => {
             />
           </div>
         </div>
+
+        {/* Formulário de contato */}
         <form
           ref={form}
           onSubmit={sendEmail}
@@ -124,12 +151,15 @@ const ContactForm = () => {
             className="form-control mb-4"
             required
           />
+          {/* Botão de envio do formulário */}
           <input
             onClick={notify}
             type="submit"
             value="SEND"
             className="btn-send btn btn-lg rounded-2 mb-5"
           />
+
+          {/* Componente ToastContainer para notificações */}
           <ToastContainer
             position="top-right"
             autoClose={2000}
@@ -147,4 +177,6 @@ const ContactForm = () => {
     </div>
   );
 };
+
+// Exportando o componente ContactForm
 export default ContactForm;
