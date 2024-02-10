@@ -19,7 +19,7 @@ function Footer() {
             <div className="head gap-2 mb-3 d-flex justify-content-center align-items-start">
               <img src={logo} alt="Logo" />
               <h5 className="bg-transparent">
-                &copy;2024 X Rental. All rights reserved.
+                &copy;{new Date().getFullYear()} X Rental. All rights reserved.
               </h5>
             </div>
             <div className="icons d-flex gap-3 bg-transparent mb-4">
