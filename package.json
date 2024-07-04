@@ -2,7 +2,7 @@
   "name": "x-rental-apartments-finder-",
   "version": "1.0.0",
   "description": "The App is dedicated to providing an intuitive, user-friendly experience for both prospective tenants and owners. A WBS CODING SCHOOL Full Stack Web and App Development Final Project created by Bernard Almeida, Eudes Costa Junior &amp; Nnaemeka C. Emesowum",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
