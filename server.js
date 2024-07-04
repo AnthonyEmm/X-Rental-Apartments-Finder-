@@ -18,14 +18,18 @@ app.use(
     credentials: true,
   }),
 );
-app.use(express.static(path.join(__dirname, "Client", "dist")));
+// app.use(express.static(path.join(__dirname, "Client", "dist")));
 app.use(express.json());
 
 app.use("/api/auth", userRouter);
 app.use("/api/", propertiesRouter);
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "Client", "dist", "index.html"));
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "Client", "dist", "index.html"));
+// });
+
+app.get("/", (req, res) => {
+  res.send("Hello Maziar!");
 });
 
 app.use((err, req, res, next) => {
