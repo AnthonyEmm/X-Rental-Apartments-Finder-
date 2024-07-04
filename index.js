@@ -14,15 +14,19 @@ const PORT = 4050;
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://x-rental-client.vercel.app/",
+    origin: "http://localhost:5173",
     credentials: true,
   }),
 );
-
+app.use(express.static(path.join(__dirname, "Client", "dist")));
 app.use(express.json());
 
 app.use("/api/auth", userRouter);
 app.use("/api/", propertiesRouter);
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "Client", "dist", "index.html"));
+});
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
