@@ -14,7 +14,7 @@ const PORT = 4050;
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://x-rental-client.vercel.app/",
     credentials: true,
   }),
 );
