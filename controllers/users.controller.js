@@ -59,12 +59,7 @@ const login = async (req, res, next) => {
       expiresIn: "500m",
     });
     res
-      .cookie("access_token", token, {
-        httpOnly: true,
-        maxAge: "3600000",
-        secure: true,
-        sameSite: "None",
-      })
+      .cookie("access_token", token, { httpOnly: true, maxAge: 28800000 })
       .json(payload);
   } catch (error) {
     console.log(error);
