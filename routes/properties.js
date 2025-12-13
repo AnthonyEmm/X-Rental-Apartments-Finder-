@@ -5,7 +5,7 @@ const {
   getProperty,
   testUpload,
 } = require("../controllers/properties.controller.js");
-const uploadImage = require("../middlewares/uploadImage");
+const { upload, uploadToCloudinary } = require("../middlewares/uploadImage.js");
 const {
   uploadMultiple,
   cloudinaryUpload,
@@ -14,7 +14,10 @@ const { authenticate } = require("../middlewares/auth.js");
 
 const propertiesRouter = express.Router();
 
+// Get all properties
 propertiesRouter.get("/properties", getProperties);
+
+// Create new listing (multiple images)
 propertiesRouter
   .route("/createlisting")
   .post(
@@ -24,7 +27,12 @@ propertiesRouter
     createProperty,
   );
 
+// Get a single property
 propertiesRouter.route("/properties/:id").get(getProperty);
-propertiesRouter.route("/test").post(uploadImage.single("image"), testUpload);
+
+// Test single image upload
+propertiesRouter
+  .route("/test")
+  .post(upload.single("image"), uploadToCloudinary, testUpload);
 
 module.exports = propertiesRouter;
